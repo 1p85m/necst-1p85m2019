@@ -13,9 +13,6 @@ class controller(object):
     def __init__(self):
         self.sis = sis()
         self.sglo1 = sglo1()
-        #self.sgirr = sgirr()
-        #self.loatt_h = loatt_h()
-        #self.loatt_v = loatt_v()
 
 
 class make_pub(object):
@@ -42,88 +39,49 @@ class sis(object):
     def __init__(self):
         self.make_pub = make_pub()
 
-    def set_l1_vp(self, command):
-        topic_name = '/1p85m2019/sis_l1/vp_cmd'
+    def set_vp(self, cmd, pol, side_band):
+        topic_dict = {
+            'lhcp': {
+                'lsb': '/1p85m2019/sis_l1/vp_cmd',
+                'usb': '/1p85m2019/sis_l2/vp_cmd',
+            },
+            'rhcp': {
+                'lsb': '/1p85m2019/sis_r1/vp_cmd',
+                'usb': '/1p85m2019/sis_r2/vp_cmd',
+            },
+        }
         data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
+        self.make_pub.publish(topic_dict[pol][side_band], data_class, msg=cmd)
         return
 
-    def set_l2_vp(self, command):
-        topic_name = '/1p85m2019/sis_l2/vp_cmd'
+    def set_vgap(self, cmd, pol, side_band):
+        topic_dict = {
+            'lhcp': {
+                'lsb': '/1p85m2019/sis_l1/vgap_cmd',
+                'usb': '/1p85m2019/sis_l2/vgap_cmd',
+            },
+            'rhcp': {
+                'lsb': '/1p85m2019/sis_r1/vgap_cmd',
+                'usb': '/1p85m2019/sis_r2/vgap_cmd',
+            },
+        }
         data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
+        self.make_pub.publish(topic_dict[pol][side_band], data_class, msg=cmd)
         return
 
-    def set_r1_vp(self, command):
-        topic_name = '/1p85m2019/sis_r1/vp_cmd'
+    def set_v(self, cmd, pol, side_band):
+        topic_dict = {
+            'lhcp': {
+                'lsb': '/1p85m2019/sis_l1/v_cmd',
+                'usb': '/1p85m2019/sis_l2/v_cmd',
+            },
+            'rhcp': {
+                'lsb': '/1p85m2019/sis_r1/v_cmd',
+                'usb': '/1p85m2019/sis_r2/v_cmd',
+            },
+        }
         data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_r2_vp(self, command):
-        topic_name = '/1p85m2019/sis_r2/vp_cmd'
-        data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_l1_vgap(self, command):
-        topic_name = '/1p85m2019/sis_l1/vgap_cmd'
-        data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_l2_vgap(self, command):
-        topic_name = '/1p85m2019/sis_l2/vgap_cmd'
-        data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_r1_vgap(self, command):
-        topic_name = '/1p85m2019/sis_r1/vgap_cmd'
-        data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_r2_vgap(self, command):
-        topic_name = '/1p85m2019/sis_r2/vgap_cmd'
-        data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_l1_v(self, command):
-        topic_name = '/1p85m2019/sis_l1/v_cmd'
-        data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_l2_v(self, command):
-        topic_name = '/1p85m2019/sis_l2/v_cmd'
-        data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_r1_v(self, command):
-        topic_name = '/1p85m2019/sis_r1/v_cmd'
-        data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_r2_v(self, command):
-        topic_name = '/1p85m2019/sis_r2/v_cmd'
-        data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
+        self.make_pub.publish(topic_dict[pol][side_band], data_class, msg=cmd)
         return
 
 
@@ -132,166 +90,74 @@ class sglo(object):
     def __init__(self):
         self.make_pub = make_pub()
 
-    def set_freq_1st_lo_lp(self, command):
-        topic_name = '/1p85m/1st_lo_lp/f_cmd'
+    def set_1st_lo(self, cmd, pol):
+        topic_dict = {
+            'lhcp': '/1p85m/1st_lo_lhcp/f_cmd',
+            'rhcp': '/1p85m/1st_lo_rhcp/f_cmd',
+        }
         data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
+        self.make_pub.publish(topic_dict[pol], data_class, msg=cmd)
         return
 
-    def set_freq_1st_lo_rp(self, command):
-        topic_name = '/1p85m/1st_lo_rp/f_cmd'
+    def set_2nd_lo(self, cmd, side_band):
+        topic_dict = {
+            'lsb': '/1p85m/2nd_lo_lsb/f_cmd',
+            'usb': '/1p85m/2nd_lo_usb/f_cmd',
+        }
         data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
+        self.make_pub.publish(topic_dict[pol], data_class, msg=cmd)
         return
 
-    def set_fleq_2nd_lo_usb(self, command):
-        topic_name = '/1p85m/2nd_lo_us/f_cmd'
+    def set_1st_sg(self, cmd, pol):
+        topic_dict = {
+            'lhcp': '/1p85m/1st_sg_lhcp/f_cmd',
+            'rhcp': '/1p85m/1st_sg_rhcp/f_cmd',
+        }
         data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
+        self.make_pub.publish(topic_dict[pol], data_class, msg=cmd)
         return
 
-    def set_freq_2nd_lo_lsb(self, command):
-        topic_name = '/1p85m/2nd_lo_ls/f_cmd'
+    def set_2nd_sg(self, cmd, side_band):
+        topic_dict = {
+            'lsb': '/1p85m/2nd_sg_lsb/f_cmd',
+            'usb': '/1p85m/2nd_sg_usb/f_cmd',
+        }
         data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
+        self.make_pub.publish(topic_dict[pol], data_class, msg=cmd)
         return
 
-    def set_onoff_1st_lo_lp(self, command):
-        topic_name = '/1p85m/1st_lo_lp/onoff_cmd'
+    def set_1st_sg_onoff(self, cmd, pol):
+        topic_dict = {
+            'lhcp': '/1p85m/1st_sg_lhcp/onoff_cmd',
+            'rhcp': '/1p85m/1st_sg_rhcp/onoff_cmd',
+        }
+        data_class = std_msgs.msg.Float64
+        self.make_pub.publish(topic_dict[num][pol], data_class, msg=cmd)
+        return
+
+    def set_2nd_sg_onoff(self, cmd, side_band):
+        topic_dict = {
+            'lsb': '/1p85m/2nd_sg_lsb/onoff_cmd',
+            'usb': '/1p85m/2nd_sg_usb/onoff_cmd',
+        }
+        data_class = std_msgs.msg.Float64
+        self.make_pub.publish(topic_dict[num][side_band], data_class, msg=cmd)
+        return
+
+    def set_1st_lo_onoff(self, cmd, pol):
+        topic_dict = {
+            'lhcp': '/1p85m/1st_lo_lhcp/onoff_cmd',
+            'rhcp': '/1p85m/1st_lo_rhcp/onoff_cmd',
+        }
         data_class = std_msgs.msg.String
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
+        self.make_pub.publish(topic_dict[num][pol], data_class, msg=cmd)
         return
 
-    def set_onoff_1st_lo_rp(self, command):
-        topic_name = '/1p85m/1st_lo_rp/onoff_cmd'
+    def set_2nd_lo_onoff(self, cmd, side_band):
+        topic_dict = {
+            'lsb': '/1p85m/2nd_lo_lsb/onoff_cmd',
+            'usb': '/1p85m/2nd_lo_usb/onoff_cmd',
+        }
         data_class = std_msgs.msg.String
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_onoff_2nd_lo_usb(self, command):
-        topic_name = '/1p85m/2nd_lo_rsb/onoff_cmd'
-        data_class = std_msgs.msg.String
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_onoff_2nd_lsb(self, command):
-        topic_name = '/1p85m/2nd_lo_lsb/onoff_cmd'
-        data_class = std_msgs.msg.String
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_freq_1st_sg_rp(self, command):
-        topic_name = '/1p85m/1st_sg_rp/f_cmd'
-        data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_freq_1st_sg_lp(self, command):
-        topic_name = '/1p85m/1st_sg_lp/f_cmd'
-        data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_fleq_2nd_sg_usb(self, command):
-        topic_name = '/1p85m/2nd_sg_usb/f_cmd'
-        data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_freq_2nd_sg_lsb(self, command):
-        topic_name = '/1p85m/2nd_sg_lsb/f_cmd'
-        data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_onoff_1st_sg_lp(self, command):
-        topic_name = '/1p85m/1st_sg_lp/onoff_cmd'
-        data_class = std_msgs.msg.String
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_onoff_1st_sg_rp(self, command):
-        topic_name = '/1p85m/1st_sg_rp/onoff_cmd'
-        data_class = std_msgs.msg.String
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_onoff_2nd_sg_usb(self, command):
-        topic_name = '/1p85m/2nd_sg_usb/onoff_cmd'
-        data_class = std_msgs.msg.String
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_onoff_2nd_sg_lsb(self, command):
-        topic_name = '/1p85m/2nd_sg_lsb/onoff_cmd'
-        data_class = std_msgs.msg.String
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-class sgirr(object):
-
-    def __init__(self):
-        self.make_pub = make_pub()
-
-    def set_freq(self, command):
-        topic_name = '/tz2019/sg_irr/f_cmd'
-        data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_power(self, command):
-        topic_name = '/tz2019/sg_irr/p_cmd'
-        data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-    def set_onoff(self, command):
-        topic_name = '/tz2019/sg_irr/onoff_cmd'
-        data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-
-class loatt_h(object):
-
-    def __init__(self):
-        self.make_pub = make_pub()
-
-    def set_cur(self, command):
-        topic_name = '/tz2019/loatt_h/i_cmd'
-        data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
-        return
-
-
-class loatt_v(object):
-
-    def __init__(self):
-        self.make_pub = make_pub()
-
-    def set_cur(self, command):
-        topic_name = '/tz2019/loatt_v/i_cmd'
-        data_class = std_msgs.msg.Float64
-
-        self.make_pub.publish(topic_name, data_class, msg = command)
+        self.make_pub.publish(topic_dict[num][side_band], data_class, msg=cmd)
         return
