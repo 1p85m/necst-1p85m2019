@@ -42,85 +42,85 @@ class sis(object):
     def __init__(self):
         self.make_pub = make_pub()
 
-    def set_v1_vp(self, command):
-        topic_name = '/tz2019/sis_v1/vp_cmd'
+    def set_l1_vp(self, command):
+        topic_name = '/1p85m2019/sis_l1/vp_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
 
-    def set_h1_vp(self, command):
-        topic_name = '/tz2019/sis_h1/vp_cmd'
+    def set_l2_vp(self, command):
+        topic_name = '/1p85m2019/sis_l2/vp_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
 
-    def set_h2_vp(self, command):
-        topic_name = '/tz2019/sis_h2/vp_cmd'
+    def set_r1_vp(self, command):
+        topic_name = '/1p85m2019/sis_r1/vp_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
 
-    def set_v2_vp(self, command):
-        topic_name = '/tz2019/sis_v2/vp_cmd'
+    def set_r2_vp(self, command):
+        topic_name = '/1p85m2019/sis_r2/vp_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
 
-    def set_v1_vgap(self, command):
-        topic_name = '/tz2019/sis_v1/vgap_cmd'
+    def set_l1_vgap(self, command):
+        topic_name = '/1p85m2019/sis_l1/vgap_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
 
-    def set_h1_vgap(self, command):
-        topic_name = '/tz2019/sis_h1/vgap_cmd'
+    def set_l2_vgap(self, command):
+        topic_name = '/1p85m2019/sis_l2/vgap_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
 
-    def set_h2_vgap(self, command):
-        topic_name = '/tz2019/sis_h2/vgap_cmd'
+    def set_r1_vgap(self, command):
+        topic_name = '/1p85m2019/sis_r1/vgap_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
 
-    def set_v2_vgap(self, command):
-        topic_name = '/tz2019/sis_v2/vgap_cmd'
+    def set_r2_vgap(self, command):
+        topic_name = '/1p85m2019/sis_r2/vgap_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
 
-    def set_v1_v(self, command):
-        topic_name = '/tz2019/sis_v1/v_cmd'
+    def set_l1_v(self, command):
+        topic_name = '/1p85m2019/sis_l1/v_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
 
-    def set_h1_v(self, command):
-        topic_name = '/tz2019/sis_h1/v_cmd'
+    def set_l2_v(self, command):
+        topic_name = '/1p85m2019/sis_l2/v_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
 
-    def set_h2_v(self, command):
-        topic_name = '/tz2019/sis_h2/v_cmd'
+    def set_r1_v(self, command):
+        topic_name = '/1p85m2019/sis_r1/v_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
 
-    def set_v2_v(self, command):
-        topic_name = '/tz2019/sis_v2/v_cmd'
+    def set_r2_v(self, command):
+        topic_name = '/1p85m2019/sis_r2/v_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
