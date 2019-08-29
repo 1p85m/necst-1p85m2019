@@ -13,7 +13,7 @@ class controller(object):
     def __init__(self):
         self.sis = sis()
         self.sglo1 = sglo1()
-        self.sgirr = sgirr()
+        #self.sgirr = sgirr()
         #self.loatt_h = loatt_h()
         #self.loatt_v = loatt_v()
 
@@ -127,32 +127,122 @@ class sis(object):
         return
 
 
-class sglo1(object):
+class sglo(object):
 
     def __init__(self):
         self.make_pub = make_pub()
 
-    def set_freq(self, command):
-        topic_name = '/tz2019/sg_lo1/f_cmd'
+    def set_freq_1st_lo_lp(self, command):
+        topic_name = '/1p85m/1st_lo_lp/f_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
 
-    def set_power(self, command):
-        topic_name = '/tz2019/sg_lo1/p_cmd'
+    def set_freq_1st_lo_rp(self, command):
+        topic_name = '/1p85m/1st_lo_rp/f_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
 
-    def set_onoff(self, command):
-        topic_name = '/tz2019/sg_lo1/onoff_cmd'
+    def set_fleq_2nd_lo_usb(self, command):
+        topic_name = '/1p85m/2nd_lo_us/f_cmd'
         data_class = std_msgs.msg.Float64
 
         self.make_pub.publish(topic_name, data_class, msg = command)
         return
 
+    def set_freq_2nd_lo_lsb(self, command):
+        topic_name = '/1p85m/2nd_lo_ls/f_cmd'
+        data_class = std_msgs.msg.Float64
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_onoff_1st_lo_lp(self, command):
+        topic_name = '/1p85m/1st_lo_lp/onoff_cmd'
+        data_class = std_msgs.msg.String
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_onoff_1st_lo_rp(self, command):
+        topic_name = '/1p85m/1st_lo_rp/onoff_cmd'
+        data_class = std_msgs.msg.String
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_onoff_2nd_lo_usb(self, command):
+        topic_name = '/1p85m/2nd_lo_rsb/onoff_cmd'
+        data_class = std_msgs.msg.String
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_onoff_2nd_lsb(self, command):
+        topic_name = '/1p85m/2nd_lo_lsb/onoff_cmd'
+        data_class = std_msgs.msg.String
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_freq_1st_sg_rp(self, command):
+        topic_name = '/1p85m/1st_sg_rp/f_cmd'
+        data_class = std_msgs.msg.Float64
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_freq_1st_sg_lp(self, command):
+        topic_name = '/1p85m/1st_sg_lp/f_cmd'
+        data_class = std_msgs.msg.Float64
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_fleq_2nd_sg_usb(self, command):
+        topic_name = '/1p85m/2nd_sg_usb/f_cmd'
+        data_class = std_msgs.msg.Float64
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_freq_2nd_sg_lsb(self, command):
+        topic_name = '/1p85m/2nd_sg_lsb/f_cmd'
+        data_class = std_msgs.msg.Float64
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_onoff_1st_sg_lp(self, command):
+        topic_name = '/1p85m/1st_sg_lp/onoff_cmd'
+        data_class = std_msgs.msg.String
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_onoff_1st_sg_rp(self, command):
+        topic_name = '/1p85m/1st_sg_rp/onoff_cmd'
+        data_class = std_msgs.msg.String
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_onoff_2nd_sg_usb(self, command):
+        topic_name = '/1p85m/2nd_sg_usb/onoff_cmd'
+        data_class = std_msgs.msg.String
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
+    def set_onoff_2nd_sg_lsb(self, command):
+        topic_name = '/1p85m/2nd_sg_lsb/onoff_cmd'
+        data_class = std_msgs.msg.String
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
 
 class sgirr(object):
 
