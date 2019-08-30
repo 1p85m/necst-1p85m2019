@@ -170,7 +170,7 @@
 <!--temp section-->
 <!--dewar_temp-1p85m2019-dev_reader.conf-->
   <node pkg = "necst-1p85m2019"
-        name = "dewar_temp-1p85m2019-dev_reader"
+        name = "dewar_temp_4K-1p85m2019-dev_reader"
         type = "relay.py">
         <remap from = '/1p85m/dewar/temp' to = '/1p85m/dewar/temp_4k'/>
         <remap from = '/dev/218/__IP__/ch' to = '/dev/218/__IP__/ch1'/>
@@ -179,7 +179,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "dewar_temp-1p85m2019-dev_reader"
+        name = "dewar_temp_40K-1p85m2019-dev_reader"
         type = "relay.py">
         <remap from = '/1p85m/dewar/temp' to = '/1p85m/dewar/temp_40k'/>
         <remap from = '/dev/218/__IP__/ch' to = '/dev/218/__IP__/ch2'/>
@@ -188,7 +188,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "dewar_temp-1p85m2019-dev_reader"
+        name = "dewar_temp_300K-1p85m2019-dev_reader"
         type = "relay.py">
         <remap from = '/1p85m/dewar/temp' to = '/1p85m/dewar/temp_300k'/>
         <remap from = '/dev/218/__IP__/ch' to = '/dev/218/__IP__/ch3'/>
