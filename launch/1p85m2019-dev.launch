@@ -135,11 +135,11 @@
         name = "if_l1_power_1p85m2019_dev_reader"
         type = "relay.py">
     <remap from = '/1p85m/if/power' to = '/1p85m/if_l1/power'/>
-    <remap from = '/dev/ma24126a/__port__/power' to = '/dev/ma24126a/__port__/power'/>
+    <remap from = '/dev/ma24126a/__port__/power' to = '/dev/ma24126a/ttyACM0/power'/>
     <param name = "config_file"
            value = "$(find necst-1p85m2019)/node_conf/if_power_1p85m2019_dev_reader.conf" />
   </node>
-
+<!--
   <node pkg = "necst-1p85m2019"
         name = "if_l2_power_1p85m2019_dev_reader"
         type = "relay.py">
@@ -166,7 +166,7 @@
     <param name = "config_file"
            value = "$(find necst-1p85m2019)/node_conf/if_power_1p85m2019_dev_reader.conf" />
   </node>
-
+-->
 <!--temp section-->
 <!--dewar_temp_1p85m2019_dev_reader.conf-->
   <node pkg = "necst-1p85m2019"
@@ -203,7 +203,7 @@
         name = "first_sg_lhcp_1p85m2019_dev_freq_writer"
         type = "relay.py">
         <remap from = '/1p85m/1st_sg/f_cmd' to = '//1p85m/1st_sg_lhcp/f_cmd'/>
-        <remap from = '/dev/fsw0020/__IP__/f_cmd' to = '/dev/fsw0020/__IP__/f_cmd'/>
+        <remap from = '/dev/fsw0020/__IP__/f_cmd' to = '/dev/fsw0020/ip_192_168_100_53/f_cmd'/>
     <param name = "config_file"
            value = "$(find necst-1p85m2019)/node_conf/first_sg_1p85m2019_dev_freq_writer.conf" />
   </node>
@@ -212,7 +212,7 @@
         name = "first_sg_rhcp_1p85m2019_dev_freq_writer"
         type = "relay.py">
         <remap from = '/1p85m/1st_sg/f_cmd' to = '/1p85m/1st_sg_rhcp/f_cmd'/>
-        <remap from = '/dev/fsw0020/__IP__/f_cmd' to = '/dev/fsw0020/__IP__/f_cmd'/>
+        <remap from = '/dev/fsw0020/__IP__/f_cmd' to = '/dev/fsw0020/ip_192_168_100_54/f_cmd'/>
     <param name = "config_file"
            value = "$(find necst-1p85m2019)/node_conf/first_sg_1p85m2019_dev_freq_writer.conf" />
   </node>
@@ -222,7 +222,7 @@
           name = "second_sg_lsb_1p85m2019_dev_freq_writer"
           type = "relay.py">
           <remap from = '/1p85m/2nd_sg/f_cmd' to = '/1p85m/2nd_sg_lsb/f_cmd'/>
-          <remap from = '/dev/fsw0010/__IP__/f_cmd' to = '/dev/fsw0010/__IP__/f_cmd'/>
+          <remap from = '/dev/fsw0010/__IP__/f_cmd' to = '/dev/fsw0010/ip_192_168_100_51/f_cmd'/>
       <param name = "config_file"
              value = "$(find necst-1p85m2019)/node_conf/second_sg_1p85m2019_dev_freq_writer.conf" />
     </node>
@@ -231,7 +231,7 @@
           name = "second_sg_usb_1p85m2019_dev_freq_writer"
           type = "relay.py">
           <remap from = '/1p85m/2nd_sg/f_cmd' to = '/1p85m/2nd_sg_usb/f_cmd'/>
-          <remap from = '/dev/fsw0010/__IP__/f_cmd' to = '/dev/fsw0010/__IP__/f_cmd'/>
+          <remap from = '/dev/fsw0010/__IP__/f_cmd' to = '/dev/fsw0010/ip_192_168_100_52/f_cmd'/>
       <param name = "config_file"
              value = "$(find necst-1p85m2019)/node_conf/second_sg_1p85m2019_dev_freq_writer.conf" />
     </node>
@@ -242,7 +242,7 @@
           name = "first_sg_lhcp_1p85m2019_dev_onoff_writer"
           type = "relay.py">
           <remap from = '/1p85m/1st_sg/onoff_cmd' to = '/1p85m/1st_sg_lhcp/onoff_cmd'/>
-          <remap from = '/dev/fsw0020/__IP__/f_cmd' to = '/dev/fsw0020/__IP__/f_cmd'/>
+          <remap from = '/dev/fsw0020/__IP__/f_cmd' to = '/dev/fsw0020/ip_192_168_100_53/f_cmd'/>
       <param name = "config_file"
              value = "$(find necst-1p85m2019)/node_conf/first_sg_1p85m2019_dev_onoff_writer.conf" />
     </node>
@@ -251,7 +251,7 @@
           name = "first_sg_rhcp_1p85m2019_dev_onoff_writer"
           type = "relay.py">
           <remap from = '/1p85m/1st_sg/onoff_cmd' to = '/1p85m/1st_sg_rhcp/onoff_cmd'/>
-          <remap from = '/dev/fsw0020/__IP__/f_cmd' to = '/dev/fsw0020/__IP__/f_cmd'/>
+          <remap from = '/dev/fsw0020/__IP__/f_cmd' to = '/dev/fsw0020/ip_192_168_100_54/f_cmd'/>
       <param name = "config_file"
              value = "$(find necst-1p85m2019)/node_conf/first_sg_1p85m2019_dev_onoff_writer.conf" />
     </node>
@@ -261,7 +261,7 @@
           name = "second_sg_lsb_1p85m201_dev_onoff_writer"
           type = "relay.py">
           <remap from = '/1p85m/2nd_sg/onoff_cmd' to = '/1p85m/2nd_sg_lsb/onoff_cmd'/>
-          <remap from = '/dev/fsw0010/__IP__/f_cmd' to = '/dev/fsw0010/__IP__/f_cmd'/>
+          <remap from = '/dev/fsw0010/__IP__/f_cmd' to = '/dev/fsw0010/ip_192_168_100_51/f_cmd'/>
       <param name = "config_file"
              value = "$(find necst-1p85m2019)/node_conf/second_sg_1p85m2019_dev_onoff_writer.conf" />
     </node>
@@ -270,7 +270,7 @@
           name = "second_sg_usb_1p85m2019_dev_onoff_writer"
           type = "relay.py">
           <remap from = '/1p85m/2nd_sg/onoff_cmd' to = '/1p85m/2nd_sg_usb/onoff_cmd'/>
-          <remap from = '/dev/fsw0010/__IP__/f_cmd' to = '/dev/fsw0010/__IP__/f_cmd'/>
+          <remap from = '/dev/fsw0010/__IP__/f_cmd' to = '/dev/fsw0010/ip_192_168_100_52/f_cmd'/>
       <param name = "config_file"
              value = "$(find necst-1p85m2019)/node_conf/second_sg_1p85m2019_dev_onoff_writer.conf" />
     </node>

@@ -1,7 +1,7 @@
 <launch>
   <machine name="opurec" address="192.168.100.191" env-loader="/root/ros/devel/env.sh" user="exito" password="Se1k0u"  />
   <node pkg = "rospkg-ogameasure"
-        name = "fsw0010_usb"
+        name = "fsw0010_lsb"
         type = "fsw0010.py"
         machine="opurec">
     <param name="~host" value="192.168.100.51" />
@@ -15,7 +15,7 @@
 
   </node>
   <node pkg = "rospkg-ogameasure"
-        name = "fsw0010_lsb"
+        name = "fsw0010_usb"
         type = "fsw0010.py"
         machine="opurec">
     <param name="~host" value="192.168.100.52" />
