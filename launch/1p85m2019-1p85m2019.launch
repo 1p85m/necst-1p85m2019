@@ -70,7 +70,7 @@
 <node pkg = "necst-1p85m2019"
       name = "sis_r1_vp_1p85m2019_1p85m2019_writer"
       type = "relay.py">
-  <remap from = '/1p85m2019/sis/vp_cmd' to = '/1p85m2019/sis_r1/vgap_cmd'/>
+  <remap from = '/1p85m2019/sis/vp_cmd' to = '/1p85m2019/sis_r1/vp_cmd'/>
   <remap from = '/1p85m2019/sis/v_cmd' to = '/1p85m2019/sis_r1/v_cmd'/>
   <param name = "config_file"
          value = "$(find necst-1p85m2019)/node_conf/sis_vp_1p85m2019_1p85m2019_writer.conf" />
