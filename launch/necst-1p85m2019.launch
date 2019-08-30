@@ -4,7 +4,7 @@
 <!--sis_vp-necst-1p85m2019_writer.conf-->
 
   <node pkg = "necst-1p85m2019"
-        name = "sis_l1_vp-necst-1p85m2019_writer"
+        name = "sis_l1_vp_necst_1p85m2019_writer"
         type = "relay.py">
     <remap from = '/necst/rx_sis2sb/vp_cmd' to = '/necst/rx_sis2sb/vp1_cmd'/>
     <remap from = '/1p85m2019/sis/vp_cmd' to = '/1p85m2019/sis_l1/vp_cmd'/>
@@ -13,7 +13,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "sis_l2_vp-necst-1p85m2019_writer"
+        name = "sis_l2_vp_necst_1p85m2019_writer"
         type = "relay.py">
     <remap from = '/necst/rx_sis2sb/vp_cmd' to = '/necst/rx_sis2sb/vp1_cmd'/>
     <remap from = '/1p85m2019/sis/vp_cmd' to = '/1p85m2019/sis_l2/vp_cmd'/>
@@ -31,7 +31,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "sis_r2_vp-necst-1p85m2019_writer"
+        name = "sis_r2_vp_necst_1p85m2019_writer"
         type = "relay.py">
     <remap from = '/necst/rx_sis2sb/vp_cmd' to = '/necst/rx_sis2sb/vp2_cmd'/>
     <remap from = '/1p85m2019/sis/vp_cmd' to = '/1p85m2019/sis_r2/vp_cmd'/>
@@ -44,7 +44,7 @@
 <!--sis_vgap-necst-1p85m2019_writer.conf-->
 
   <node pkg = "necst-1p85m2019"
-        name = "sis_l1_vgap-necst-1p85m2019_writer"
+        name = "sis_l1_vgap_necst_1p85m2019_writer"
         type = "relay.py">
     <remap from = '/1p85m2019/sis/vp_cmd' to = '/1p85m2019/sis_l1/vp_cmd'/>
     <param name = "config_file"
@@ -53,7 +53,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "sis_l2_vgap-necst-1p85m2019_writer"
+        name = "sis_l2_vgap_necst_1p85m2019_writer"
         type = "relay.py">
     <remap from = '/1p85m2019/sis/vp_cmd' to = '/1p85m2019/sis_l2/vp_cmd'/>
     <param name = "config_file"
@@ -62,7 +62,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-      name = "sis_r1_vgap-necst-1p85m2019_writer"
+      name = "sis_r1_vgap_necst_1p85m2019_writer"
       type = "relay.py">
   <remap from = '/1p85m2019/sis/vp_cmd' to = '/1p85m2019/sis_r1/vp_cmd'/>
   <param name = "config_file"
@@ -71,7 +71,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "sis_r2_vgap-necst-1p85m2019_writer"
+        name = "sis_r2_vgap-necst_1p85m2019_writer"
         type = "relay.py">
     <remap from = '/1p85m2019/sis/vp_cmd' to = '/1p85m2019/sis_r2/vp_cmd'/>
     <param name = "config_file"
