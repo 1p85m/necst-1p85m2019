@@ -6,7 +6,7 @@
   <node pkg = "necst-1p85m2019"
         name = "sis_l1_v_1p85m2019_dev_writer"
         type = "relay.py">
-    <remap from = 'test_/1p85m2019/sis/v_cmd' to = '/1p85m2019/sis_l1/v_cmd'/>
+    <remap from = '/1p85m2019/sis/v_cmd' to = '/1p85m2019/sis_l1/v_cmd'/>
     <remap from = '/dev/cpz340816/rsw/ch' to = '/dev/cpz340816/rsw0/ch1'/>
     <param name = "config_file"
            value = "$(find necst-1p85m2019)/sis_v-1p85m2019-dev_writer.conf" />
