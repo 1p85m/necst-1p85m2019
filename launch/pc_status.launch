@@ -1,0 +1,50 @@
+
+<launch>
+  <machine name="necst" address="192.168.100.198" env-loader="/root/ros/devel/env.sh" user="root" password="root"  />
+  <machine name="necstrx" address="192.168.100.132" env-loader="/root/ros/devel/env.sh" user="root" password="root"  />
+  <machine name="opurec" address="192.168.100.191" env-loader="/root/ros/devel/env.sh" user="exito" password="Se1k0u"  />
+
+
+
+  <node pkg = "necst-core"
+        name = "pc_status_necst"
+        type = "pc_status.py"
+        required="true"
+        output="screen"
+        machine="necst">
+    <remap from = '/core/pc_status/cpu' to = '/core/pc_status/necst/cpu'/>
+    <remap from = '/core/pc_status/mem' to = '/core/pc_status/necst/mem'/>
+    <remap from = '/core/pc_status/disk' to = '/core/pc_status/necst/disk'/>
+    <remap from = '/core/pc_status/login' to = '/core/pc_status/necst/login'/>
+    <remap from = '/core/pc_status/proc' to = '/core/pc_status/necst/proc'/>
+
+  </node>
+
+  <node pkg = "necst-core"
+        name = "pc_status_necstrx"
+        type = "pc_status.py"
+        required="true"
+        output="screen"
+        machine="necstrx">
+    <remap from = '/core/pc_status/cpu' to = '/core/pc_status/necstrx/cpu'/>
+    <remap from = '/core/pc_status/mem' to = '/core/pc_status/necstrx/mem'/>
+    <remap from = '/core/pc_status/disk' to = '/core/pc_status/necstrx/disk'/>
+    <remap from = '/core/pc_status/login' to = '/core/pc_status/necstrx/login'/>
+    <remap from = '/core/pc_status/proc' to = '/core/pc_status/necstrx/proc'/>
+
+  </node>
+
+  <node pkg = "necst-core"
+        name = "pc_status_opurec"
+        type = "pc_status.py"
+        required="true"
+        output="screen"
+        machine="opurec">
+    <remap from = '/core/pc_status/cpu' to = '/core/pc_status/opurec/cpu'/>
+    <remap from = '/core/pc_status/mem' to = '/core/pc_status/opurec/mem'/>
+    <remap from = '/core/pc_status/disk' to = '/core/pc_status/opurec/disk'/>
+    <remap from = '/core/pc_status/login' to = '/core/pc_status/opurec/login'/>
+    <remap from = '/core/pc_status/proc' to = '/core/pc_status/opurec/proc'/>
+
+  </node>
+</launch>

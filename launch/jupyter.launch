@@ -1,0 +1,10 @@
+
+<launch>
+  <node pkg = "necst-core"
+        name = "update_jupyter_workspace"
+        type = "update_jupyter_workspace.py"
+        required="true"
+        output="screen"
+        >
+  </node>
+</launch>

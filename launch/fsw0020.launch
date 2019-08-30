@@ -1,0 +1,33 @@
+<launch>
+  <machine name="opurec" address="192.168.100.191" env-loader="/root/ros/devel/env.sh" user="exito" password="Se1k0u"  />
+  <node pkg = "rospkg-ogameasure"
+        name = "fsw0020_"
+        type = "fsw0020.py"
+        machine="opurec">
+    <param name="~host" value="192.168.100.182" />
+    <param name="~port" value="10001" />
+    <remap from = '/dev/fsw0020/__IP__/freq_cmd' to = '/dev/fsw0020/ip_192_168_100_182/freq_cmd'/>
+    <remap from = '/dev/fsw0020/__IP__/power_cmd' to = '/dev/fsw0020/ip_192_168_100_182/power_cmd'/>
+    <remap from = '/dev/fsw0020/__IP__/onoff_cmd' to = '/dev/fsw0020/ip_192_168_100_182/onoff_cmd'/>
+    <remap from = '/dev/fsw0020/__IP__/freq' to = '/dev/fsw0020/ip_192_168_100_182/freq'/>
+    <remap from = '/dev/fsw0020/__IP__/power' to = '/dev/fsw0020/ip_192_168_100_182/power'/>
+    <remap from = '/dev/fsw0020/__IP__/onoff' to = '/dev/fsw0020/ip_192_168_100_182/onoff'/>
+
+  </node>
+
+  <node pkg = "rospkg-ogameasure"
+        name = "fsw0020_"
+        type = "fsw0020.py"
+        machine="opurec">
+    <param name="~host" value="192.168.100.182" />
+    <param name="~port" value="10001" />
+    <remap from = '/dev/fsw0020/__IP__/freq_cmd' to = '/dev/fsw0020/ip_192_168_100_182/freq_cmd'/>
+    <remap from = '/dev/fsw0020/__IP__/power_cmd' to = '/dev/fsw0020/ip_192_168_100_182/power_cmd'/>
+    <remap from = '/dev/fsw0020/__IP__/onoff_cmd' to = '/dev/fsw0020/ip_192_168_100_182/onoff_cmd'/>
+    <remap from = '/dev/fsw0020/__IP__/freq' to = '/dev/fsw0020/ip_192_168_100_182/freq'/>
+    <remap from = '/dev/fsw0020/__IP__/power' to = '/dev/fsw0020/ip_192_168_100_182/power'/>
+    <remap from = '/dev/fsw0020/__IP__/onoff' to = '/dev/fsw0020/ip_192_168_100_182/onoff'/>
+
+  </node>
+
+</launch>

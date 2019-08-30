@@ -1,0 +1,11 @@
+<launch>
+
+    <include file="$(find necst-1p85m2019)/launch/ma24126a.launch" />
+    <include file="$(find necst-1p85m2019)/launch/fsw0020.launch" />
+    <include file="$(find necst-1p85m2019)/launch/fsw0010.launch" />
+
+    <!--
+    <include file="$(find necst-1p85m2019)/launch/l218.launch" />
+    <include file="$(find necst-1p85m2019)/launch/tpg261.launch" />
+    -->
+</launch>
