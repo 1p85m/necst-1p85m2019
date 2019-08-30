@@ -6,7 +6,7 @@
         type = "ma24126a.py"
         required="true"
         output="screen"
-        machine="nexstrx">
+        machine="necstrx">
         <param name="~port_list" value="['/dev/ttyACM0','/dev/ttyACM0']" />
 
         <param name="~ch_num" value="2" />
