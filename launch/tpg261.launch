@@ -1,8 +1,10 @@
 <launch>
+ <machine name="necstrx" address="192.168.100.132" env-loader="/root/ros/devel/env.sh" user="root" password="root"  />
 
   <node pkg = "rospkg-ogamaesure"
         name = "tpg261"
-        type = "tpg261.py">
+        type = "tpg261.py"
+        machine = "necstrx">
         <param name="~serial" value="FTHB88LO" />
 
     <remap from = '/dev/tpg/__usb__/press' to = '/dev/tpg/FTHB88LO/pressure'/>

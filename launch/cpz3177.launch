@@ -1,5 +1,6 @@
 <launch>
-  <node pkg="rospkg-pyinterface" name="cpz3177" type="cpz3177.py" required="true" output="screen" machine="nexstrx">
+  <machine name="necstrx" address="192.168.100.132" env-loader="/root/ros/devel/env.sh" user="root" password="root"  />
+  <node pkg="rospkg-pyinterface" name="cpz3177" type="cpz3177.py" required="true" output="screen" machine="necstrx">
     <param name="~rate" value="0.001" />
     <param name="~rsw_id" value="0" />
     <param name="~all_ch_num" value="8" />
