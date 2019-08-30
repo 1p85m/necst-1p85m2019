@@ -133,7 +133,7 @@
   <remap from = '/1p85m/1st_lo/onoff_cmd' to = '/1p85m/1st_lo1/onoff_cmd'/>
   <remap from = '/1p85m/1st_sg/onoff_cmd' to = '/1p85m/1st_sg1/onoff_cmd'/>
   <param name = "config_file"
-         value = "$(find necst-1p85m2019)/node_conf/first_lo_1p85m2019-1p85m2019_onoff_writer.conf" />
+         value = "$(find necst-1p85m2019)/node_conf/first_lo_1p85m2019_1p85m2019_onoff_writer.conf" />
 </node>
 
 <node pkg = "necst-1p85m2019"
