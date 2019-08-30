@@ -46,7 +46,7 @@
   <node pkg = "necst-1p85m2019"
         name = "sis_l1_vgap_necst_1p85m2019_writer"
         type = "relay.py">
-    <remap from = '/1p85m2019/sis/vp_cmd' to = '/1p85m2019/sis_l1/vp_cmd'/>
+    <remap from = '/1p85m2019/sis/vgap_cmd' to = '/1p85m2019/sis_l1/vgap_cmd'/>
     <param name = "config_file"
            value = "$(find necst-1p85m2019)/node_conf/sis_vgap_necst_1p85m2019_writer.conf" />
 
@@ -55,7 +55,7 @@
   <node pkg = "necst-1p85m2019"
         name = "sis_l2_vgap_necst_1p85m2019_writer"
         type = "relay.py">
-    <remap from = '/1p85m2019/sis/vp_cmd' to = '/1p85m2019/sis_l2/vp_cmd'/>
+    <remap from = '/1p85m2019/sis/vgap_cmd' to = '/1p85m2019/sis_l2/vgap_cmd'/>
     <param name = "config_file"
            value = "$(find necst-1p85m2019)/node_conf/sis_vgap_necst_1p85m2019_writer.conf" />
 
@@ -64,7 +64,7 @@
   <node pkg = "necst-1p85m2019"
       name = "sis_r1_vgap_necst_1p85m2019_writer"
       type = "relay.py">
-  <remap from = '/1p85m2019/sis/vp_cmd' to = '/1p85m2019/sis_r1/vp_cmd'/>
+  <remap from = '/1p85m2019/sis/vgap_cmd' to = '/1p85m2019/sis_r1/vgap_cmd'/>
   <param name = "config_file"
          value = "$(find necst-1p85m2019)/node_conf/sis_vgap_necst_1p85m2019_writer.conf" />
 
@@ -73,7 +73,7 @@
   <node pkg = "necst-1p85m2019"
         name = "sis_r2_vgap_necst_1p85m2019_writer"
         type = "relay.py">
-    <remap from = '/1p85m2019/sis/vp_cmd' to = '/1p85m2019/sis_r2/vp_cmd'/>
+    <remap from = '/1p85m2019/sis/vgap_cmd' to = '/1p85m2019/sis_r2/vgap_cmd'/>
     <param name = "config_file"
            value = "$(find necst-1p85m2019)/node_conf/sis_vgap_necst_1p85m2019_writer.conf" />
 
