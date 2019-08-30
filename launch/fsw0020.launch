@@ -6,12 +6,8 @@
         machine="opurec">
     <param name="~host" value="192.168.100.54" />
     <param name="~port" value="10001" />
-    <remap from = '/dev/fsw0020/__IP__/freq_cmd' to = '/dev/fsw0020/ip_192_168_100_54/freq_cmd'/>
-    <remap from = '/dev/fsw0020/__IP__/power_cmd' to = '/dev/fsw0020/ip_192_168_100_54/power_cmd'/>
+    <remap from = '/dev/fsw0020/__IP__/f_cmd' to = '/dev/fsw0020/ip_192_168_100_54/freq_cmd'/>
     <remap from = '/dev/fsw0020/__IP__/onoff_cmd' to = '/dev/fsw0020/ip_192_168_100_54/onoff_cmd'/>
-    <remap from = '/dev/fsw0020/__IP__/freq' to = '/dev/fsw0020/ip_192_168_100_54/freq'/>
-    <remap from = '/dev/fsw0020/__IP__/power' to = '/dev/fsw0020/ip_192_168_100_54/power'/>
-    <remap from = '/dev/fsw0020/__IP__/onoff' to = '/dev/fsw0020/ip_192_168_100_54/onoff'/>
 
   </node>
 
@@ -21,12 +17,8 @@
         machine="opurec">
     <param name="~host" value="192.168.100.53" />
     <param name="~port" value="10001" />
-    <remap from = '/dev/fsw0020/__IP__/freq_cmd' to = '/dev/fsw0020/ip_192_168_100_53/freq_cmd'/>
-    <remap from = '/dev/fsw0020/__IP__/power_cmd' to = '/dev/fsw0020/ip_192_168_100_53/power_cmd'/>
+    <remap from = '/dev/fsw0020/__IP__/f_cmd' to = '/dev/fsw0020/ip_192_168_100_53/freq_cmd'/>
     <remap from = '/dev/fsw0020/__IP__/onoff_cmd' to = '/dev/fsw0020/ip_192_168_100_53/onoff_cmd'/>
-    <remap from = '/dev/fsw0020/__IP__/freq' to = '/dev/fsw0020/ip_192_168_100_53/freq'/>
-    <remap from = '/dev/fsw0020/__IP__/power' to = '/dev/fsw0020/ip_192_168_100_53/power'/>
-    <remap from = '/dev/fsw0020/__IP__/onoff' to = '/dev/fsw0020/ip_192_168_100_53/onoff'/>
 
   </node>
 
