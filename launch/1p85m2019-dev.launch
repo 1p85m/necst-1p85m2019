@@ -287,6 +287,5 @@
       <param name = "config_file"
              value = "$(find necst-1p85m2019)/node_conf/dewar_vacuum_1p85m2019_dev_reader.conf" />
     </node>
-
-</launch>
 -->
+</launch>
