@@ -132,7 +132,7 @@
 <!--if_power-1p85m2019-dev_reader.conf-->
 
   <node pkg = "necst-1p85m2019"
-        name = "if_power-1p85m2019-dev_reader"
+        name = "if_l1_power-1p85m2019-dev_reader"
         type = "relay.py">
     <remap from = '/1p85m/if/power' to = '/1p85m/if_l1/power'/>
     <remap from = '/dev/ma24126a/__port__/power' to = '/dev/ma24126a/__port__/power'/>
@@ -141,7 +141,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "if_power-1p85m2019-dev_reader"
+        name = "if_l2_power-1p85m2019-dev_reader"
         type = "relay.py">
     <remap from = '/1p85m/if/power' to = '/1p85m/if_l2/power'/>
     <remap from = '/dev/ma24126a/__port__/power' to = '/dev/ma24126a/__port__/power'/>
@@ -150,7 +150,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "if_power-1p85m2019-dev_reader"
+        name = "if_r1_power-1p85m2019-dev_reader"
         type = "relay.py">
     <remap from = '/1p85m/if/power' to = '/1p85m/if_r1/power'/>
     <remap from = '/dev/ma24126a/__port__/power' to = '/dev/ma24126a/__port__/power'/>
@@ -159,7 +159,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "if_power-1p85m2019-dev_reader"
+        name = "if_r2_power-1p85m2019-dev_reader"
         type = "relay.py">
     <remap from = '/1p85m/if/power' to = '/1p85m/if_r2/power'/>
     <remap from = '/dev/ma24126a/__port__/power' to = '/dev/ma24126a/__port__/power'/>
