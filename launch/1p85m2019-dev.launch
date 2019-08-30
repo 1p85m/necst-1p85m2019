@@ -228,7 +228,7 @@
     </node>
 
     <node pkg = "necst-1p85m2019"
-          name = "first_sg2-1p85m2019-dev_freq_writer"
+          name = "second_sg2-1p85m2019-dev_freq_writer"
           type = "relay.py">
           <remap from = '/1p85m/2nd_sg/f_cmd' to = '/1p85m/2nd_sg2/f_cmd'/>
           <remap from = '/dev/fsw0010/__IP__/f_cmd' to = '/dev/fsw0010/__IP__/f_cmd'/>
@@ -239,7 +239,7 @@
 
 <!--first_sg-1p85m2019-dev_onoff_writer.conf-->
     <node pkg = "necst-1p85m2019"
-          name = "first_sg1-1p85m2019-dev_freq_writer"
+          name = "first_sg1-1p85m2019-dev_onoff_writer"
           type = "relay.py">
           <remap from = '/1p85m/1st_sg/onoff_cmd' to = '/1p85m/1st_sg1/onoff_cmd'/>
           <remap from = '/dev/fsw0020/__IP__/f_cmd' to = '/dev/fsw0020/__IP__/f_cmd'/>
@@ -248,7 +248,7 @@
     </node>
 
     <node pkg = "necst-1p85m2019"
-          name = "first_sg2-1p85m2019-dev_freq_writer"
+          name = "first_sg2-1p85m2019-dev_onoff_writer"
           type = "relay.py">
           <remap from = '/1p85m/1st_sg/onoff_cmd' to = '/1p85m/1st_sg2/onoff_cmd'/>
           <remap from = '/dev/fsw0020/__IP__/f_cmd' to = '/dev/fsw0020/__IP__/f_cmd'/>
