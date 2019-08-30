@@ -13,7 +13,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "sis_l2_v-1p85m2019-dev_writer"
+        name = "sis_l2_v_1p85m2019_dev_writer"
         type = "relay.py">
     <remap from = '/1p85m2019/sis/v_cmd' to = '/1p85m2019/sis_l2/v_cmd'/>
     <remap from = '/dev/cpz340816/rsw/ch' to = '/dev/cpz340816/rsw0/ch2'/>
@@ -23,7 +23,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "sis_r1_v-1p85m2019-dev_writer"
+        name = "sis_r1_v_1p85m2019_dev_writer"
         type = "relay.py">
     <remap from = '/1p85m2019/sis/v_cmd' to = '/1p85m2019/sis_r1/v_cmd'/>
     <remap from = '/dev/cpz340816/rsw/ch' to = '/dev/cpz340816/rsw0/ch3'/>
@@ -33,7 +33,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "sis_r2_v-1p85m2019-dev_writer"
+        name = "sis_r2_v_1p85m2019_dev_writer"
         type = "relay.py">
     <remap from = '/1p85m2019/sis/v_cmd' to = '/1p85m2019/sis_r2/v_cmd'/>
     <remap from = '/dev/cpz340816/rsw/ch' to = '/dev/cpz340816/rsw0/ch4'/>
@@ -46,7 +46,7 @@
 <!--sis_iv_reader-->
 <!--sis_i-1p85m2019-dev_reader.conf-->
   <node pkg = "necst-1p85m2019"
-        name = "sis_l1_i-1p85m2019-dev_reader"
+        name = "sis_l1_i1p85m2019_dev_reader"
         type = "relay.py">
     <remap from = '/1p85m2019/sis/i' to = '/1p85m2019/sis_l1/i'/>
     <remap from = '/dev/cpz3177/rsw/ch' to = '/dev/cpz3177/rsw0/ch1'/>
@@ -56,7 +56,7 @@
 
 
     <node pkg = "necst-1p85m2019"
-          name = "sis_l2_i-1p85m2019-dev_reader"
+          name = "sis_l2_i_1p85m2019_dev_reader"
           type = "relay.py">
       <remap from = '/1p85m2019/sis/i' to = '/1p85m2019/sis_l2/i'/>
       <remap from = '/dev/cpz3177/rsw/ch' to = '/dev/cpz3177/rsw0/ch3'/>
@@ -65,7 +65,7 @@
     </node>
 
     <node pkg = "necst-1p85m2019"
-          name = "sis_r1_i-1p85m2019-dev_reader"
+          name = "sis_r1_i_1p85m2019_dev_reader"
           type = "relay.py">
       <remap from = '/1p85m2019/sis/i' to = '/1p85m2019/sis_r1/i'/>
       <remap from = '/dev/cpz3177/rsw/ch' to = '/dev/cpz3177/rsw0/ch5'/>
@@ -75,7 +75,7 @@
     </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "sis_r2_i-1p85m2019-dev_reader"
+        name = "sis_r2_i_1p85m2019_dev_reader"
         type = "relay.py">
     <remap from = '/1p85m2019/sis/i' to = '/1p85m2019/sis_r2/i'/>
     <remap from = '/dev/cpz3177/rsw/ch' to = '/dev/cpz3177/rsw0/ch7'/>
@@ -88,7 +88,7 @@
   <!--sis_v-1p85m2019-dev_reader.conf-->
 
   <node pkg = "necst-1p85m2019"
-        name = "sis_l1_v-1p85m2019-dev_reader"
+        name = "sis_l1_v_1p85m2019_dev_reader"
         type = "relay.py">
     <remap from = '/1p85m2019/sis/v' to = '/1p85m2019/sis_l1/v'/>
     <remap from = '/dev/cpz3177/rsw/ch' to = '/dev/cpz3177/rsw0/ch2'/>
@@ -98,7 +98,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "sis_l2_v-1p85m2019-dev_reader.conf"
+        name = "sis_l2_v_1p85m2019_dev_reader"
         type = "relay.py">
     <remap from = '/1p85m2019/sis/v' to = '/1p85m2019/sis_l2/v'/>
     <remap from = '/dev/cpz3177/rsw/ch' to = '/dev/cpz3177/rsw0/ch4'/>
@@ -108,7 +108,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "sis_r1_v-1p85m2019-dev_reader"
+        name = "sis_r1_v_1p85m2019_dev_reader"
         type = "relay.py">
     <remap from = '/1p85m2019/sis/v' to = '/1p85m2019/sis_r1/v'/>
     <remap from = '/dev/cpz3177/rsw/ch' to = '/dev/cpz3177/rsw0/ch6'/>
@@ -119,7 +119,7 @@
 
 
   <node pkg = "necst-1p85m2019"
-        name = "sis_r2_v-1p85m2019-dev_reader"
+        name = "sis_r2_v_1p85m2019_dev_reader"
         type = "relay.py">
     <remap from = '/1p85m2019/sis/v' to = '/1p85m2019/sis_r2/v'/>
     <remap from = '/dev/cpz3177/rsw/ch' to = '/dev/cpz3177/rsw0/ch8'/>
@@ -132,7 +132,7 @@
 <!--if_power-1p85m2019-dev_reader.conf-->
 
   <node pkg = "necst-1p85m2019"
-        name = "if_l1_power-1p85m2019-dev_reader"
+        name = "if_l1_power_1p85m2019_dev_reader"
         type = "relay.py">
     <remap from = '/1p85m/if/power' to = '/1p85m/if_l1/power'/>
     <remap from = '/dev/ma24126a/__port__/power' to = '/dev/ma24126a/__port__/power'/>
@@ -141,7 +141,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "if_l2_power-1p85m2019-dev_reader"
+        name = "if_l2_power_1p85m2019_dev_reader"
         type = "relay.py">
     <remap from = '/1p85m/if/power' to = '/1p85m/if_l2/power'/>
     <remap from = '/dev/ma24126a/__port__/power' to = '/dev/ma24126a/__port__/power'/>
@@ -150,7 +150,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "if_r1_power-1p85m2019-dev_reader"
+        name = "if_r1_power_1p85m2019_dev_reader"
         type = "relay.py">
     <remap from = '/1p85m/if/power' to = '/1p85m/if_r1/power'/>
     <remap from = '/dev/ma24126a/__port__/power' to = '/dev/ma24126a/__port__/power'/>
@@ -159,7 +159,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "if_r2_power-1p85m2019-dev_reader"
+        name = "if_r2_power_1p85m2019_dev_reader"
         type = "relay.py">
     <remap from = '/1p85m/if/power' to = '/1p85m/if_r2/power'/>
     <remap from = '/dev/ma24126a/__port__/power' to = '/dev/ma24126a/__port__/power'/>
@@ -170,7 +170,7 @@
 <!--temp section-->
 <!--dewar_temp-1p85m2019-dev_reader.conf-->
   <node pkg = "necst-1p85m2019"
-        name = "dewar_temp_4K-1p85m2019-dev_reader"
+        name = "dewar_temp_4K_1p85m2019_dev_reader"
         type = "relay.py">
         <remap from = '/1p85m/dewar/temp' to = '/1p85m/dewar/temp_4k'/>
         <remap from = '/dev/218/__IP__/ch' to = '/dev/218/__IP__/ch1'/>
@@ -179,7 +179,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "dewar_temp_40K-1p85m2019-dev_reader"
+        name = "dewar_temp_40K_1p85m2019_dev_reader"
         type = "relay.py">
         <remap from = '/1p85m/dewar/temp' to = '/1p85m/dewar/temp_40k'/>
         <remap from = '/dev/218/__IP__/ch' to = '/dev/218/__IP__/ch2'/>
@@ -188,7 +188,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "dewar_temp_300K-1p85m2019-dev_reader"
+        name = "dewar_temp_300K_1p85m2019_dev_reader"
         type = "relay.py">
         <remap from = '/1p85m/dewar/temp' to = '/1p85m/dewar/temp_300k'/>
         <remap from = '/dev/218/__IP__/ch' to = '/dev/218/__IP__/ch3'/>
@@ -200,7 +200,7 @@
 <!--sg section-->
 <!--first_sg-1p85m2019-dev_freq_writer.conf-->
   <node pkg = "necst-1p85m2019"
-        name = "first_sg1-1p85m2019-dev_freq_writer"
+        name = "first_sg1_1p85m2019_dev_freq_writer"
         type = "relay.py">
         <remap from = '/1p85m/1st_sg/f_cmd' to = '/1p85m/1st_sg1/f_cmd'/>
         <remap from = '/dev/fsw0020/__IP__/f_cmd' to = '/dev/fsw0020/__IP__/f_cmd'/>
@@ -209,7 +209,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "first_sg2-1p85m2019-dev_freq_writer"
+        name = "first_sg2_1p85m2019_dev_freq_writer"
         type = "relay.py">
         <remap from = '/1p85m/1st_sg/f_cmd' to = '/1p85m/1st_sg2/f_cmd'/>
         <remap from = '/dev/fsw0020/__IP__/f_cmd' to = '/dev/fsw0020/__IP__/f_cmd'/>
@@ -219,7 +219,7 @@
 
 <!--second_sg-1p85m2019-dev_freq_writer.conf-->
     <node pkg = "necst-1p85m2019"
-          name = "second_sg1-1p85m2019-dev_freq_writer"
+          name = "second_sg1_1p85m2019_dev_freq_writer"
           type = "relay.py">
           <remap from = '/1p85m/2nd_sg/f_cmd' to = '/1p85m/2nd_sg1/f_cmd'/>
           <remap from = '/dev/fsw0010/__IP__/f_cmd' to = '/dev/fsw0010/__IP__/f_cmd'/>
@@ -228,7 +228,7 @@
     </node>
 
     <node pkg = "necst-1p85m2019"
-          name = "second_sg2-1p85m2019-dev_freq_writer"
+          name = "second_sg2_1p85m2019_dev_freq_writer"
           type = "relay.py">
           <remap from = '/1p85m/2nd_sg/f_cmd' to = '/1p85m/2nd_sg2/f_cmd'/>
           <remap from = '/dev/fsw0010/__IP__/f_cmd' to = '/dev/fsw0010/__IP__/f_cmd'/>
@@ -239,7 +239,7 @@
 
 <!--first_sg-1p85m2019-dev_onoff_writer.conf-->
     <node pkg = "necst-1p85m2019"
-          name = "first_sg1-1p85m2019-dev_onoff_writer"
+          name = "first_sg1_1p85m2019_dev_onoff_writer"
           type = "relay.py">
           <remap from = '/1p85m/1st_sg/onoff_cmd' to = '/1p85m/1st_sg1/onoff_cmd'/>
           <remap from = '/dev/fsw0020/__IP__/f_cmd' to = '/dev/fsw0020/__IP__/f_cmd'/>
@@ -248,7 +248,7 @@
     </node>
 
     <node pkg = "necst-1p85m2019"
-          name = "first_sg2-1p85m2019-dev_onoff_writer"
+          name = "first_sg2_1p85m2019_dev_onoff_writer"
           type = "relay.py">
           <remap from = '/1p85m/1st_sg/onoff_cmd' to = '/1p85m/1st_sg2/onoff_cmd'/>
           <remap from = '/dev/fsw0020/__IP__/f_cmd' to = '/dev/fsw0020/__IP__/f_cmd'/>
@@ -258,7 +258,7 @@
 
 <!--second_sg-1p85m2019-dev_onoff_writer.conf-->
     <node pkg = "necst-1p85m2019"
-          name = "second_sg1-1p85m2019-dev_onoff_writer"
+          name = "second_sg1_1p85m201_dev_onoff_writer"
           type = "relay.py">
           <remap from = '/1p85m/2nd_sg/onoff_cmd' to = '/1p85m/2nd_sg1/onoff_cmd'/>
           <remap from = '/dev/fsw0010/__IP__/f_cmd' to = '/dev/fsw0010/__IP__/f_cmd'/>
@@ -267,7 +267,7 @@
     </node>
 
     <node pkg = "necst-1p85m2019"
-          name = "second_sg2-1p85m2019-dev_onoff_writer"
+          name = "second_sg2_1p85m2019_dev_onoff_writer"
           type = "relay.py">
           <remap from = '/1p85m/2nd_sg/onoff_cmd' to = '/1p85m/2nd_sg2/onoff_cmd'/>
           <remap from = '/dev/fsw0010/__IP__/f_cmd' to = '/dev/fsw0010/__IP__/f_cmd'/>
@@ -280,7 +280,7 @@
 <!--dewar_vacuum-1p85m2019-dev_reader.conf-->
 
     <node pkg = "necst-1p85m2019"
-          name = "dewar_vacuum-1p85m2019-dev_reader"
+          name = "dewar_vacuum_1p85m2019_dev_reader"
           type = "relay.py">
           <remap from = '/dev/tpg/__usb__/press' to = '/dev/tpg/__usb__/press'/>
       <param name = "config_file"
