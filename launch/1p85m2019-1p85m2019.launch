@@ -10,7 +10,7 @@
     <remap from = '/1p85m2019/sis/vgap_cmd' to = '/1p85m2019/sis_l1/vgap_cmd'/>
     <remap from = '/1p85m2019/sis/v_cmd' to = '/1p85m2019/sis_l1/v_cmd'/>
     <param name = "config_file"
-           value = "$(find necst-1p85m2019)/node_conf/sis_vgap-1p85m2019-1p85m2019_writer.conf" />
+           value = "$(find necst-1p85m2019)/node_conf/sis_vgap_1p85m2019_1p85m2019_writer.conf" />
 
   </node>
 
@@ -20,7 +20,7 @@
     <remap from = '/1p85m2019/sis/vgap_cmd' to = '/1p85m2019/sis_l2/vgap_cmd'/>
     <remap from = '/1p85m2019/sis/v_cmd' to = '/1p85m2019/sis_l2/v_cmd'/>
     <param name = "config_file"
-           value = "$(find necst-1p85m2019)/node_conf/sis_vgap-1p85m2019-1p85m2019_writer.conf" />
+           value = "$(find necst-1p85m2019)/node_conf/sis_vgap_1p85m2019_1p85m2019_writer.conf" />
 
   </node>
 
@@ -30,7 +30,7 @@
     <remap from = '/1p85m2019/sis/vgap_cmd' to = '/1p85m2019/sis_r1/vgap_cmd'/>
     <remap from = '/1p85m2019/sis/v_cmd' to = '/1p85m2019/sis_r1/v_cmd'/>
     <param name = "config_file"
-           value = "$(find necst-1p85m2019)/node_conf/sis_vgap-1p85m2019-1p85m2019_writer.conf" />
+           value = "$(find necst-1p85m2019)/node_conf/sis_vgap_1p85m2019_1p85m2019_writer.conf" />
 
   </node>
 
@@ -40,7 +40,7 @@
     <remap from = '/1p85m2019/sis/vgap_cmd' to = '/1p85m2019/sis_r2/vgap_cmd'/>
     <remap from = '/1p85m2019/sis/v_cmd' to = '/1p85m2019/sis_r2/v_cmd'/>
     <param name = "config_file"
-           value = "$(find necst-1p85m2019)/node_conf/sis_vgap-1p85m2019-1p85m2019_writer.conf" />
+           value = "$(find necst-1p85m2019)/node_conf/sis_vgap_1p85m2019_1p85m2019_writer.conf" />
 
   </node>
 
@@ -53,7 +53,7 @@
   <remap from = '/1p85m2019/sis/vp_cmd' to = '/1p85m2019/sis_l1/vp_cmd'/>
   <remap from = '/1p85m2019/sis/v_cmd' to = '/1p85m2019/sis_l1/v_cmd'/>
   <param name = "config_file"
-         value = "$(find necst-1p85m2019)/node_conf/sis_vp-1p85m2019-1p85m2019_writer.conf" />
+         value = "$(find necst-1p85m2019)/node_conf/sis_vp_1p85m2019_1p85m2019_writer.conf" />
 
 </node>
 
@@ -63,7 +63,7 @@
   <remap from = '/1p85m2019/sis/vp_cmd' to = '/1p85m2019/sis_l2/vp_cmd'/>
   <remap from = '/1p85m2019/sis/v_cmd' to = '/1p85m2019/sis_l2/v_cmd'/>
   <param name = "config_file"
-         value = "$(find necst-1p85m2019)/node_conf/sis_vp-1p85m2019-1p85m2019_writer.conf" />
+         value = "$(find necst-1p85m2019)/node_conf/sis_vp_1p85m2019_1p85m2019_writer.conf" />
 
 </node>
 
@@ -73,17 +73,17 @@
   <remap from = '/1p85m2019/sis/vp_cmd' to = '/1p85m2019/sis_r1/vgap_cmd'/>
   <remap from = '/1p85m2019/sis/v_cmd' to = '/1p85m2019/sis_r1/v_cmd'/>
   <param name = "config_file"
-         value = "$(find necst-1p85m2019)/node_conf/sis_vp-1p85m2019-1p85m2019_writer.conf" />
+         value = "$(find necst-1p85m2019)/node_conf/sis_vp_1p85m2019_1p85m2019_writer.conf" />
 
 </node>
 
 <node pkg = "necst-1p85m2019"
-      name = "sis_r2_vgap_1p85m2019_1p85m2019_writer"
+      name = "sis_r2_vp_1p85m2019_1p85m2019_writer"
       type = "relay.py">
   <remap from = '/1p85m2019/sis/vp_cmd' to = '/1p85m2019/sis_r2/vgap_cmd'/>
   <remap from = '/1p85m2019/sis/v_cmd' to = '/1p85m2019/sis_r2/v_cmd'/>
   <param name = "config_file"
-         value = "$(find necst-1p85m2019)/node_conf/sis_vp-1p85m2019-1p85m2019_writer.conf" />
+         value = "$(find necst-1p85m2019)/node_conf/sis_vp_1p85m2019_1p85m2019_writer.conf" />
 </node>
 
 <!--first_lo-1p85m2019-1p85m2019_freq_writer.conf-->
@@ -93,7 +93,7 @@
   <remap from = '/1p85m/1st_lo/f_cmd' to = '/1p85m/1st_lo1/f_cmd'/>
   <remap from = '/1p85m/1st_sg/f_cmd' to = '/1p85m/1st_sg1/f_cmd'/>
   <param name = "config_file"
-         value = "$(find necst-1p85m2019)/node_conf/first_lo-1p85m2019-1p85m2019_freq_writer.conf" />
+         value = "$(find necst-1p85m2019)/node_conf/first_lo_1p85m2019_1p85m2019_freq_writer.conf" />
 </node>
 
 <node pkg = "necst-1p85m2019"
@@ -102,7 +102,7 @@
   <remap from = '/1p85m/1st_lo/f_cmd' to = '/1p85m/1st_lo2/f_cmd'/>
   <remap from = '/1p85m/1st_sg/f_cmd' to = '/1p85m/1st_sg2/f_cmd'/>
   <param name = "config_file"
-         value = "$(find necst-1p85m2019)/node_conf/first_lo-1p85m2019-1p85m2019_freq_writer.conf" />
+         value = "$(find necst-1p85m2019)/node_conf/first_lo_1p85m2019_1p85m2019_freq_writer.conf" />
 </node>
 
 
@@ -113,7 +113,7 @@
   <remap from = '/1p85m/2nd_lo/f_cmd' to = '/1p85m/2nd_lo1/f_cmd'/>
   <remap from = '/1p85m/2nd_sg/f_cmd' to = '/1p85m/2nd_sg1/f_cmd'/>
   <param name = "config_file"
-         value = "$(find necst-1p85m2019)/node_conf/second_lo-1p85m2019-1p85m2019_freq_writer.conf" />
+         value = "$(find necst-1p85m2019)/node_conf/second_lo_1p85m2019_1p85m2019_freq_writer.conf" />
 </node>
 
 <node pkg = "necst-1p85m2019"
@@ -122,7 +122,7 @@
   <remap from = '/1p85m/2nd_lo/f_cmd' to = '/1p85m/2nd_lo2/f_cmd'/>
   <remap from = '/1p85m/2nd_sg/f_cmd' to = '/1p85m/2nd_sg2/f_cmd'/>
   <param name = "config_file"
-         value = "$(find necst-1p85m2019)/node_conf/second_lo-1p85m2019-1p85m2019_freq_writer.conf" />
+         value = "$(find necst-1p85m2019)/node_conf/second_lo_1p85m2019_1p85m2019_freq_writer.conf" />
 </node>
 
 """
@@ -133,7 +133,7 @@
   <remap from = '/1p85m/1st_lo/onoff_cmd' to = '/1p85m/1st_lo1/onoff_cmd'/>
   <remap from = '/1p85m/1st_sg/onoff_cmd' to = '/1p85m/1st_sg1/onoff_cmd'/>
   <param name = "config_file"
-         value = "$(find necst-1p85m2019)/node_conf/first_lo-1p85m2019-1p85m2019_onoff_writer.conf" />
+         value = "$(find necst-1p85m2019)/node_conf/first_lo_1p85m2019-1p85m2019_onoff_writer.conf" />
 </node>
 
 <node pkg = "necst-1p85m2019"
@@ -142,7 +142,7 @@
   <remap from = '/1p85m/1st_lo/onoff_cmd' to = '/1p85m/1st_lo2/onoff_cmd'/>
   <remap from = '/1p85m/1st_sg/onoff_cmd' to = '/1p85m/1st_sg2/onoff_cmd'/>
   <param name = "config_file"
-         value = "$(find necst-1p85m2019)/node_conf/first_lo-1p85m2019-1p85m2019_onoff_writer.conf" />
+         value = "$(find necst-1p85m2019)/node_conf/first_lo_1p85m2019_1p85m2019_onoff_writer.conf" />
 </node>
 
 
@@ -153,7 +153,7 @@
   <remap from = '/1p85m/2nd_lo/onoff_cmd' to = '/1p85m/2nd_lo1/onoff_cmd'/>
   <remap from = '/1p85m/2nd_sg/onoff_cmd' to = '/1p85m/2nd_sg1/onoff_cmd'/>
   <param name = "config_file"
-         value = "$(find necst-1p85m2019)/node_conf/second_lo-1p85m2019-1p85m2019_onoff_writer.conf" />
+         value = "$(find necst-1p85m2019)/node_conf/second_lo_1p85m2019_1p85m2019_onoff_writer.conf" />
 </node>
 
 <node pkg = "necst-1p85m2019"
@@ -162,7 +162,7 @@
   <remap from = '/1p85m/2nd_lo/onoff_cmd' to = '/1p85m/2nd_lo2/onoff_cmd'/>
   <remap from = '/1p85m/2nd_sg/onoff_cmd' to = '/1p85m/2nd_sg2/onoff_cmd'/>
   <param name = "config_file"
-         value = "$(find necst-1p85m2019)/node_conf/second_lo-1p85m2019-1p85m2019_onoff_writer.conf" />
+         value = "$(find necst-1p85m2019)/node_conf/second_lo_1p85m2019_1p85m2019_onoff_writer.conf" />
 </node>
 
 </launch>
