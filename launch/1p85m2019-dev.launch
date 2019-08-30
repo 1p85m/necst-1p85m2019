@@ -108,7 +108,7 @@
   </node>
 
   <node pkg = "necst-1p85m2019"
-        name = "sis_r1_i-1p85m2019-dev_reader"
+        name = "sis_r1_v-1p85m2019-dev_reader"
         type = "relay.py">
     <remap from = '/1p85m2019/sis/v' to = '/1p85m2019/sis_r1/v'/>
     <remap from = '/dev/cpz3177/rsw/ch' to = '/dev/cpz3177/rsw0/ch6'/>
