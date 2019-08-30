@@ -169,6 +169,7 @@
 -->
 <!--temp section-->
 <!--dewar_temp_1p85m2019_dev_reader.conf-->
+<!--
   <node pkg = "necst-1p85m2019"
         name = "dewar_temp_4K_1p85m2019_dev_reader"
         type = "relay.py">
@@ -195,7 +196,7 @@
     <param name = "config_file"
            value = "$(find necst-1p85m2019)/node_conf/dewar_temp_1p85m2019_dev_reader.conf" />
   </node>
-
+-->
 
 <!--sg section-->
 <!--first_sg_1p85m2019_dev_freq_writer.conf-->
@@ -278,7 +279,7 @@
 
 <!--vacuum section-->
 <!--dewar_vacuum_1p85m2019_dev_reader.conf-->
-
+<!--
     <node pkg = "necst-1p85m2019"
           name = "dewar_vacuum_1p85m2019_dev_reader"
           type = "relay.py">
@@ -288,3 +289,4 @@
     </node>
 
 </launch>
+-->
