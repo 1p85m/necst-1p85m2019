@@ -7,13 +7,16 @@
         required="true"
         output="screen"
         machine="necstrx">
-        <param name="~port_list" value="['/dev/ttyACM0']" />
+        <param name="~port_list" value="['/dev/ttyACM0','/dev/ttyACM1']" />
 
-        <param name="~ch_num" value="1" />
+        <param name="~ch_num" value="2" />
 
 
     <remap from = '/dev/ma24126a/__port__/1' to = '/dev/ma24126a/ttyACM0/power'/>
-    <remap from = '/dev/ma24126a/__port__/zero_set/1' to = '/dev/ma24126a/ttyACM0/zero_set'/>
+    <remap from = '/dev/ma24126a/__port__/1' to = '/dev/ma24126a/ttyACM1/power'/>
+
+    <remap from = '/dev/ma24126a/__port__/2' to = '/dev/ma24126a/ttyACM0/power'/>
+    <remap from = '/dev/ma24126a/__port__/2' to = '/dev/ma24126a/ttyACM1/power'/>
 
 
   </node>
