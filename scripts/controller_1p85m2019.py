@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-name = '1p85m2019_controller'
+name = '1p85m_controller'
 
 import rospy
 
@@ -42,12 +42,12 @@ class sis(object):
     def set_vp(self, cmd, pol, side_band):
         topic_dict = {
             'lhcp': {
-                'lsb': '/1p85m2019/sis_l1/vp_cmd',
-                'usb': '/1p85m2019/sis_l2/vp_cmd',
+                'lsb': '/1p85m/sis_l1/vp_cmd',
+                'usb': '/1p85m/sis_l2/vp_cmd',
             },
             'rhcp': {
-                'lsb': '/1p85m2019/sis_r1/vp_cmd',
-                'usb': '/1p85m2019/sis_r2/vp_cmd',
+                'lsb': '/1p85m/sis_r1/vp_cmd',
+                'usb': '/1p85m/sis_r2/vp_cmd',
             },
         }
         data_class = std_msgs.msg.Float64
@@ -57,12 +57,12 @@ class sis(object):
     def set_vgap(self, cmd, pol, side_band):
         topic_dict = {
             'lhcp': {
-                'lsb': '/1p85m2019/sis_l1/vgap_cmd',
-                'usb': '/1p85m2019/sis_l2/vgap_cmd',
+                'lsb': '/1p85m/sis_l1/vgap_cmd',
+                'usb': '/1p85m/sis_l2/vgap_cmd',
             },
             'rhcp': {
-                'lsb': '/1p85m2019/sis_r1/vgap_cmd',
-                'usb': '/1p85m2019/sis_r2/vgap_cmd',
+                'lsb': '/1p85m/sis_r1/vgap_cmd',
+                'usb': '/1p85m/sis_r2/vgap_cmd',
             },
         }
         data_class = std_msgs.msg.Float64
@@ -72,12 +72,12 @@ class sis(object):
     def set_v(self, cmd, pol, side_band):
         topic_dict = {
             'lhcp': {
-                'lsb': '/1p85m2019/sis_l1/v_cmd',
-                'usb': '/1p85m2019/sis_l2/v_cmd',
+                'lsb': '/1p85m/sis_l1/v_cmd',
+                'usb': '/1p85m/sis_l2/v_cmd',
             },
             'rhcp': {
-                'lsb': '/1p85m2019/sis_r1/v_cmd',
-                'usb': '/1p85m2019/sis_r2/v_cmd',
+                'lsb': '/1p85m/sis_r1/v_cmd',
+                'usb': '/1p85m/sis_r2/v_cmd',
             },
         }
         data_class = std_msgs.msg.Float64
