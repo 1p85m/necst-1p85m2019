@@ -1,6 +1,7 @@
 <launch>
-
+<!--
     <include file="$(find necst-1p85m2019)/launch/rospkg-pyinterface.launch" />
+-->
     <include file="$(find necst-1p85m2019)/launch/rospkg-ogameasure.launch" />
     <include file="$(find necst-1p85m2019)/launch/1p85m2019-1p85m2019.launch" />
     <include file="$(find necst-1p85m2019)/launch/1p85m2019-dev.launch" />
