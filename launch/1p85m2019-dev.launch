@@ -203,7 +203,7 @@
   <node pkg = "necst-1p85m2019"
         name = "first_sg_lhcp_1p85m2019_dev_freq_writer"
         type = "relay.py">
-        <remap from = '/1p85m/1st_sg/f_cmd' to = '//1p85m/1st_sg_lhcp/f_cmd'/>
+        <remap from = '/1p85m/1st_sg/f_cmd' to = '/1p85m/1st_sg_lhcp/f_cmd'/>
         <remap from = '/dev/fsw0020/__IP__/f_cmd' to = '/dev/fsw0020/ip_192_168_100_53/freq_cmd'/>
     <param name = "config_file"
            value = "$(find necst-1p85m2019)/node_conf/first_sg_1p85m2019_dev_freq_writer.conf" />
