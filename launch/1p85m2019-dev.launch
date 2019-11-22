@@ -6,7 +6,7 @@
   <node pkg = "necst-1p85m2019"
         name = "sis_l1_v_1p85m2019_dev_writer"
         type = "relay.py">
-    <remap from = '/1p85m2019/sis/v_cmd' to = '/1p85m2019/sis_l1/v_cmd'/>
+    <remap from = '/1p85m/sis/v_cmd' to = '/1p85m/sis_l1/v_cmd'/>
     <remap from = '/dev/cpz340816/rsw/ch' to = '/dev/cpz340816/rsw0/ch1'/>
     <param name = "config_file"
            value = "$(find necst-1p85m2019)/node_conf/sis_v_1p85m2019_dev_writer.conf" />
@@ -15,7 +15,7 @@
   <node pkg = "necst-1p85m2019"
         name = "sis_l2_v_1p85m2019_dev_writer"
         type = "relay.py">
-    <remap from = '/1p85m2019/sis/v_cmd' to = '/1p85m2019/sis_l2/v_cmd'/>
+    <remap from = '/1p85m/sis/v_cmd' to = '/1p85m/sis_l2/v_cmd'/>
     <remap from = '/dev/cpz340816/rsw/ch' to = '/dev/cpz340816/rsw0/ch2'/>
     <param name = "config_file"
            value = "$(find necst-1p85m2019)/node_conf/sis_v_1p85m2019_dev_writer.conf" />
@@ -25,7 +25,7 @@
   <node pkg = "necst-1p85m2019"
         name = "sis_r1_v_1p85m2019_dev_writer"
         type = "relay.py">
-    <remap from = '/1p85m2019/sis/v_cmd' to = '/1p85m2019/sis_r1/v_cmd'/>
+    <remap from = '/1p85m/sis/v_cmd' to = '/1p85m/sis_r1/v_cmd'/>
     <remap from = '/dev/cpz340816/rsw/ch' to = '/dev/cpz340816/rsw0/ch3'/>
     <param name = "config_file"
            value = "$(find necst-1p85m2019)/node_conf/sis_v_1p85m2019_dev_writer.conf" />
@@ -35,7 +35,7 @@
   <node pkg = "necst-1p85m2019"
         name = "sis_r2_v_1p85m2019_dev_writer"
         type = "relay.py">
-    <remap from = '/1p85m2019/sis/v_cmd' to = '/1p85m2019/sis_r2/v_cmd'/>
+    <remap from = '/1p85m/sis/v_cmd' to = '/1p85m/sis_r2/v_cmd'/>
     <remap from = '/dev/cpz340816/rsw/ch' to = '/dev/cpz340816/rsw0/ch4'/>
     <param name = "config_file"
            value = "$(find necst-1p85m2019)/node_conf/sis_v_1p85m2019_dev_writer.conf" />
@@ -48,7 +48,7 @@
   <node pkg = "necst-1p85m2019"
         name = "sis_l1_i1p85m2019_dev_reader"
         type = "relay.py">
-    <remap from = '/1p85m2019/sis/i' to = '/1p85m2019/sis_l1/i'/>
+    <remap from = '/1p85m/sis/i' to = '/1p85m/sis_l1/i'/>
     <remap from = '/dev/cpz3177/rsw/ch' to = '/dev/cpz3177/rsw0/ch2'/>
         <param name = "config_file"
                value = "$(find necst-1p85m2019)/node_conf/sis_i_1p85m2019_dev_reader.conf" />
@@ -58,7 +58,7 @@
     <node pkg = "necst-1p85m2019"
           name = "sis_l2_i_1p85m2019_dev_reader"
           type = "relay.py">
-      <remap from = '/1p85m2019/sis/i' to = '/1p85m2019/sis_l2/i'/>
+      <remap from = '/1p85m/sis/i' to = '/1p85m/sis_l2/i'/>
       <remap from = '/dev/cpz3177/rsw/ch' to = '/dev/cpz3177/rsw0/ch4'/>
           <param name = "config_file"
                  value = "$(find necst-1p85m2019)/node_conf/sis_i_1p85m2019_dev_reader.conf" />
@@ -67,7 +67,7 @@
     <node pkg = "necst-1p85m2019"
           name = "sis_r1_i_1p85m2019_dev_reader"
           type = "relay.py">
-      <remap from = '/1p85m2019/sis/i' to = '/1p85m2019/sis_r1/i'/>
+      <remap from = '/1p85m/sis/i' to = '/1p85m/sis_r1/i'/>
       <remap from = '/dev/cpz3177/rsw/ch' to = '/dev/cpz3177/rsw0/ch6'/>
       <param name = "config_file"
              value = "$(find necst-1p85m2019)/node_conf/sis_i_1p85m2019_dev_reader.conf" />
@@ -77,7 +77,7 @@
   <node pkg = "necst-1p85m2019"
         name = "sis_r2_i_1p85m2019_dev_reader"
         type = "relay.py">
-    <remap from = '/1p85m2019/sis/i' to = '/1p85m2019/sis_r2/i'/>
+    <remap from = '/1p85m/sis/i' to = '/1p85m/sis_r2/i'/>
     <remap from = '/dev/cpz3177/rsw/ch' to = '/dev/cpz3177/rsw0/ch8'/>
         <param name = "config_file"
                value = "$(find necst-1p85m2019)/node_conf/sis_i_1p85m2019_dev_reader.conf" />
@@ -90,7 +90,7 @@
   <node pkg = "necst-1p85m2019"
         name = "sis_l1_v_1p85m2019_dev_reader"
         type = "relay.py">
-    <remap from = '/1p85m2019/sis/v' to = '/1p85m2019/sis_l1/v'/>
+    <remap from = '/1p85m/sis/v' to = '/1p85m/sis_l1/v'/>
     <remap from = '/dev/cpz3177/rsw/ch' to = '/dev/cpz3177/rsw0/ch1'/>
         <param name = "config_file"
                value = "$(find necst-1p85m2019)/node_conf/sis_v_1p85m2019_dev_reader.conf" />
@@ -100,7 +100,7 @@
   <node pkg = "necst-1p85m2019"
         name = "sis_l2_v_1p85m2019_dev_reader"
         type = "relay.py">
-    <remap from = '/1p85m2019/sis/v' to = '/1p85m2019/sis_l2/v'/>
+    <remap from = '/1p85m/sis/v' to = '/1p85m/sis_l2/v'/>
     <remap from = '/dev/cpz3177/rsw/ch' to = '/dev/cpz3177/rsw0/ch3'/>
         <param name = "config_file"
                value = "$(find necst-1p85m2019)/node_conf/sis_v_1p85m2019_dev_reader.conf" />
@@ -110,7 +110,7 @@
   <node pkg = "necst-1p85m2019"
         name = "sis_r1_v_1p85m2019_dev_reader"
         type = "relay.py">
-    <remap from = '/1p85m2019/sis/v' to = '/1p85m2019/sis_r1/v'/>
+    <remap from = '/1p85m/sis/v' to = '/1p85m/sis_r1/v'/>
     <remap from = '/dev/cpz3177/rsw/ch' to = '/dev/cpz3177/rsw0/ch5'/>
     <param name = "config_file"
            value = "$(find necst-1p85m2019)/node_conf/sis_v_1p85m2019_dev_reader.conf" />
@@ -121,7 +121,7 @@
   <node pkg = "necst-1p85m2019"
         name = "sis_r2_v_1p85m2019_dev_reader"
         type = "relay.py">
-    <remap from = '/1p85m2019/sis/v' to = '/1p85m2019/sis_r2/v'/>
+    <remap from = '/1p85m/sis/v' to = '/1p85m/sis_r2/v'/>
     <remap from = '/dev/cpz3177/rsw/ch' to = '/dev/cpz3177/rsw0/ch7'/>
         <param name = "config_file"
                value = "$(find necst-1p85m2019)/node_conf/sis_v_1p85m2019_dev_reader.conf" />
