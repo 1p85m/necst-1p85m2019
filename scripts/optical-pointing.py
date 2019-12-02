@@ -26,10 +26,10 @@ class optical_pointing(object):
 
     def __init__(self):
         rospy.init_node("optical_pointing")
-        self.catalog_file = "/home/exito/ros/src/necst-telescope/lib/bsc5.dat"
-        self.kisa_file = "/home/exito/ros/src/necst-telescope/lib/kisa.dat"
+        self.catalog_file = "/home/exito/ros/src/necst-1p85m2019/lib/bsc5.dat"
+        self.kisa_file    = "/home/exito/ros/src/necst-1p85m2019/lib/kisa.dat"
 
-        self.m100_path = "/home/m100raspi/data/optical-pointing/"
+        self.m100_path = "/home/m100raspi/data/optical_pointing/"
         self.data_path = "/home/exito/data/operation/"+name+"/"
         self.pic_path  = "/home/exito/data/operation/"+name+"/picture/"
 
@@ -406,6 +406,8 @@ class optical_pointing(object):
 
         new_kisa_file = self.data_dir + "new_kisa.dat"
         shutil.copy(self.kisa_file,new_kisa_file)
+        shutil.copy(self.kisa_file,)
+
         print('new kisa file is created: %s'%(new_kisa_file))
         print("create new kisa.dat")
         print("Data location : " + self.data_dir)
