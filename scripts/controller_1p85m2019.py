@@ -132,7 +132,7 @@ class sglo(object):
             'rhcp': '/1p85m/1st_sg_rhcp/onoff_cmd',
         }
         data_class = std_msgs.msg.Float64
-        self.make_pub.publish(topic_dict[cmd][pol], data_class, msg=cmd)
+        self.make_pub.publish(topic_dict[pol], data_class, msg=cmd)
         return
 
     def set_2nd_sg_onoff(self, cmd, side_band):
@@ -141,7 +141,7 @@ class sglo(object):
             'usb': '/1p85m/2nd_sg_usb/onoff_cmd',
         }
         data_class = std_msgs.msg.Float64
-        self.make_pub.publish(topic_dict[cmd][side_band], data_class, msg=cmd)
+        self.make_pub.publish(topic_dict[side_band], data_class, msg=cmd)
         return
 
     def set_1st_lo_onoff(self, cmd, pol):
@@ -150,7 +150,7 @@ class sglo(object):
             'rhcp': '/1p85m/1st_lo_rhcp/onoff_cmd',
         }
         data_class = std_msgs.msg.String
-        self.make_pub.publish(topic_dict[cmd][pol], data_class, msg=cmd)
+        self.make_pub.publish(topic_dict[pol], data_class, msg=cmd)
         return
 
     def set_2nd_lo_onoff(self, cmd, side_band):
