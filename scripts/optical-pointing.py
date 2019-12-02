@@ -33,7 +33,6 @@ class optical_pointing(object):
         self.data_path = "/home/exito/data/operation/"+name+"/"
         self.pic_path  = "/home/exito/data/operation/"+name+"/picture/"
 
-
         self.camera = telescope_controller.camera()
         self.antenna = telescope_controller.antenna()
         self.logger = core_controller.logger()
