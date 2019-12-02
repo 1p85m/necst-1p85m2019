@@ -1,0 +1,9 @@
+<launch>
+  <node pkg = "necst-1p85m2019"
+        name = "xffts_total_power"
+        type = "xffts_total_power.py"
+        >
+        <param name="~board_num" value="4" />
+  </node>
+
+</launch>
