@@ -20,8 +20,8 @@ f4 = 6.5
 
 sis.set_1st_lo(float(f1),"lhcp")
 sis.set_1st_lo(float(f2),"rhcp")
-sis.set_2nd_lo(float(v3),"usb")
-sis.set_2nd_lo(float(v4),"lsb")
+sis.set_2nd_lo(float(f3),"usb")
+sis.set_2nd_lo(float(f4),"lsb")
 
 sis.set_1st_lo_onoff("on","lhcp")
 sis.set_1st_lo_onoff("on","rhcp")
