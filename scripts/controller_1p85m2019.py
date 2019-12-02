@@ -159,5 +159,5 @@ class sglo(object):
             'usb': '/1p85m/2nd_lo_usb/onoff_cmd',
         }
         data_class = std_msgs.msg.String
-        self.make_pub.publish(topic_dict[cmd][side_band], data_class, msg=cmd)
+        self.make_pub.publish(topic_dict[side_band], data_class, msg=cmd)
         return
