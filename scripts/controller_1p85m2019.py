@@ -105,7 +105,7 @@ class sglo(object):
             'usb': '/1p85m/2nd_lo_usb/f_cmd',
         }
         data_class = std_msgs.msg.Float64
-        self.make_pub.publish(topic_dict[pol], data_class, msg=cmd)
+        self.make_pub.publish(topic_dict[side_band], data_class, msg=cmd)
         return
 
     def set_1st_sg(self, cmd, pol):
@@ -123,7 +123,7 @@ class sglo(object):
             'usb': '/1p85m/2nd_sg_usb/f_cmd',
         }
         data_class = std_msgs.msg.Float64
-        self.make_pub.publish(topic_dict[pol], data_class, msg=cmd)
+        self.make_pub.publish(topic_dict[side_band], data_class, msg=cmd)
         return
 
     def set_1st_sg_onoff(self, cmd, pol):
