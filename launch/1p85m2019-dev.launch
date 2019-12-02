@@ -132,37 +132,8 @@
 <!--if_power_1p85m2019_dev_reader.conf-->
 
   <node pkg = "necst-1p85m2019"
-        name = "if_l1_power_1p85m2019_dev_reader"
+        name = "if_power_1p85m2019_dev_reader"
         type = "relay.py">
-    <remap from = '/1p85m/if/power' to = '/1p85m/if_l1/power'/>
-    <remap from = '/dev/ma24126a/__port__/power' to = '/dev/ma24126a/ttyACM0/power'/>
-    <param name = "config_file"
-           value = "$(find necst-1p85m2019)/node_conf/if_power_1p85m2019_dev_reader.conf" />
-  </node>
-
-  <node pkg = "necst-1p85m2019"
-        name = "if_l2_power_1p85m2019_dev_reader"
-        type = "relay.py">
-    <remap from = '/1p85m/if/power' to = '/1p85m/if_l2/power'/>
-    <remap from = '/dev/ma24126a/__port__/power' to = '/dev/ma24126a/__port__/power'/>
-    <param name = "config_file"
-           value = "$(find necst-1p85m2019)/node_conf/if_power_1p85m2019_dev_reader.conf" />
-  </node>
-
-  <node pkg = "necst-1p85m2019"
-        name = "if_r1_power_1p85m2019_dev_reader"
-        type = "relay.py">
-    <remap from = '/1p85m/if/power' to = '/1p85m/if_r1/power'/>
-    <remap from = '/dev/ma24126a/__port__/power' to = '/dev/ma24126a/__port__/power'/>
-    <param name = "config_file"
-           value = "$(find necst-1p85m2019)/node_conf/if_power_1p85m2019_dev_reader.conf" />
-  </node>
-
-  <node pkg = "necst-1p85m2019"
-        name = "if_r2_power_1p85m2019_dev_reader"
-        type = "relay.py">
-    <remap from = '/1p85m/if/power' to = '/1p85m/if_r2/power'/>
-    <remap from = '/dev/ma24126a/__port__/power' to = '/dev/ma24126a/__port__/power'/>
     <param name = "config_file"
            value = "$(find necst-1p85m2019)/node_conf/if_power_1p85m2019_dev_reader.conf" />
   </node>

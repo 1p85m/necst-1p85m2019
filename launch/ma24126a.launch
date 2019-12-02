@@ -1,22 +1,19 @@
 <launch>
-
+  <!--
   <machine name="necstrx" address="192.168.100.132" env-loader="/root/ros/devel/env.sh" user="root" password="root"  />
+　-->
   <node pkg = "rospkg-ogameasure"
         name = "ma24126a"
         type = "ma24126a.py"
         required="true"
         output="screen"
-        machine="necstrx">
-        <param name="~port_list" value="['/dev/ttyACM0','/dev/ttyACM1']" />
+        >
+        <param name="~port_list" value="['/dev/ttyACM0']" />
 
-        <param name="~ch_num" value="2" />
+        <param name="~ch_num" value="1" />
 
 
     <remap from = '/dev/ma24126a/__port__/1' to = '/dev/ma24126a/ttyACM0/power'/>
-    <remap from = '/dev/ma24126a/__port__/1' to = '/dev/ma24126a/ttyACM1/power'/>
-
-    <remap from = '/dev/ma24126a/__port__/2' to = '/dev/ma24126a/ttyACM0/power'/>
-    <remap from = '/dev/ma24126a/__port__/2' to = '/dev/ma24126a/ttyACM1/power'/>
 
 
   </node>
