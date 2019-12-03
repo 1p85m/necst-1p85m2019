@@ -25,7 +25,11 @@ date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
 file_name = name + '/' + date + '.necstdb'
 print(file_name)
 
-vol = np.linspace(0, 1.2, 300)   #search optimal SIS voltage value
+
+initial_voltage = 0.  # mV
+final_voltage   = 12. # mV
+step            = 0.1 # mV
+roop = int((final_voltage - initial_voltage) / step)
 
 
 date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
@@ -39,8 +43,14 @@ time.sleep(1)
 input('READY HOT MEASUREMENT? PRESS ENTER!!')
 sis.set_vgap(0)
 logger.start(file_name_hot)
-for v in vol:             #measure y-factor
-    sis.set_vgap(v)
+#####measure y-factor#####
+
+for v in range(roop+1):
+    v=initial_voltage+ step*i
+    sis.set_v(float(v),"lhcp","lsb")
+    sis.set_v(float(v),"lhcp","usb")
+    sis.set_v(float(v),"rhcp","lsb")
+    sis.set_v(float(v),"rhcp","usb")
     time.sleep(0.3)
     continue
 logger.stop()
@@ -49,10 +59,14 @@ logger.stop()
 input('READY COLD MEASUREMENT? PRESS ENTER!!')
 sis.set_vgap(0)
 logger.start(file_name_cold)
-for v in vol:             #measure y-factor
-    sis.set_vgap(v)
+ffor v in range(roop+1):
+    v=initial_voltage+ step*i
+    sis.set_v(float(v),"lhcp","lsb")
+    sis.set_v(float(v),"lhcp","usb")
+    sis.set_v(float(v),"rhcp","lsb")
+    sis.set_v(float(v),"rhcp","usb")
     time.sleep(0.3)
     continue
 logger.stop()
 
-sis.set_vgap(0)
+sis.set_v(0)
