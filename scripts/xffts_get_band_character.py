@@ -15,6 +15,7 @@ import argparse
 import numpy
 import rospy
 import std_msgs.msg
+import datetime
 
 sys.path.append("../../necst-core/scripts")
 import core_controller
