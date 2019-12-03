@@ -54,10 +54,10 @@ for i in range(roop+1):
     sis.set_v(float(v),"rhcp","lsb")
     time.sleep(integ_time)
 
-sis.set_v(0,"lhcp","usb")
-sis.set_v(0,"lhcp","lsb")
-sis.set_v(0,"rhcp","usb")
-sis.set_v(0,"rhcp","lsb")
+sis.set_v(float(initial_voltage),"lhcp","usb")
+sis.set_v(float(initial_voltage),"lhcp","lsb")
+sis.set_v(float(initial_voltage),"rhcp","usb")
+sis.set_v(float(initial_voltage),"rhcp","lsb")
 
 input('READY COLD MEASUREMENT? PRESS ENTER!!')
 status.publish("{0:4}".format("cold"))
