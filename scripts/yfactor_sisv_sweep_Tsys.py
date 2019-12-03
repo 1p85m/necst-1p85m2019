@@ -44,6 +44,7 @@ sis.set_v(float(initial_voltage),"rhcp","lsb")
 time.sleep(1)
 
 for i in range(roop+1):
+    v = initial_voltage + i*step
     sis.set_v(float(v),"lhcp","usb")
     sis.set_v(float(v),"lhcp","lsb")
     sis.set_v(float(v),"rhcp","usb")
