@@ -159,10 +159,10 @@ class optical_pointing(object):
                 self.antenna.tracking_check()
 
                 nowtimestamp = datetime.datetime.today()
-                timestr = nowtimestamp.strftime('%Y%m%d_%H.%M.%S')
+                timestr = nowtimestamp.strftime('%Y%m%d_%H%M%S')
                 savename = timestr +".JPG"
 
-                savefile = self.m100_path + start_timestamp.strftime('%Y%m%d_%H:%M:%S') + "/" +savename
+                savefile = self.m100_path + start_timestamp.strftime('%Y%m%d_%H%M%S') + "/" +savename
                 pre_az = self.antenna.get_az()
                 pre_el = self.antenna.get_el()
                 self.camera.capture(savefile)
@@ -185,7 +185,7 @@ class optical_pointing(object):
 
         self.logger.stop()
 
-        filename = start_timestamp.strftime('%Y%m%d_%H.%M.%S.dat')
+        filename = start_timestamp.strftime('%Y%m%d_%H%M%S.dat')
         filepath = self.data_dir + filename
         f = open(filepath, "w")
         try:
