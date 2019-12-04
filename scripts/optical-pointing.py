@@ -220,7 +220,7 @@ class optical_pointing(object):
             time.sleep(1)
             continue
 
-        self.imgEncodeDecode(fl)
+        #self.imgEncodeDecode(fl)
 
         for fl1 in fl:
             img = cv2.imread(self.pic_dir+fl1, cv2.IMREAD_GRAYSCALE)
