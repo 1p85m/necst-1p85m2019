@@ -216,9 +216,9 @@ class optical_pointing(object):
         kisa = fkisa.readlines()
         print(kisa)
         print(dkisa)
-        a1 = float(kisa[0])+dkisa[0]
-        a2 = float(kisa[1])+dkisa[1]
-        a3 = float(kisa[2])+dkisa[2]
+        a1 = float(kisa[0])-dkisa[0]
+        a2 = float(kisa[1])-dkisa[1]
+        a3 = float(kisa[2])-dkisa[2]
         b1 = float(kisa[3])+dkisa[3]
         b2 = float(kisa[4])+dkisa[4]
         b3 = float(kisa[5])+dkisa[5]

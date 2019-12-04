@@ -161,7 +161,7 @@ class optical_pointing(object):
                 nowtimestamp = datetime.datetime.today()
                 timestr = nowtimestamp.strftime('%Y%m%d_%H%M%S')
                 savename = timestr +".JPG"
-                time.sleep(3)
+                time.sleep(2)
                 savefile = self.m100_path + start_timestamp.strftime('%Y%m%d_%H%M%S') + "/" +savename
                 pre_az = self.antenna.get_az()
                 pre_el = self.antenna.get_el()
@@ -221,7 +221,7 @@ class optical_pointing(object):
                     #pix_x.apeend()
                     #pix_y.append()
                     #continue
-                print(self.pic_dir+fl1)
+                print("calculated dAz dEl : "+self.pic_dir+fl1)
                 img = np.flipud(img)
                 ret, nimg = cv2.threshold(img, 50, 255, cv2.THRESH_BINARY)
                 contours, hierarchy = cv2.findContours(nimg, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -315,11 +315,11 @@ class optical_pointing(object):
         plt.grid()
         plt.savefig(self.data_dir + '%s_vs_%s.png'%(xlabel[0], ylabel[0]))
 
-    def f_az(self, X, b1, b2, b3, g1):
+    def f_el(self, X, b1, b2, b3, g1):
         Az, El = X
         return (b1 * np.cos(Az*(np.pi/180.))) + (b2 * np.sin(Az*(np.pi/180.))) + b3 + (g1 * El)
 
-    def f_el(self, X, a1, a2, a3):
+    def f_az(self, X, a1, a2, a3):
         Az, El = X
         return (a1 * np.tan(El*(np.pi/180.))) + (a2 / np.cos(El*(np.pi/180.))) + a3 + ((self.b1 * np.sin(Az*(np.pi/180.)) * np.sin(El*(np.pi/180.)) - self.b2 * np.cos(Az*(np.pi/180.)) * np.sin(El*(np.pi/180.))) / np.cos(El*(np.pi/180.)))
 
@@ -331,13 +331,13 @@ class optical_pointing(object):
         dAz = txt[2]
         dEl = txt[3]
 
-        fit_dEl = curve_fit(self.f_az, (Az, El), dEl)
+        fit_dEl = curve_fit(self.f_el, (Az, El), dEl)
         self.b1 = fit_dEl[0][0]
         self.b2 = fit_dEl[0][1]
         b3 = fit_dEl[0][2]
         g1 = fit_dEl[0][3]
-
-        fit_dAz = curve_fit(self.f_el, (Az, El), dAz)
+        time.sleep(0.01)
+        fit_dAz = curve_fit(self.f_az, (Az, El), dAz)
         a1 = fit_dAz[0][0]
         a2 = fit_dAz[0][1]
         a3 = fit_dAz[0][2]
@@ -426,9 +426,14 @@ class optical_pointing(object):
             cv2.imwrite(img, decimg)
         return
 
+    def move_home(self):
+        self.antenna.move_azel(180,45)
+        return
+
 if __name__ == "__main__":
     opt = optical_pointing()
     filep = opt.move_target()
+    opt.move_azel()
     opt.calc_daz_del(filep)
     dkisa = opt.fitting()
     opt.apply_kisa(dkisa)
