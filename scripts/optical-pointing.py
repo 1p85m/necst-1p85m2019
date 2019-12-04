@@ -390,7 +390,7 @@ class optical_pointing(object):
 
         old_kisa_file = self.data_dir + "old_kisa.dat"
         shutil.copy(self.kisa_file,old_kisa_file)
-        print('old kisa file is created: %s'%(filepath))
+        print('old kisa file is created: %s'%(self.data_dir))
 
 
         nkisa = open(self.kisa_file,"w")
