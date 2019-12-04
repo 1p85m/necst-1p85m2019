@@ -170,14 +170,13 @@ class optical_pointing(object):
                 late_el = self.antenna.get_el()
 
                 angle = [(pre_az+late_az)/2, (pre_el+late_el)/2]
-
-                print("angle " + str(angle))
-                print("captured image")
-                print("=========================================")
                 az.append(angle[0])
                 el.append(angle[1])
                 pic.append(savename)
                 time.sleep(5)
+                print("angle " + str(angle))
+                print("captured image")
+                print("=========================================")
 
                 continue
         except KeyboardInterrupt:
@@ -437,4 +436,4 @@ if __name__ == "__main__":
     opt.calc_daz_del(filep)
     dkisa = opt.fitting()
     opt.apply_kisa(dkisa)
-    #opt.move_home()
+    opt.move_home()
