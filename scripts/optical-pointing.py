@@ -29,7 +29,7 @@ class optical_pointing(object):
         self.catalog_file = "/home/exito/ros/src/necst-1p85m2019/lib/bsc5.dat"
         self.kisa_file    = "/home/exito/ros/src/necst-1p85m2019/lib/kisa.dat"
 
-        self.m100_path = "/home/m100raspi/data/optical_pointing/"
+        self.m100_path = "/home/m100raspi/data/optical-pointing/"
         self.data_path = "/home/exito/data/operation/"+name+"/"
         self.pic_path  = "/home/exito/data/operation/"+name+"/picture/"
 
