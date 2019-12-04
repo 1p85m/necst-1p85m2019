@@ -123,7 +123,7 @@ class optical_pointing(object):
         print('initializing...')
         vmagmin = float(input("vmagmin = " ))
         vmagmax = float(input("vmagmax = " ))
-        data = self.select_opt_targets(elmin=15., elmax=85., vmagmin=vmagmin, vmagmax=vmagmax, azmin=5.,azmax=355., pmramax=1, pmdecmax=1,azint=40., show_graph=True)
+        data = self.select_opt_targets(elmin=30., elmax=70., vmagmin=vmagmin, vmagmax=vmagmax, azmin=10.,azmax=100., pmramax=1, pmdecmax=1,azint=40., show_graph=True)
         star_num = len(data)
         print('generate target star list: %d stars'%(star_num))
         ans = input("1: START optical pointing \n2: Reselect target star\n Select number = ")
