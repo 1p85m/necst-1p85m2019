@@ -405,7 +405,7 @@ class optical_pointing(object):
 
         new_kisa_file = self.data_dir + "new_kisa.dat"
         shutil.copy(self.kisa_file,new_kisa_file)
-        shutil.copy(self.kisa_file,)
+        #shutil.copy(self.kisa_file,)
 
         print('new kisa file is created: %s'%(new_kisa_file))
         print("create new kisa.dat")
