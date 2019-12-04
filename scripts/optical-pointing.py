@@ -375,6 +375,10 @@ class optical_pointing(object):
         return dkisa_list
 
     def apply_kisa(self,dkisa):
+        old_kisa_file = self.data_dir + "old_kisa.dat"
+        shutil.copy(self.kisa_file,old_kisa_file)
+        print('old kisa file is created: %s'%(self.data_dir))
+
         fkisa = open(self.kisa_file,"r")
         kisa = fkisa.readlines()
         print(kisa)
@@ -387,11 +391,6 @@ class optical_pointing(object):
         b3 = float(kisa[5])+dkisa[5]
         g1 = float(kisa[6])+dkisa[6]
         fkisa.close()
-
-        old_kisa_file = self.data_dir + "old_kisa.dat"
-        shutil.copy(self.kisa_file,old_kisa_file)
-        print('old kisa file is created: %s'%(self.data_dir))
-
 
         nkisa = open(self.kisa_file,"w")
         nkisa.write(str(a1)+"\n")
