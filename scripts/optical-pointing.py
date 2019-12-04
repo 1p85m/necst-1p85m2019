@@ -370,8 +370,9 @@ class optical_pointing(object):
         dkisa_list.append(a3)
         dkisa_list.append(g1)
 
-        dkisa_array = np.array([a1_deg, a2_deg, a3_deg, b1_deg, b2_deg, b3_deg, g1_deg]).T
-        np.savetxt(self.data_dir +'dkisa.dat', dkisa_array, fmt='%s')
+        #dkisa_array = np.array([a1_deg, a2_deg, a3_deg, b1_deg, b2_deg, b3_deg, g1_deg]).T
+        dkisa_array = np.array([a1, a2, a3, b1, b2, b3, g1]).T
+        np.savetxt(self.data_dir +'dkisa.dat', dkisa_array)
         return dkisa_list
 
     def apply_kisa(self,dkisa):
@@ -379,8 +380,12 @@ class optical_pointing(object):
         shutil.copy(self.kisa_file,old_kisa_file)
         print('old kisa file is created: %s'%(self.data_dir))
 
+        fdkisa = open(self.data_dir +'dkisa.dat',"r")
+        dkisa = fdkisa.readlines()
+
         fkisa = open(self.kisa_file,"r")
         kisa = fkisa.readlines()
+
         print(kisa)
         print(dkisa)
         a1 = float(kisa[0])+dkisa[0]
