@@ -341,6 +341,7 @@ class optical_pointing(object):
         a1 = fit_dAz[0][0]
         a2 = fit_dAz[0][1]
         a3 = fit_dAz[0][2]
+
         b1 = self.b1
         b2 = self.b2
 
@@ -433,7 +434,7 @@ class optical_pointing(object):
 if __name__ == "__main__":
     opt = optical_pointing()
     filep = opt.move_target()
-    opt.move_azel()
     opt.calc_daz_del(filep)
     dkisa = opt.fitting()
     opt.apply_kisa(dkisa)
+    #opt.move_home()
