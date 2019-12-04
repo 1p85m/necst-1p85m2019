@@ -201,58 +201,57 @@ class optical_pointing(object):
 
         return filepath
 
-
-    def calc_daz_del(self,filepath):
+    def calc_daz_del(self):
         npix_x = 6000   #number of pixcels
         npix_y = 4000
         sensor_x = 22.3   #sensor size[mm]
         f = 500.   #shoten kyori[mm]
-        fl = np.loadtxt(filepath,dtype="unicode").T[2].tolist()
-        _Az = np.loadtxt(filepath,dtype="unicode").T[0].tolist()
+        fl = np.loadtxt(self.filepath,dtype="unicode").T[2].tolist()
+        _Az = np.loadtxt(self.filepath,dtype="unicode").T[0].tolist()
         Az = [float(i) for i in _Az]
-        _El = np.loadtxt(filepath,dtype="unicode").T[1].tolist()
+        _El = np.loadtxt(self.filepath,dtype="unicode").T[1].tolist()
         El = [float(i) for i in _El]
         pix_x = []
         pix_y = []
 
-        print("copying picture from raspi ...")
-        while not os.path.exists(self.pic_dir):
-            time.sleep(1)
-            continue
-
-        #self.imgEncodeDecode(fl)
-
         for fl1 in fl:
-            img = cv2.imread(self.pic_dir+fl1, cv2.IMREAD_GRAYSCALE)
-            #if img.max()-img.min() < 50:
-                #pix_x.apeend()
-                #pix_y.append()
-                #continue
-            print(self.pic_dir+fl1)
-            img = np.flipud(img)
-            ret, nimg = cv2.threshold(img, 50, 255, cv2.THRESH_BINARY)
-            contours, hierarchy = cv2.findContours(nimg, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-            stars = []
-            areas = []
-            for cnt in contours:
-                M = cv2.moments(cnt)
-                if M['m00'] != 0:
-                    cx = int(M['m10']/M['m00'])
-                    cy = int(M['m01']/M['m00'])
-                    stars.append(np.array([[cx,cy]], dtype='int32'))
-                else:
-                    stars.append(np.array([cnt[0][0]], dtype='int32'))
-                areas.append(cv2.contourArea(cnt))
-            areasarr = np.array(areas)
-            idx = areasarr.argmax()
-            plt.imshow(np.flipud(cv2.imread(self.pic_dir+fl1)), vmin=0, vmax=256)
-            plt.xlim(0, npix_x)
-            plt.ylim(0, npix_y)
-            plt.plot(stars[idx][0][0], stars[idx][0][1], marker='+')
-            plt.savefig(self.data_dir+os.path.splitext(os.path.basename(self.pic_dir+fl1))[0]+'.mark.png')
-            plt.close()
-            pix_x.append(stars[idx][0][0])
-            pix_y.append(stars[idx][0][1])
+            try:
+                img = cv2.imread(self.pic_dir+fl1, cv2.IMREAD_GRAYSCALE)
+                #if img.max()-img.min() < 50:
+                    #pix_x.apeend()
+                    #pix_y.append()
+                    #continue
+                print(self.pic_dir+fl1)
+                img = np.flipud(img)
+                ret, nimg = cv2.threshold(img, 50, 255, cv2.THRESH_BINARY)
+                contours, hierarchy = cv2.findContours(nimg, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+                stars = []
+                areas = []
+                for cnt in contours:
+                    M = cv2.moments(cnt)
+                    if M['m00'] != 0:
+                        cx = int(M['m10']/M['m00'])
+                        cy = int(M['m01']/M['m00'])
+                        stars.append(np.array([[cx,cy]], dtype='int32'))
+                    else:
+                        stars.append(np.array([cnt[0][0]], dtype='int32'))
+                    areas.append(cv2.contourArea(cnt))
+
+                areasarr = np.array(areas)
+                idx = areasarr.argmax()
+                plt.imshow(np.flipud(cv2.imread(self.pic_dir+fl1)), vmin=0, vmax=256)
+                plt.xlim(0, npix_x)
+                plt.ylim(0, npix_y)
+                plt.plot(stars[idx][0][0], stars[idx][0][1], marker='+')
+                plt.savefig(self.data_dir+os.path.splitext(os.path.basename(self.pic_dir+fl1))[0]+'.mark.png')
+                plt.close()
+                pix_x.append(stars[idx][0][0])
+                pix_y.append(stars[idx][0][1])
+            except:
+                pix_x.append(numpy.nan)
+                pix_y.append(numpy.nan)
+                print("ERROR : can not find star position")
+                print(fl1)
         pix = np.array([pix_x, pix_y]).T
 
         dpix_x = (pix[:,0] - npix_x//2)
@@ -266,11 +265,11 @@ class optical_pointing(object):
         d_x = dpix_x * theta_x_pix   #[arcsec]
         d_y = dpix_y * theta_x_pix   #[arcsec]
 
-        d_x_sigma = np.std(d_x)
-        d_y_sigma = np.std(d_y)
+        d_x_sigma = np.nanstd(d_x)
+        d_y_sigma = np.nanstd(d_y)
 
-        d_x_rms = np.sqrt(np.sum(d_x**2)/len(d_x))
-        d_y_rms = np.sqrt(np.sum(d_y**2)/len(d_y))
+        d_x_rms = np.sqrt(np.nansum(d_x**2)/len(d_x))
+        d_y_rms = np.sqrt(np.nansum(d_y**2)/len(d_y))
 
         d_rms = np.sqrt(d_x_rms**2 + d_y_rms**2)
         d_sigma = np.sqrt(d_x_sigma**2 + d_y_sigma**2)
@@ -279,7 +278,7 @@ class optical_pointing(object):
         print('sigma = %0.2f [arcsec]'%d_sigma)
 
         p_array = np.array([Az, El, d_x, d_y]).T
-        np.savetxt(self.data_dir + 'Az_El_dAz_dEl.dat', p_array, fmt='%i', delimiter=', ')
+        np.savetxt(self.data_dir + 'Az_El_dAz_dEl.dat', p_array, delimiter=', ')
         self.scatter_plot(Az, El, ('Az', 'degree'), ('El', 'degree'), d_rms)
         self.scatter_plot(Az, d_x, ('Az', 'degree'), ('dAz', 'arcsec'), d_rms)
         self.scatter_plot(Az, d_y, ('Az', 'degree'), ('dEl', 'arcsec'), d_rms)
@@ -325,7 +324,7 @@ class optical_pointing(object):
 
 
     def fitting(self):
-        txt = np.loadtxt(fname=self.data_dir+'Az_El_dAz_dEl.dat', dtype='int', delimiter=',').T
+        txt = np.loadtxt(fname=self.data_dir+'Az_El_dAz_dEl.dat', delimiter=',').T
         Az = txt[0]
         El = txt[1]
         dAz = txt[2]
