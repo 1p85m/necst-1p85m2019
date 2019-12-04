@@ -161,7 +161,7 @@ class optical_pointing(object):
                 nowtimestamp = datetime.datetime.today()
                 timestr = nowtimestamp.strftime('%Y%m%d_%H%M%S')
                 savename = timestr +".JPG"
-                time.sleep(1)
+                time.sleep(3)
                 savefile = self.m100_path + start_timestamp.strftime('%Y%m%d_%H%M%S') + "/" +savename
                 pre_az = self.antenna.get_az()
                 pre_el = self.antenna.get_el()
@@ -294,8 +294,9 @@ class optical_pointing(object):
             plt.axes().set_aspect('equal', 'datalim')
             X, Y = [], []
             for num in np.linspace(-180,180,360):
-                X.append(5. * math.sin(math.radians(num)))
-                Y.append(5. * math.cos(math.radians(num)))
+                r = 5. #[arcsec]
+                X.append(r * math.sin(math.radians(num)))
+                Y.append(r * math.cos(math.radians(num)))
             plt.plot(X, Y)
         elif xlabel[0] == 'Az' and ylabel[0] == 'El':
             plt.title('%s_vs_%s'%(xlabel[0], ylabel[0]))
@@ -381,9 +382,9 @@ class optical_pointing(object):
         a1 = float(kisa[0])+dkisa[0]
         a2 = float(kisa[1])+dkisa[1]
         a3 = float(kisa[2])+dkisa[2]
-        b1 = float(kisa[3])+dkisa[3]
-        b2 = float(kisa[4])+dkisa[4]
-        b3 = float(kisa[5])+dkisa[5]
+        b1 = float(kisa[3])-dkisa[3]
+        b2 = float(kisa[4])-dkisa[4]
+        b3 = float(kisa[5])-dkisa[5]
         g1 = float(kisa[6])+dkisa[6]
         fkisa.close()
 
