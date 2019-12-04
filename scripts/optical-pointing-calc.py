@@ -33,8 +33,8 @@ class optical_pointing(object):
         self.data_path = "/home/exito/data/operation/"+name+"/"
         self.pic_path  = "/home/exito/data/operation/"+name+"/picture/"
 
-        self.pic_dir = self.data_path + data_name + '/'
-        self.data_dir = self.pic_path + data_name + '/'
+        self.pic_dir = self.pic_path + data_name + '/'
+        self.data_dir = self.data_path + data_name + '/'
 
         self.filepath = self.data_dir + data_name + ".dat"
         pass
