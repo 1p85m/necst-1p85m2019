@@ -161,7 +161,7 @@ class optical_pointing(object):
                 nowtimestamp = datetime.datetime.today()
                 timestr = nowtimestamp.strftime('%Y%m%d_%H%M%S')
                 savename = timestr +".JPG"
-
+                time.sleep(1)
                 savefile = self.m100_path + start_timestamp.strftime('%Y%m%d_%H%M%S') + "/" +savename
                 pre_az = self.antenna.get_az()
                 pre_el = self.antenna.get_el()
