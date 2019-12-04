@@ -79,7 +79,7 @@ class optical_pointing(object):
                 idx = areasarr.argmax()
                 plt.imshow(np.flipud(cv2.imread(self.pic_dir+fl1)), vmin=0, vmax=256)
                 plt.xlim(0, npix_x)
-                plt.ylim(0, npix_y)l
+                plt.ylim(0, npix_y)
                 plt.plot(stars[idx][0][0], stars[idx][0][1], marker='+')
                 plt.savefig(self.data_dir+os.path.splitext(os.path.basename(self.pic_dir+fl1))[0]+'.mark.png')
                 plt.close()
