@@ -103,11 +103,11 @@ class optical_pointing(object):
         d_x = dpix_x * theta_x_pix   #[arcsec]
         d_y = dpix_y * theta_x_pix   #[arcsec]
 
-        d_x_sigma = np.std(d_x)
-        d_y_sigma = np.std(d_y)
+        d_x_sigma = np.nanstd(d_x)
+        d_y_sigma = np.nanstd(d_y)
 
-        d_x_rms = np.sqrt(np.sum(d_x**2)/len(d_x))
-        d_y_rms = np.sqrt(np.sum(d_y**2)/len(d_y))
+        d_x_rms = np.sqrt(np.nansum(d_x**2)/len(d_x))
+        d_y_rms = np.sqrt(np.nansum(d_y**2)/len(d_y))
 
         d_rms = np.sqrt(d_x_rms**2 + d_y_rms**2)
         d_sigma = np.sqrt(d_x_sigma**2 + d_y_sigma**2)
