@@ -201,15 +201,15 @@ class optical_pointing(object):
 
         return filepath
 
-    def calc_daz_del(self):
+    def calc_daz_del(self,filepath):
         npix_x = 6000   #number of pixcels
         npix_y = 4000
         sensor_x = 22.3   #sensor size[mm]
         f = 500.   #shoten kyori[mm]
-        fl = np.loadtxt(self.filepath,dtype="unicode").T[2].tolist()
-        _Az = np.loadtxt(self.filepath,dtype="unicode").T[0].tolist()
+        fl = np.loadtxt(filepath,dtype="unicode").T[2].tolist()
+        _Az = np.loadtxt(filepath,dtype="unicode").T[0].tolist()
         Az = [float(i) for i in _Az]
-        _El = np.loadtxt(self.filepath,dtype="unicode").T[1].tolist()
+        _El = np.loadtxt(filepath,dtype="unicode").T[1].tolist()
         El = [float(i) for i in _El]
         pix_x = []
         pix_y = []
