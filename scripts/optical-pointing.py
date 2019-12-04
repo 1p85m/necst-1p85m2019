@@ -382,9 +382,9 @@ class optical_pointing(object):
         a1 = float(kisa[0])+dkisa[0]
         a2 = float(kisa[1])+dkisa[1]
         a3 = float(kisa[2])+dkisa[2]
-        b1 = float(kisa[3])-dkisa[3]
-        b2 = float(kisa[4])-dkisa[4]
-        b3 = float(kisa[5])-dkisa[5]
+        b1 = float(kisa[3])+dkisa[3]
+        b2 = float(kisa[4])+dkisa[4]
+        b3 = float(kisa[5])+dkisa[5]
         g1 = float(kisa[6])+dkisa[6]
         fkisa.close()
 
