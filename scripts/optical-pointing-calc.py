@@ -207,23 +207,28 @@ class optical_pointing(object):
         dkisa_list.append(b3)
         dkisa_list.append(g1)
 
-        dkisa_array = np.array([a1_deg, a2_deg, a3_deg, b1_deg, b2_deg, b3_deg, g1_deg]).T
+        #dkisa_array = np.array([a1_deg, a2_deg, a3_deg, b1_deg, b2_deg, b3_deg, g1_deg]).T
+        dkisa_array = np.array([a1, a2, a3, b1, b2, b3, g1]).T
 
-        np.savetxt(self.data_dir +'dkisa.dat', dkisa_array, fmt='%s')
+        #np.savetxt(self.data_dir +'dkisa.dat', dkisa_array, fmt='%s')
+        np.savetxt(self.data_dir +'dkisa.dat', dkisa_array)
+
         return dkisa_list
 
     def apply_kisa(self,dkisa):
         fkisa = open(self.kisa_file,"r")
         kisa = fkisa.readlines()
+        fdkisa = open(self.data_dir +'dkisa.dat',"r")
+        dkisa = fdkisa.readlines()
         print(kisa)
         print(dkisa)
-        a1 = float(kisa[0])+dkisa[0]
-        a2 = float(kisa[1])+dkisa[1]
-        a3 = float(kisa[2])+dkisa[2]
-        b1 = float(kisa[3])+dkisa[3]
-        b2 = float(kisa[4])+dkisa[4]
-        b3 = float(kisa[5])+dkisa[5]
-        g1 = float(kisa[6])+dkisa[6]
+        a1 = float(kisa[0])+float(dkisa[0])
+        a2 = float(kisa[1])+float(dkisa[1])
+        a3 = float(kisa[2])+float(dkisa[2])
+        b1 = float(kisa[3])+float(dkisa[3])
+        b2 = float(kisa[4])+float(dkisa[4])
+        b3 = float(kisa[5])+float(dkisa[5])
+        g1 = float(kisa[6])+float(dkisa[6])
         fkisa.close()
 
         old_kisa_file = self.data_dir + "old_kisa.dat"
