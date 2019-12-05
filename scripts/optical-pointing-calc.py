@@ -284,4 +284,4 @@ if __name__ == "__main__":
     opt = optical_pointing()
     #opt.calc_daz_del()
     dkisa = opt.fitting()
-    #opt.apply_kisa(dkisa)
+    opt.apply_kisa(dkisa)
