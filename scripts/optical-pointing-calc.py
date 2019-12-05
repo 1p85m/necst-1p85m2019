@@ -184,8 +184,8 @@ class optical_pointing(object):
         b2 = self.b2
 
         print(a1)
-        print(a1)
-        print(a1)
+        print(a2)
+        print(a3)
         print(b1)
         print(b2)
         print(b3)
