@@ -187,7 +187,7 @@ class optical_pointing(object):
         print(b1)
         print(b2)
         print(b3)
-        print(b4)
+        print(g1)
 
         a1_deg = ' a1 = ' + str(a1/3600.) + ' [degree]'
         a2_deg = ' a2 = ' + str(a2/3600.) + ' [degree]'
