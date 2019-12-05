@@ -158,7 +158,7 @@ class optical_pointing(object):
 
     def f_az(self, X, a1, a2, a3):
         Az, El = X
-        return (a1 * np.tan(El*(np.pi/180.))) + (a2 / np.cos(El*(np.pi/180.))) + a3 + ((self.b1 * np.sin(Az*(np.pi/180.)) * np.tan(El*(np.pi/180.)))  - self.b2 * np.cos(Az*(np.pi/180.)) * np.tan(El*(np.pi/180.))))
+        return (a1 * np.sin(El*(np.pi/180.) / np.cos(El*(np.pi/180.)) + (a2 / np.cos(El*(np.pi/180.))) + a3 + self.b1 * np.sin(Az*(np.pi/180.)) * np.sin(El*(np.pi/180.) / np.cos(El*(np.pi/180.)) - self.b2 * np.cos(Az*(np.pi/180.)) * np.sin(El*(np.pi/180.))) / np.cos(El*(np.pi/180.)))
 
 
     def fitting(self):
