@@ -13,12 +13,13 @@ import datetime
 
 sys.path.append("../../necst-core/scripts")
 
-import controller
+
 import core_controller
+import controller_1p85m2019
 
 rospy.init_node(name)
 
-sis = controller.sis()
+sis = controller_1p85m2019.sis()
 logger = core_controller.logger()
 
 date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
