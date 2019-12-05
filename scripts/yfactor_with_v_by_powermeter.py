@@ -42,7 +42,11 @@ print(file_name_cold)
 
 time.sleep(1)
 input('READY HOT MEASUREMENT? PRESS ENTER!!')
-sis.set_vgap(0)
+sis.set_v(float(initial_voltage),"lhcp","lsb")
+sis.set_v(float(initial_voltage),"lhcp","usb")
+sis.set_v(float(initial_voltage),"rhcp","lsb")
+sis.set_v(float(initial_voltage),"rhcp","usb")
+time.sleep(1)
 logger.start(file_name_hot)
 #####measure y-factor#####
 
@@ -58,7 +62,12 @@ logger.stop()
 
 
 input('READY COLD MEASUREMENT? PRESS ENTER!!')
-sis.set_vgap(0)
+
+sis.set_v(float(initial_voltage),"lhcp","lsb")
+sis.set_v(float(initial_voltage),"lhcp","usb")
+sis.set_v(float(initial_voltage),"rhcp","lsb")
+sis.set_v(float(initial_voltage),"rhcp","usb")
+time.sleep(1)
 logger.start(file_name_cold)
 for v in range(roop+1):
     v=initial_voltage+ step*i
