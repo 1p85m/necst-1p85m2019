@@ -169,7 +169,7 @@ class optical_pointing(object):
         dEl = txt[3]
 
         print(111)
-        fit_dEl = curve_fit(self.f_el, (Az, El), dEl,check_finite=False,p0=[0])
+        fit_dEl = curve_fit(self.f_el, (Az, El), dEl,check_finite=False,p0=[0,0,0])
         self.b1 = fit_dEl[0][0]
         self.b2 = fit_dEl[0][1]
         b3 = fit_dEl[0][2]
