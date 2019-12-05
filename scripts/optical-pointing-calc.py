@@ -154,11 +154,7 @@ class optical_pointing(object):
 
     def f_el(self, X, b1, b2, b3, g1):
         Az, El = X
-        #return (b1 * np.cos(Az*(np.pi/180.))) + (b2 * np.sin(Az*(np.pi/180.))) + b3 + (g1 * El)
-        Az = math.radians(Az)
-        El = math.radians(El)
-        return (b1 * math.cos(Az)) + (b2 * math.sin(Az)) + b3 + (g1 * El)
-
+        return (b1 * np.cos(Az*(np.pi/180.))) + (b2 * np.sin(Az*(np.pi/180.))) + b3 + (g1 * El)
 
     def f_az(self, X, a1, a2, a3):
         Az, El = X
