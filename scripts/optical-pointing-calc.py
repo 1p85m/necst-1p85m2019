@@ -152,8 +152,8 @@ class optical_pointing(object):
         plt.grid()
         plt.savefig(self.data_dir + '%s_vs_%s.png'%(xlabel[0], ylabel[0]))
 
-    def f_az(self, X, b1, b2, b3, g1):
-        Az, El = X
+    def f_az(self, Az, El, b1, b2, b3, g1):
+        #Az, El = X
         return (b1 * np.cos(Az*(np.pi/180.))) + (b2 * np.sin(Az*(np.pi/180.))) + b3 + (g1 * El)
 
     def f_el(self, X, a1, a2, a3):
@@ -168,7 +168,7 @@ class optical_pointing(object):
         dAz = txt[2]
         dEl = txt[3]
 
-        fit_dEl = curve_fit(self.f_az, (Az, El), dEl,check_finite=False)
+        fit_dEl = curve_fit(self.f_az, Az, El, dEl,check_finite=False)
         self.b1 = fit_dEl[0][0]
         self.b2 = fit_dEl[0][1]
         b3 = fit_dEl[0][2]
