@@ -13,7 +13,6 @@ import datetime
 sys.path.append("../../necst-core/scripts")
 sys.path.append("../../necst-1p85m2019/scripts")
 
-import controller
 import core_controller
 import controller_1p85m2019
 
