@@ -213,6 +213,14 @@ class optical_pointing(object):
         #np.savetxt(self.data_dir +'dkisa.dat', dkisa_array, fmt='%s')
         np.savetxt(self.data_dir +'dkisa.dat', dkisa_array)
 
+        plt.plot((Az, El), dEl, 'o')
+        plt.plot((Az, El), fit_dEl, '-')
+        plt.show()
+
+        plt.plot((Az, El), dAz, 'o')
+        plt.plot((Az, El), fit_dAz, '-')
+        plt.show()
+
         return dkisa_list
 
     def apply_kisa(self,dkisa):
@@ -270,6 +278,6 @@ class optical_pointing(object):
 
 if __name__ == "__main__":
     opt = optical_pointing()
-    opt.calc_daz_del()
+    #opt.calc_daz_del()
     dkisa = opt.fitting()
     #opt.apply_kisa(dkisa)
