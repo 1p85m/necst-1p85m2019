@@ -22,14 +22,10 @@ rospy.init_node(name)
 sis = controller_1p85m2019.sis()
 logger = core_controller.logger()
 
-date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
-file_name = name + '/' + date + '.necstdb'
-print(file_name)
-
 
 initial_voltage = 0.  # mV
-final_voltage   = 12. # mV
-step            = 0.1 # mV
+final_voltage   = 10. # mV
+step            = 0.03 # mV
 roop = int((final_voltage - initial_voltage) / step)
 
 
@@ -79,4 +75,7 @@ for i in range(roop+1):
     continue
 logger.stop()
 
-sis.set_v(0)
+sis.set_v(0,"lhcp","lsb")
+sis.set_v(0,"lhcp","usb")
+sis.set_v(0,"rhcp","lsb")
+sis.set_v(0,"rhcp","usb")
