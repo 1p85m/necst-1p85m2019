@@ -163,6 +163,7 @@ class optical_pointing(object):
 
     def fitting(self):
         txt = np.loadtxt(fname=self.data_dir+'Az_El_dAz_dEl.dat', delimiter=',').T
+        txt[:, ~np.isnan(txt).any(axis=0)]
         Az = txt[0]
         El = txt[1]
         dAz = txt[2]
