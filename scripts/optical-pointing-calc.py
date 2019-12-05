@@ -181,6 +181,14 @@ class optical_pointing(object):
         b1 = self.b1
         b2 = self.b2
 
+        print(a1)
+        print(a1)
+        print(a1)
+        print(b1)
+        print(b2)
+        print(b3)
+        print(b4)
+
         a1_deg = ' a1 = ' + str(a1/3600.) + ' [degree]'
         a2_deg = ' a2 = ' + str(a2/3600.) + ' [degree]'
         a3_deg = ' a3 = ' + str(a3/3600.) + ' [degree]'
@@ -213,13 +221,6 @@ class optical_pointing(object):
         #np.savetxt(self.data_dir +'dkisa.dat', dkisa_array, fmt='%s')
         np.savetxt(self.data_dir +'dkisa.dat', dkisa_array)
 
-        plt.plot((Az, El), dEl, 'o')
-        plt.plot((Az, El), fit_dEl, '-')
-        plt.show()
-
-        plt.plot((Az, El), dAz, 'o')
-        plt.plot((Az, El), fit_dAz, '-')
-        plt.show()
 
         return dkisa_list
 
