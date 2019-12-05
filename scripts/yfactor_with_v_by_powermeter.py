@@ -59,7 +59,7 @@ logger.stop()
 input('READY COLD MEASUREMENT? PRESS ENTER!!')
 sis.set_vgap(0)
 logger.start(file_name_cold)
-ffor v in range(roop+1):
+for v in range(roop+1):
     v=initial_voltage+ step*i
     sis.set_v(float(v),"lhcp","lsb")
     sis.set_v(float(v),"lhcp","usb")
