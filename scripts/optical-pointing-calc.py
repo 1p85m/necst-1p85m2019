@@ -26,6 +26,7 @@ class optical_pointing(object):
 
     def __init__(self):
         data_name = "20191205_165413"
+        data_name = "20191204_201804"
         self.catalog_file = "/home/exito/ros/src/necst-1p85m2019/lib/bsc5.dat"
         self.kisa_file    = "/home/exito/ros/src/necst-1p85m2019/lib/kisa.dat"
 
