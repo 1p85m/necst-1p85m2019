@@ -265,7 +265,7 @@
 <node pkg = "necst-1p85m2019"
       name = "adios_1p85m2019_dev_att4_writer"
       type = "relay.py">
-      <remap from = '/dev/adios/__IP__/att_cmd' to = '/dev/adios/ip_192_168_100_25/att1_cmd'/>
+      <remap from = '/dev/adios/__ip__/att_cmd' to = '/dev/adios/ip_192_168_100_25/att1_cmd'/>
       <remap from = '/1p85m/adios/ch/att_cmd' to = '/1p85m/adios/ch4/att_cmd'/>
   <param name = "config_file"
          value = "$(find necst-1p85m2019)/node_conf/adios_1p85m2019_dev_att_writer.conf" />
@@ -274,7 +274,7 @@
 <node pkg = "necst-1p85m2019"
       name = "adios_1p85m2019_dev_att3_writer"
       type = "relay.py">
-      <remap from = '/dev/adios/__IP__/att_cmd' to = '/dev/adios/ip_192_168_100_25/att2_cmd'/>
+      <remap from = '/dev/adios/__ip__/att_cmd' to = '/dev/adios/ip_192_168_100_25/att2_cmd'/>
       <remap from = '/1p85m/adios/ch/att_cmd' to = '/1p85m/adios/ch3/att_cmd'/>
   <param name = "config_file"
          value = "$(find necst-1p85m2019)/node_conf/adios_1p85m2019_dev_att_writer.conf" />
@@ -283,7 +283,7 @@
 <node pkg = "necst-1p85m2019"
       name = "adios_1p85m2019_dev_att2_writer"
       type = "relay.py">
-      <remap from = '/dev/adios/__IP__/att_cmd' to = '/dev/adios/ip_192_168_100_26/att1_cmd'/>
+      <remap from = '/dev/adios/__ip__/att_cmd' to = '/dev/adios/ip_192_168_100_26/att1_cmd'/>
       <remap from = '/1p85m/adios/ch/att_cmd' to = '/1p85m/adios/ch2/att_cmd'/>
   <param name = "config_file"
          value = "$(find necst-1p85m2019)/node_conf/adios_1p85m2019_dev_att_writer.conf" />
@@ -292,7 +292,7 @@
 <node pkg = "necst-1p85m2019"
       name = "adios_1p85m2019_dev_att1_writer"
       type = "relay.py">
-      <remap from = '/dev/adios/__IP__/att_cmd' to = '/dev/adios/ip_192_168_100_26/att2_cmd'/>
+      <remap from = '/dev/adios/__ip__/att_cmd' to = '/dev/adios/ip_192_168_100_26/att2_cmd'/>
       <remap from = '/1p85m/adios/ch/att_cmd' to = '/1p85m/adios/ch1/att_cmd'/>
   <param name = "config_file"
          value = "$(find necst-1p85m2019)/node_conf/adios_1p85m2019_dev_att_writer.conf" />
@@ -302,7 +302,7 @@
 <node pkg = "necst-1p85m2019"
       name = "adios_1p85m2019_dev_att4_reader"
       type = "relay.py">
-      <remap from = '/dev/adios/__IP__/att' to = '/dev/adios/ip_192_168_100_25/att1'/>
+      <remap from = '/dev/adios/__ip__/att' to = '/dev/adios/ip_192_168_100_25/att1'/>
       <remap from = '/1p85m/adios/ch/att' to = '/1p85m/adios/ch4/att'/>
   <param name = "config_file"
          value = "$(find necst-1p85m2019)/node_conf/adios_1p85m2019_dev_att_reader.conf" />
@@ -311,7 +311,7 @@
 <node pkg = "necst-1p85m2019"
       name = "adios_1p85m2019_dev_att3_reader"
       type = "relay.py">
-      <remap from = '/dev/adios/__IP__/att' to = '/dev/adios/ip_192_168_100_25/att2'/>
+      <remap from = '/dev/adios/__ip__/att' to = '/dev/adios/ip_192_168_100_25/att2'/>
       <remap from = '/1p85m/adios/ch/att' to = '/1p85m/adios/ch3/att'/>
   <param name = "config_file"
          value = "$(find necst-1p85m2019)/node_conf/adios_1p85m2019_dev_att_reader.conf" />
@@ -320,7 +320,7 @@
 <node pkg = "necst-1p85m2019"
       name = "adios_1p85m2019_dev_att2_reader"
       type = "relay.py">
-      <remap from = '/dev/adios/__IP__/att' to = '/dev/adios/ip_192_168_100_26/att1'/>
+      <remap from = '/dev/adios/__ip__/att' to = '/dev/adios/ip_192_168_100_26/att1'/>
       <remap from = '/1p85m/adios/ch/att' to = '/1p85m/adios/ch2/att'/>
       <param name = "config_file"
              value = "$(find necst-1p85m2019)/node_conf/adios_1p85m2019_dev_att_reader.conf" />
@@ -329,7 +329,7 @@
 <node pkg = "necst-1p85m2019"
       name = "adios_1p85m2019_dev_att1_reader"
       type = "relay.py">
-      <remap from = '/dev/adios/__IP__/att' to = '/dev/adios/ip_192_168_100_26/att2'/>
+      <remap from = '/dev/adios/__ip__/att' to = '/dev/adios/ip_192_168_100_26/att2'/>
       <remap from = '/1p85m/adios/ch/att' to = '/1p85m/adios/ch1/att'/>
       <param name = "config_file"
              value = "$(find necst-1p85m2019)/node_conf/adios_1p85m2019_dev_att_reader.conf" />
