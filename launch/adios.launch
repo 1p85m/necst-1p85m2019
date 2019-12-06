@@ -10,7 +10,6 @@
     <remap from = "/dev/adios/__IP__/att1" to = "/dev/adios/ip_192_168_100_26/att1"/>
     <remap from = "/dev/adios/__IP__/att2" to = "/dev/adios/ip_192_168_100_26/att2"/>
 
-  </node>
 
   <node pkg = "rospkg-ogameasure"
         name = "adios"
