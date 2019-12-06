@@ -2,10 +2,10 @@
 
 name = 'adios_att_set'
 
-att1 = 12
-att2 = 12
+att1 = 10
+att2 = 11
 att3 = 12
-att4 = 12
+att4 = 13
 
 import sys
 import rospy
