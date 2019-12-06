@@ -1,7 +1,7 @@
 <launch>
 
   <node pkg = "rospkg-ogameasure"
-        name = "adios"
+        name = "adios2"
         type = "adios.py">
         <param name="~host" value="192.168.100.26" />
         <param name="~port" value="6001" />
@@ -10,9 +10,10 @@
     <remap from = "/dev/adios/__IP__/att1" to = "/dev/adios/ip_192_168_100_26/att1"/>
     <remap from = "/dev/adios/__IP__/att2" to = "/dev/adios/ip_192_168_100_26/att2"/>
 
+  </node>
 
   <node pkg = "rospkg-ogameasure"
-        name = "adios"
+        name = "adios1"
         type = "adios.py">
         <param name="~host" value="192.168.100.25" />
         <param name="~port" value="6001" />
