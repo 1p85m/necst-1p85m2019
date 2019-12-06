@@ -161,3 +161,31 @@ class sglo(object):
         data_class = std_msgs.msg.String
         self.make_pub.publish(topic_dict[side_band], data_class, msg=cmd)
         return
+
+class adios_att(object):
+    def __init__(self):
+        self.make_pub = make_pub()
+
+    def set_att_ch1(self, cmd):
+        data_class = std_msgs.msg.Int32
+        topic_name = "/1p85m/adios/ch1/att_cmd"
+        self.make_pub.publish(topic_name, data_class, msg=cmd)
+        return
+
+    def set_att_ch2(self, cmd):
+        data_class = std_msgs.msg.Int32
+        topic_name = "/1p85m/adios/ch2/att_cmd"
+        self.make_pub.publish(topic_name, data_class, msg=cmd)
+        return
+
+    def set_att_ch3(self, cmd):
+        data_class = std_msgs.msg.Int32
+        topic_name = "/1p85m/adios/ch3/att_cmd"
+        self.make_pub.publish(topic_name, data_class, msg=cmd)
+        return
+
+    def set_att_ch4(self, cmd):
+        data_class = std_msgs.msg.Int32
+        topic_name = "/1p85m/adios/ch4/att_cmd"
+        self.make_pub.publish(topic_name, data_class, msg=cmd)
+        return
