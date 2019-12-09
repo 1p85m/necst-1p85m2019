@@ -440,7 +440,7 @@ class optical_pointing(object):
 if __name__ == "__main__":
     opt = optical_pointing()
     filep = opt.move_target()
-    opt.calc_daz_del(filep)
-    dkisa = opt.fitting()
-    opt.apply_kisa(dkisa)
+    #opt.calc_daz_del(filep)
+    #dkisa = opt.fitting()
+    #opt.apply_kisa(dkisa)
     opt.move_home()
