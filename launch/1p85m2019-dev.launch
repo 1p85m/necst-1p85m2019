@@ -326,7 +326,7 @@
              value = "$(find necst-1p85m2019)/node_conf/adios_1p85m2019_dev_att_reader.conf" />
 </node>
 
-<node pkg = "necst-1p85m2019"
+<<node pkg = "necst-1p85m2019"
       name = "adios_1p85m2019_dev_att1_reader"
       type = "relay.py">
       <remap from = '/dev/adios/__ip__/att' to = '/dev/adios/ip_192_168_100_26/att2'/>
@@ -335,4 +335,32 @@
              value = "$(find necst-1p85m2019)/node_conf/adios_1p85m2019_dev_att_reader.conf" />
 </node>
 
-</launch>
+<node pkg = "necst-1p85m2019"
+      name = "ondo_1p85m2019_dev_temp_reader"
+      type = "relay.py">
+      <remap from = '/dev/TandD/__port__/temperature' to = '/dev/TandD/ttyUSB2/temperature'/>
+      <remap from = '/1p85m/TandD/tr_73u/temperature' to = '/1p85m/TandD/container/temperature'/>
+      <param name = "config_file"
+             value = "$(find necst-1p85m2019)/node_conf/ondo_1p85m2019_dev_temp_reader.conf" />
+</node>
+
+<node pkg = "necst-1p85m2019"
+      name = "ondo_1p85m2019_dev_humid_reader"
+      type = "relay.py">
+      <remap from = '/dev/TandD/__port__/humidity' to = '/dev/TandD/ttyUSB2/humidity'/>
+      <remap from = '/1p85m/TandD/tr_73u/humidity' to = '/1p85m/TandD/container/humidity'/>
+      <param name = "config_file"
+             value = "$(find necst-1p85m2019)/node_conf/ondo_1p85m2019_dev_humid_reader.conf" />
+</node>
+
+
+<node pkg = "necst-1p85m2019"
+      name = "ondo_1p85m2019_dev_press_reader"
+      type = "relay.py">
+      <remap from = '/dev/TandD/__port__/pressure' to = '/dev/TandD/ttyUSB2/pressure'/>
+      <remap from = '/1p85m/TandD/tr_73u/pressure' to = '/1p85m/TandD/container/pressure'/>
+      <param name = "config_file"
+             value = "$(find necst-1p85m2019)/node_conf/ondo_1p85m2019_dev_press_reader.conf" />
+</node>
+
+/launch>
