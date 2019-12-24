@@ -189,3 +189,23 @@ class adios_att(object):
         topic_name = "/1p85m/adios/ch4/att_cmd"
         self.make_pub.publish(topic_name, data_class, msg=cmd)
         return
+
+
+class load(object):
+    def __init__(self):
+        self.make_pub = make_pub()
+        pass
+
+    def move_sky(self):
+        cmd = "sky"
+        data_class = std_msgs.msg.String
+        topic_name = "/1p85m/load/position_cmd"
+        self.make_pub.publish(topic_name, data_class, msg=cmd)
+        pass
+
+    def move_hot(self):
+        cmd = "hot"
+        data_class = std_msgs.msg.String
+        topic_name = "/1p85m/load/position_cmd"
+        self.make_pub.publish(topic_name, data_class, msg=cmd)
+        pass
