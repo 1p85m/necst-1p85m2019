@@ -326,7 +326,7 @@
              value = "$(find necst-1p85m2019)/node_conf/adios_1p85m2019_dev_att_reader.conf" />
 </node>
 
-<<node pkg = "necst-1p85m2019"
+<node pkg = "necst-1p85m2019"
       name = "adios_1p85m2019_dev_att1_reader"
       type = "relay.py">
       <remap from = '/dev/adios/__ip__/att' to = '/dev/adios/ip_192_168_100_26/att2'/>
@@ -363,4 +363,4 @@
              value = "$(find necst-1p85m2019)/node_conf/ondo_1p85m2019_dev_press_reader.conf" />
 </node>
 
-/launch>
+</launch>
