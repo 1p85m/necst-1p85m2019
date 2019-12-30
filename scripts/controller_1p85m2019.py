@@ -9,10 +9,12 @@ import std_msgs.msg
 
 
 class controller(object):
-
     def __init__(self):
         self.sis = sis()
         self.sglo = sglo()
+        self.camera = camera()
+        self.adios_att = adios_att()
+        self.load = load()
 
 
 class make_pub(object):
@@ -189,6 +191,23 @@ class adios_att(object):
         topic_name = "/1p85m/adios/ch4/att_cmd"
         self.make_pub.publish(topic_name, data_class, msg=cmd)
         return
+
+
+class camera(object):
+    def __init__(self):
+        self.make_pub = make_pub()
+
+    def capture(self,savepath):
+        """
+        msg
+        - type : String
+
+        """
+        topic_name = '/dev/m100/capture/savepath'
+        data_class = std_msgs.msg.String
+        cmd = savepath
+        self.make_pub.publish(topic_name, data_class, msg = cmd)
+        pass
 
 
 class load(object):

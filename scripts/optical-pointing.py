@@ -12,6 +12,8 @@ import shutil
 import matplotlib.pyplot as plt
 sys.path.append("/home/exito/ros/src/necst-telescope/scripts")
 import telescope_controller
+sys.path.append("/home/exito/ros/src/necst-1p85m2019/scripts")
+import controller_1p85m2019
 sys.path.append("/home/exito/ros/src/necst-core/scripts")
 import core_controller
 import rospy
@@ -33,7 +35,7 @@ class optical_pointing(object):
         self.data_path = "/home/exito/data/operation/"+name+"/"
         self.pic_path  = "/home/exito/data/operation/"+name+"/picture/"
 
-        self.camera = telescope_controller.camera()
+        self.camera = controller_1p85m2019.camera()
         self.antenna = telescope_controller.antenna()
         self.logger = core_controller.logger()
         pass
