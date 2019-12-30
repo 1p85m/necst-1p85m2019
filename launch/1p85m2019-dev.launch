@@ -363,4 +363,18 @@
              value = "$(find necst-1p85m2019)/node_conf/ondo_1p85m2019_dev_press_reader.conf" />
 </node>
 
+<node pkg = "necst-1p85m2019"
+      name = "load_1p85m_dev_writer"
+      type = "relay.py">
+      <param name = "config_file"
+             value = "$(find necst-1p85m2019)/node_conf/load_1p85m_dev_writer.conf" />
+</node>
+
+<node pkg = "necst-1p85m2019"
+      name = "load_1p85m_dev_reader"
+      type = "relay.py">
+      <param name = "config_file"
+             value = "$(find necst-1p85m2019)/node_conf/load_1p85m_dev_reader.conf" />
+</node>
+
 </launch>
