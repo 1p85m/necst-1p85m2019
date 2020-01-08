@@ -30,7 +30,7 @@ el_cmds = [20, 24, 30, 40, 70]
 
 print("Moving az: "+str(az)+ ", el: "+str(el))
 antenna.move_azel(float(az),float(el))
-time.sleep(10)
+antenna.tracking_check()
 
 logger.start(file_name)
 
@@ -39,7 +39,7 @@ time.sleep(5)
 load.move_sky()
 time.sleep(5)
 
-for el_cmds in el_cmds:
+for el_cmd in el_cmds:
     print("Moving az: "+str(az)+ ", el: "+str(el_cmd))
     antenna.move_azel(float(az),float(el_cmd))
     antenna.tracking_check()
