@@ -42,6 +42,7 @@ time.sleep(5)
 for el_cmd in el_cmds:
     print("Moving az: "+str(az)+ ", el: "+str(el_cmd))
     antenna.move_azel(float(az),float(el_cmd))
+    timr.sleep(2)
     antenna.tracking_check()
     time.sleep(1)
     continue
