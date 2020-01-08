@@ -35,21 +35,22 @@ time.sleep(10)
 logger.start(file_name)
 
 load.move_hot()
-time.sleep(2)
+time.sleep(5)
 load.move_sky()
-time.sleep(2)
+time.sleep(5)
 
 for el_cmds in el_cmds:
     print("Moving az: "+str(az)+ ", el: "+str(el_cmd))
     antenna.move_azel(float(az),float(el_cmd))
-    time.sleep(5)
+    antenna.tracking_check()
+    time.sleep(1)
     continue
 
 antenna.finalize()
 
 load.move_hot()
-time.sleep(2)
+time.sleep(5)
 load.move_sky()
-time.sleep(2)
+time.sleep(5)
 
 logger.stop()
