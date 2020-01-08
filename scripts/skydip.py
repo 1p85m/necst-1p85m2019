@@ -2,7 +2,7 @@
 
 import sys
 import time
-impport controller_1p85m2019
+import controller_1p85m2019
 sys.path.append("/home/exito/necst-telescope/scripts")
 import telescope_controller
 sys.path.append("/home/exito/necst-core/scripts")
