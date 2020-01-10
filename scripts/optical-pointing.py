@@ -150,6 +150,8 @@ class optical_pointing(object):
         print(file_name)
         self.logger.start(file_name)
 
+        self.antenna.select_optobs(True)
+
         try:
             for i in range(0, len(data)):
                 #print(float(data[i,1]), float(data[i,2]), data[i,3], data[i,4], data[i,5], data[i,6])
@@ -183,7 +185,7 @@ class optical_pointing(object):
                 continue
         except KeyboardInterrupt:
             self.print('operation INTERRUPTED!')
-
+        self.antenna.select_optobs(False)
         self.logger.stop()
 
         filename = start_timestamp.strftime('%Y%m%d_%H%M%S.dat')
