@@ -23,9 +23,9 @@ print(file_name)
 antenna = telescope_controller.antenna()
 load = controller_1p85m2019.load()
 
-az = 90
+az = 
 el = 20
-el_cmds = [20, 24, 30, 40, 70]
+el_cmd = 80
 
 
 print("Moving az: "+str(az)+ ", el: "+str(el))
@@ -39,13 +39,11 @@ time.sleep(5)
 load.move_sky()
 time.sleep(5)
 
-for el_cmd in el_cmds:
-    print("Moving az: "+str(az)+ ", el: "+str(el_cmd))
-    antenna.move_azel(float(az),float(el_cmd))
-    timr.sleep(2)
-    antenna.tracking_check()
-    time.sleep(1)
-    continue
+print("Moving az: "+str(az)+ ", el: "+str(el_cmd))
+antenna.move_azel(float(az),float(el_cmd))
+time.sleep(2)
+antenna.tracking_check()
+time.sleep(1)
 
 antenna.finalize()
 

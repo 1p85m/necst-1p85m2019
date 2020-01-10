@@ -16,7 +16,6 @@ sys.path.append("../../necst-core/scripts")
 import topic_utils
 
 rospy.init_node('spec')
-
 spec ={i: topic_utils.recv("/xffts_board0%d"%(i), Float64MultiArray) for i in range(1,5)}
 
 

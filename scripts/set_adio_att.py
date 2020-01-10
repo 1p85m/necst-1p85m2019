@@ -2,7 +2,7 @@
 
 name = 'adios_att_set'
 
-att1 = 10
+att1 = 20
 att2 = 11
 att3 = 12
 att4 = 13

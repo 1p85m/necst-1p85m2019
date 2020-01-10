@@ -42,12 +42,12 @@ pub_outputdo =rospy.Publisher(base+'/output_do', std_msgs.msg.Int64MultiArray, q
 
 
 pub[use_axis]['step'].publish(4750)
-time.sleep(5)
+time.sleep(15)
 
 logger.start(file_name)
-time.sleep(2)
+time.sleep(3)
 
 pub[use_axis]['step'].publish(19700)
-time.sleep(7)
+time.sleep(15)
 
 logger.stop()
