@@ -42,7 +42,7 @@ integ = 10
 # move OFF point
 logger.start(file_name)
 
-print("Moving OFF : ra,dec "+str(offf_ra_cmd)+", "+str(off_dec_cmd)+", frame="+ coord)
+print("Moving OFF : ra,dec "+str(off_ra_cmd)+", "+str(off_dec_cmd)+", frame="+ coord)
 antenna.move_wcs(off_ra_cmd,off_dec_cmd,frame=coord)
 antenna.tracking_check()
 print("track ")
