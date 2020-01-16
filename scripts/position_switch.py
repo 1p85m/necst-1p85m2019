@@ -28,14 +28,23 @@ file_name = name + '/' + date + '.necstdb'
 print(file_name)
 
 #off point coordinate
-off_ra_cmd = 78.4#deg
-off_dec_cmd = -4.7#deg
-coord = 'galactic'
+#orikl
+off_ra_cmd = 81.946 #deg
+off_dec_cmd = -5.706 #deg
+coord = 'fk4'
+# cyg x
+#off_ra_cmd = 78.4 #deg
+#off_dec_cmd = -4.7 #deg
+#coord = 'galactic'
 
 # target radec
-target_name = 'CygX'
-obs_ra_cmd = 15*(20+28/60+40.8/3600) #deg
-obs_dec_cmd = 41+10/60+1/3600 #deg
+target_name = 'Orion KL'
+obs_ra_cmd = 15*(5+35/60+14.16/3600) #deg
+obs_dec_cmd = -5+22/60+21.5/3600 #deg
+
+#target_name = 'Cyg X'
+#obs_ra_cmd = 15*(20+28/60+40.8/3600) #deg
+#obs_dec_cmd = 41+10/60+1/3600 #deg
 
 integ = 10
 
