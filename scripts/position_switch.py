@@ -73,6 +73,6 @@ time.sleep(integ)
 obsmode.publish("{0:9}".format('on end'))
 time.sleep(1)
 
-anntena.finalize()
+antenna.finalize()
 
 logger.stop()
