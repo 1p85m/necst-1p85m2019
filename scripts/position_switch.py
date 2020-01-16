@@ -49,16 +49,16 @@ print("track ")
 #observe hot
 load.move_hot()
 time.sleep(5)
-obsmode.publish({0:9}.format('hot start'))
+obsmode.publish("{0:9}".format('hot start'))
 time.sleep(integ)
-obsmode.publish({0:9}.format('hot end'))
+obsmode.publish("{0:9}".format('hot end'))
 load.move_sky()
 time.sleep(5)
 
 # observe off
-obsmode.publish({0:9}.format('off start'))
+obsmode.publish("{0:9}".format('off start'))
 time.sleep(integ)
-obsmode.publish({0:9}.format('off end'))
+obsmode.publish("{0:9}".format('off end'))
 time.sleep(1)
 
 # move&observe ON point
@@ -68,9 +68,9 @@ antenna.move_wcs(obs_ra_cmd,obs_dec_cmd)
 antenna.tracking_check()
 print("track ")
 
-obsmode.publish({0:9}.format('on start'))
+obsmode.publish("{0:9}".format('on start'))
 time.sleep(integ)
-obsmode.publish({0:9}.format('on end'))
+obsmode.publish("{0:9}".format('on end'))
 time.sleep(1)
 
 anntena.finalize()
