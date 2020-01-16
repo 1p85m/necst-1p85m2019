@@ -23,7 +23,7 @@ print(file_name)
 antenna = telescope_controller.antenna()
 load = controller_1p85m2019.load()
 
-az = 
+az = 180
 el = 20
 el_cmd = 80
 
