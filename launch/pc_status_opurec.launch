@@ -1,0 +1,19 @@
+
+<launch>
+
+
+  <node pkg = "necst-core"
+        name = "pc_status_necst"
+        type = "pc_status.py"
+        required="true"
+        output="screen"
+        >
+    <remap from = '/core/pc_status/cpu' to = '/core/pc_status/necst/cpu'/>
+    <remap from = '/core/pc_status/mem' to = '/core/pc_status/necst/mem'/>
+    <remap from = '/core/pc_status/disk' to = '/core/pc_status/necst/disk'/>
+    <remap from = '/core/pc_status/login' to = '/core/pc_status/necst/login'/>
+    <remap from = '/core/pc_status/proc' to = '/core/pc_status/necst/proc'/>
+
+  </node>
+
+</launch>

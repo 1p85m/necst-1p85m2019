@@ -1,5 +1,6 @@
 
 <launch>
+    
   <machine name="necst" address="192.168.100.198" env-loader="/root/ros/devel/env.sh" user="root" password="root"  />
   <machine name="necstrx" address="192.168.100.132" env-loader="/root/ros/devel/env.sh" user="root" password="root"  />
   <machine name="opurec" address="192.168.100.191" env-loader="/root/ros/devel/env.sh" user="exito" password="Se1k0u"  />

@@ -186,6 +186,7 @@ class optical_pointing(object):
         except KeyboardInterrupt:
             self.print('operation INTERRUPTED!')
         self.antenna.select_optobs(False)
+        self.antenna.finalize()
         self.logger.stop()
 
         filename = start_timestamp.strftime('%Y%m%d_%H%M%S.dat')
