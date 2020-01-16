@@ -33,7 +33,7 @@ off_dec_cmd = -4.7#deg
 coord = 'galactic'
 
 # target radec
-target_name = CygX
+target_name = 'CygX'
 obs_ra_cmd = 15*(20+28/60+40.8/3600) #deg
 obs_dec_cmd = 41+10/60+1/3600 #deg
 
