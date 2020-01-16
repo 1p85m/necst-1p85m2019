@@ -9,6 +9,7 @@ import core_controller
 sys.path.append("/home/exito/ros/src/necst-1p85m2019/scripts")
 import core_controller
 import rospy
+import std_msgs
 import datetime
 
 name = "position_switch"
