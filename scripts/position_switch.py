@@ -7,7 +7,7 @@ import telescope_controller
 sys.path.append("/home/exito/ros/src/necst-core/scripts")
 import core_controller
 sys.path.append("/home/exito/ros/src/necst-1p85m2019/scripts")
-import core_controller
+import controller_1p85m2019
 import rospy
 import datetime
 
