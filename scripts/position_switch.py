@@ -20,20 +20,23 @@ antenna = telescope_controller.antenna()
 load = controller_1p85m2019.load()
 
 obsmode = rospy.Publisher('/'+name+'/obsmode', std_msgs.msg.String, queue_size=1)
+target = rospy.Publisher('/'+name+'/target', std_msgs.msg.String, queue_size=1)
 
 date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
 file_name = name + '/' + date + '.necstdb'
 print(file_name)
 
 #off point coordinate
-obs_ra_cmd = 15*(5+35/60+17.3/3600)
-obs_dec_cmd = -5-23/60-28/3600
-coord = 'fk4'
+off_ra_cmd = 78.4#deg
+off_dec_cmd = -4.7#deg
+coord = 'galactic'
 
 # target radec
-obs_ra_cmd = 15*(5+35/60+17.3/3600)
-obs_dec_cmd = -5-23/60-28/3600
+target_name = CygX
+obs_ra_cmd = 15*(20+28/60+40.8/3600) #deg
+obs_dec_cmd = 41+10/60+1/3600 #deg
 
+integ = 10
 
 # move OFF point
 logger.start(file_name)
@@ -46,25 +49,26 @@ print("track ")
 load.move_hot()
 time.sleep(5)
 obsmode.publish({0:9}.format('hot start'))
-time.sleep(10)
+time.sleep(integ)
 obsmode.publish({0:9}.format('hot end'))
 load.move_sky()
 time.sleep(5)
 
 # observe off
 obsmode.publish({0:9}.format('off start'))
-time.sleep(10)
+time.sleep(integ)
 obsmode.publish({0:9}.format('off end'))
 time.sleep(1)
 
 # move&observe ON point
-print("Moving ra,dec "+str(ra_cmd)+", "+str(dec_cmd))
-antenna.move_wcs(ra_cmd,dec_cmd)
+target.publish(target_name)
+print("Moving ra,dec "+str(obs_ra_cmd)+", "+str(obs_dec_cmd))
+antenna.move_wcs(obs_ra_cmd,obs_dec_cmd)
 antenna.tracking_check()
 print("track ")
 
 obsmode.publish({0:9}.format('on start'))
-time.sleep(10)
+time.sleep(integ)
 obsmode.publish({0:9}.format('on end'))
 time.sleep(1)
 
