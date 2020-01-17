@@ -93,7 +93,7 @@
   <remap from = '/1p85m/1st_lo/f_cmd' to = '/1p85m/1st_lo_lhcp/f_cmd'/>
   <remap from = '/1p85m/1st_sg/f_cmd' to = '/1p85m/1st_sg_lhcp/f_cmd'/>
   <param name = "config_file"
-         value = "$(find necst-1p85m2019)/node_conf/first_lo_1p85m2019_1p85m2019_freq_writer.conf" />
+         value = "$(find necst-1p85m2019)/node_conf/first_lo_lhcp_1p85m2019_1p85m2019_freq_writer.conf" />
 </node>
 
 <node pkg = "necst-1p85m2019"
@@ -102,7 +102,7 @@
   <remap from = '/1p85m/1st_lo/f_cmd' to = '/1p85m/1st_lo_rhcp/f_cmd'/>
   <remap from = '/1p85m/1st_sg/f_cmd' to = '/1p85m/1st_sg_rhcp/f_cmd'/>
   <param name = "config_file"
-         value = "$(find necst-1p85m2019)/node_conf/first_lo_1p85m2019_1p85m2019_freq_writer.conf" />
+         value = "$(find necst-1p85m2019)/node_conf/first_lo_rhcp_1p85m2019_1p85m2019_freq_writer.conf" />
 </node>
 
 
