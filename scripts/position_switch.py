@@ -29,13 +29,11 @@ print(file_name)
 
 #off point coordinate
 #orikl
-off_ra_cmd = 81.946 #deg
-off_dec_cmd = -5.706 #deg
-coord = 'fk4'
+off_ra_cmd = 82.55910596 #deg
+off_dec_cmd = -5.66845794 #deg
 # cyg x
-#off_ra_cmd = 78.4 #deg
-#off_dec_cmd = -4.7 #deg
-#coord = 'galactic'
+#off_ra_cmd = 312.4486 #deg
+#off_dec_cmd = 36.5084 #deg
 
 # target radec
 target_name = 'Orion KL'
@@ -51,8 +49,8 @@ integ = 10
 # move OFF point
 logger.start(file_name)
 
-print("Moving OFF : ra,dec "+str(off_ra_cmd)+", "+str(off_dec_cmd)+", frame="+ coord)
-antenna.move_wcs(off_ra_cmd,off_dec_cmd,frame=coord)
+print("Moving OFF : ra,dec "+str(off_ra_cmd)+", "+str(off_dec_cmd))
+antenna.move_wcs(off_ra_cmd,off_dec_cmd)
 antenna.tracking_check()
 print("track ")
 #observe hot
