@@ -12,7 +12,7 @@ import rospy
 import std_msgs
 import datetime
 
-name = "position_switch"
+name = "r_sky"
 
 rospy.init_node(name)
 
