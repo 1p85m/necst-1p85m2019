@@ -73,7 +73,7 @@ time.sleep(1)
 # move&observe ON point
 target.publish(target_name)
 print("Moving ra,dec "+str(obs_ra_cmd+offset_x)+", "+str(obs_dec_cmd+offset_y))
-antenna.move_wcs(obs_ra_cmd,obs_dec_cmd,offset_x,+offset_y)
+antenna.move_wcs(obs_ra_cmd,obs_dec_cmd,offset_x,offset_y)
 antenna.tracking_check()
 print("track ")
 
