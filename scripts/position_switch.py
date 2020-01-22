@@ -40,7 +40,7 @@ target_name = 'Orion KL'
 obs_ra_cmd = 15*(5+35/60+14.16/3600) #deg
 obs_dec_cmd = -5+22/60+21.5/3600 #deg
 offset_x = 0.0
-offset_y = 0.3
+offset_y = 0.0
 
 #target_name = 'Cyg X'
 #obs_ra_cmd = 15*(20+28/60+40.8/3600) #deg
