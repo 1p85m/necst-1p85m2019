@@ -39,8 +39,9 @@ off_dec_cmd = -5.66845794 #deg
 target_name = 'Orion KL'
 obs_ra_cmd = 15*(5+35/60+14.16/3600) #deg
 obs_dec_cmd = -5+22/60+21.5/3600 #deg
-offset_x = 0.0
-offset_y = 0.0
+
+offset_x = 180/3600 #deg
+offset_y = 180/3600 #deg
 
 #target_name = 'Cyg X'
 #obs_ra_cmd = 15*(20+28/60+40.8/3600) #deg
@@ -58,90 +59,92 @@ print("track ")
 #observe hot
 load.move_hot()
 time.sleep(5)
-obsmode.publish("{0:9}".format('hot start'))
+obsmode.publish("{0:20}".format('hot start'))
 time.sleep(integ)
-obsmode.publish("{0:9}".format('hot end'))
+obsmode.publish("{0:20}".format('hot end'))
 load.move_sky()
 time.sleep(5)
 
 # observe off
-obsmode.publish("{0:9}".format('off start'))
+obsmode.publish("{0:20}".format('off start'))
 time.sleep(integ)
-obsmode.publish("{0:9}".format('off end'))
+obsmode.publish("{0:20}".format('off end'))
 time.sleep(1)
+
+
 
 
 
 # move&observe ON point
 target.publish(target_name)
 print("Moving ra,dec "+str(obs_ra_cmd+offset_x)+", "+str(obs_dec_cmd+offset_y))
-antenna.move_wcs(obs_ra_cmd,obs_dec_cmd,offset_x,offset_y)
+antenna.move_wcs(obs_ra_cmd,obs_dec_cmd,-offset_x,0)
 antenna.tracking_check()
 print("track ")
 
-obsmode.publish("{0:9}".format('on start'))
+obsmode.publish("{0:20}".format('on start -ra 0'))
 time.sleep(integ)
-obsmode.publish("{0:9}".format('on end'))
+obsmode.publish("{0:20}".format('on end -ra 0'))
 time.sleep(1)
 
 # move&observe ON point
 target.publish(target_name)
 print("Moving ra,dec "+str(obs_ra_cmd+offset_x)+", "+str(obs_dec_cmd+offset_y))
-antenna.move_wcs(obs_ra_cmd,obs_dec_cmd,offset_x,offset_y)
+antenna.move_wcs(obs_ra_cmd,obs_dec_cmd,0,0)
 antenna.tracking_check()
 print("track ")
 
-obsmode.publish("{0:9}".format('on start'))
+obsmode.publish("{0:20}".format('on start 0 0'))
 time.sleep(integ)
-obsmode.publish("{0:9}".format('on end'))
+obsmode.publish("{0:20}".format('on end 0 0'))
 time.sleep(1)
 
 # move&observe ON point
 target.publish(target_name)
 print("Moving ra,dec "+str(obs_ra_cmd+offset_x)+", "+str(obs_dec_cmd+offset_y))
-antenna.move_wcs(obs_ra_cmd,obs_dec_cmd,offset_x,offset_y)
+antenna.move_wcs(obs_ra_cmd,obs_dec_cmd,+offset_x,0)
 antenna.tracking_check()
 print("track ")
 
-obsmode.publish("{0:9}".format('on start'))
+obsmode.publish("{0:20}".format('on start +ra 0'))
 time.sleep(integ)
-obsmode.publish("{0:9}".format('on end'))
+obsmode.publish("{0:20}".format('on end +ra 0'))
 time.sleep(1)
 
 # move&observe ON point
 target.publish(target_name)
 print("Moving ra,dec "+str(obs_ra_cmd+offset_x)+", "+str(obs_dec_cmd+offset_y))
-antenna.move_wcs(obs_ra_cmd,obs_dec_cmd,offset_x,offset_y)
+antenna.move_wcs(obs_ra_cmd,obs_dec_cmd,0,-offset_y)
 antenna.tracking_check()
 print("track ")
 
-obsmode.publish("{0:9}".format('on start'))
+obsmode.publish("{0:20}".format('on start 0 -dec'))
 time.sleep(integ)
-obsmode.publish("{0:9}".format('on end'))
+obsmode.publish("{0:20}".format('on end 0 -dec'))
 time.sleep(1)
 
 # move&observe ON point
 target.publish(target_name)
 print("Moving ra,dec "+str(obs_ra_cmd+offset_x)+", "+str(obs_dec_cmd+offset_y))
-antenna.move_wcs(obs_ra_cmd,obs_dec_cmd,offset_x,offset_y)
+antenna.move_wcs(obs_ra_cmd,obs_dec_cmd,0,0)
 antenna.tracking_check()
 print("track ")
 
-obsmode.publish("{0:9}".format('on start'))
+obsmode.publish("{0:20}".format('on start 0 0'))
 time.sleep(integ)
-obsmode.publish("{0:9}".format('on end'))
+obsmode.publish("{0:20}".format('on end 0 0'))
 time.sleep(1)
 
 # move&observe ON point
 target.publish(target_name)
 print("Moving ra,dec "+str(obs_ra_cmd+offset_x)+", "+str(obs_dec_cmd+offset_y))
-antenna.move_wcs(obs_ra_cmd,obs_dec_cmd,offset_x,offset_y)
+antenna.move_wcs(obs_ra_cmd,obs_dec_cmd,0,+offset_y)
 antenna.tracking_check()
 print("track ")
 
-obsmode.publish("{0:9}".format('on start'))
+obsmode.publish("{0:20}".format('on start 0 +dec'))
 time.sleep(integ)
-obsmode.publish("{0:9}".format('on end'))
+obsmode.publish("{0:20}".format('on end 0 +dec'))
 time.sleep(1)
 
 
