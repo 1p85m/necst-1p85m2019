@@ -38,7 +38,7 @@ off_dec_cmd = -5.66845794 #deg
 
 # target radec
 target_name = 'Orion KL'
-off_frame = "fk5"
+on_frame = "fk5"
 obs_ra_cmd = 15*(5+35/60+14.16/3600) #deg
 obs_dec_cmd = -(5+22/60+21.5/3600) #deg
 offset_x = 0.0
