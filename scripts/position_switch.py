@@ -29,6 +29,7 @@ print(file_name)
 
 #off point coordinate
 #orikl
+off_frame = "fk5"
 off_ra_cmd = 82.55910596 #deg
 off_dec_cmd = -5.66845794 #deg
 # cyg x
@@ -37,8 +38,9 @@ off_dec_cmd = -5.66845794 #deg
 
 # target radec
 target_name = 'Orion KL'
+off_frame = "fk5"
 obs_ra_cmd = 15*(5+35/60+14.16/3600) #deg
-obs_dec_cmd = -5+22/60+21.5/3600 #deg
+obs_dec_cmd = -(5+22/60+21.5/3600) #deg
 offset_x = 0.0
 offset_y = 0.0
 
@@ -46,13 +48,13 @@ offset_y = 0.0
 #obs_ra_cmd = 15*(20+28/60+40.8/3600) #deg
 #obs_dec_cmd = 41+10/60+1/3600 #deg
 
-integ = 10
+integ = 30
 
 # move OFF point
 logger.start(file_name)
 
 print("Moving OFF : ra,dec "+str(off_ra_cmd)+", "+str(off_dec_cmd))
-antenna.move_wcs(off_ra_cmd,off_dec_cmd)
+antenna.move_wcs(off_ra_cmd,off_dec_cmd,frame=off_frame)
 antenna.tracking_check()
 print("track ")
 #observe hot
@@ -73,7 +75,7 @@ time.sleep(1)
 # move&observe ON point
 target.publish(target_name)
 print("Moving ra,dec "+str(obs_ra_cmd+offset_x)+", "+str(obs_dec_cmd+offset_y))
-antenna.move_wcs(obs_ra_cmd,obs_dec_cmd,offset_x,offset_y)
+antenna.move_wcs(obs_ra_cmd,obs_dec_cmd,offset_x,offset_y,frame=on_frame)
 antenna.tracking_check()
 print("track ")
 
