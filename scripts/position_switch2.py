@@ -48,7 +48,7 @@ offset_y = 0.0
 #obs_ra_cmd = 15*(20+28/60+40.8/3600) #deg
 #obs_dec_cmd = 41+10/60+1/3600 #deg
 
-integ = 10
+integ = 30
 
 # move OFF point
 logger.start(file_name)
