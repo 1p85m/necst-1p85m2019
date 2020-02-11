@@ -30,23 +30,28 @@ print(file_name)
 #off point coordinate
 #orikl
 off_frame = "fk5"
-off_ra_cmd = 82.55910596 #deg
-off_dec_cmd = -5.66845794 #deg
+#off_ra_cmd = 82.55910596 #deg
+#off_dec_cmd = -5.66845794 #deg
 # cyg x
-#off_ra_cmd = 312.4486 #deg
-#off_dec_cmd = 36.5084 #deg
+off_ra_cmd = 312.4486 #deg
+off_dec_cmd = 36.5084 #deg
 
 # target radec
-target_name = 'Orion KL'
-on_frame = "galactic"
-obs_ra_cmd = 208.99003 #deg
-obs_dec_cmd = -19.38486 #deg
+#target_name = 'Orion KL'
+#on_frame = "galactic"
+#obs_ra_cmd = 208.99003 #deg
+#obs_dec_cmd = -19.38486 #deg
 offset_x = 0.0
 offset_y = 0.0
 
-#target_name = 'Cyg X'
+target_name = 'Cyg X'
+#on_frame = "fk5"
 #obs_ra_cmd = 15*(20+28/60+40.8/3600) #deg
-#obs_dec_cmd = 41+10/60+1/3600 #deg
+#obs_dec_cmd = 41+10/60+12/3600 #deg
+
+on_frame = "galactic"
+obs_ra_cmd = 079.6007 #deg
+obs_dec_cmd = +01.3963 #deg
 
 integ = 30
 
