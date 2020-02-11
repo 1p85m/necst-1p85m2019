@@ -50,8 +50,10 @@ target_name = 'Cyg X'
 #obs_dec_cmd = 41+10/60+12/3600 #deg
 
 on_frame = "galactic"
-obs_ra_cmd = 079.6007 #deg
-obs_dec_cmd = +01.3963 #deg
+obs_ra_cmd = 78.8873  #deg
+obs_dec_cmd = 0.7096 #deg
+
+
 
 integ = 30
 
