@@ -16,8 +16,11 @@ class xffts_total_power(object):
 
 
     def sum(self, q, arg):
-        data = sum(q.data)
-        self.pub[arg].publish(data)
+        _tp = sum(q.data[:-1])
+        t = q.data[-1]
+        tp = std_msgs.msg.Float64MultiArray()
+        tp.data = [_tp,t]
+        self.pub[arg].publish(tp)
         return
 
 if __name__ == '__main__':

@@ -35,7 +35,7 @@ print(file_name)
 # --------------
 
 
-integ = 1.0
+integ = 10
 
 """
 desc = 'Measure XFFTS band character.'
