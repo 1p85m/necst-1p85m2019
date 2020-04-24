@@ -3,10 +3,11 @@
 name = '1p85m_controller'
 
 import rospy
-
+import sys
 import time
 import std_msgs.msg
-
+sys.path.append("/home/exito/ros/src/necst-core/scripts")
+import topic_utils
 
 class controller(object):
     def __init__(self):
