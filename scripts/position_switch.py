@@ -29,14 +29,19 @@ print(file_name)
 
 #off point coordinate
 #orikl
+#off_frame = "fk5"
+#off_ra_cmd = 82.55910596 #deg
+#off_dec_cmd = -5.66845794 #deg
+
+#M17
 off_frame = "fk5"
-off_ra_cmd = 82.55910596 #deg
-off_dec_cmd = -5.66845794 #deg
+off_ra_cmd = 272.428 #deg
+off_dec_cmd = -14.0845 #deg
 
 #IRC+10216
-off_frame = "fk4"
-off_ra_cmd = 146.562 #deg
-off_dec_cmd = 13.5125 #deg
+#off_frame = "fk4"
+#off_ra_cmd = 146.562 #deg
+#off_dec_cmd = 13.5125 #deg
 
 # cyg x
 #off_ra_cmd = 312.4486 #deg
@@ -51,12 +56,17 @@ off_dec_cmd = 13.5125 #deg
 #offset_y = 0.0
 
 # target radec
-target_name = "IRC+10216"
-on_frame = "fk5"
-obs_ra_cmd = 146.989193 #deg
-obs_dec_cmd = 13.278768 #deg
+#target_name = "IRC+10216"
+#on_frame = "fk5"
+#obs_ra_cmd = 146.989193 #deg
+#obs_dec_cmd = 13.278768 #deg
 offset_x = 0.0
 offset_y = 0.0
+
+target_name = "M17"
+on_frame = "fk5"
+obs_ra_cmd = 275.096 #deg
+obs_dec_cmd = -16.1954 #deg
 
 #target_name = 'Cyg X'
 #obs_ra_cmd = 15*(20+28/60+40.8/3600) #deg
