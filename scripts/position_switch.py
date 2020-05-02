@@ -39,13 +39,18 @@ print(file_name)
 #off_dec_cmd = -14.0845 #deg
 
 #IRC+10216
-off_frame = "fk4"
-off_ra_cmd = 146.562 #deg
-off_dec_cmd = 13.5125 #deg
+#off_frame = "fk4"
+#off_ra_cmd = 146.562 #deg
+#off_dec_cmd = 13.5125 #deg
 
 # cyg x
 #off_ra_cmd = 312.4486 #deg
 #off_dec_cmd = 36.5084 #deg
+
+# W51
+off_frame = "fk4"
+off_ra_cmd = 290.359 #deg
+off_dec_cmd = 13.9953 #deg
 
 # target radec
 #target_name = "Orion KL"
@@ -56,10 +61,10 @@ off_dec_cmd = 13.5125 #deg
 #offset_y = 0.0
 
 # target radec
-target_name = "IRC+10216"
-on_frame = "fk5"
-obs_ra_cmd = 146.989193 #deg
-obs_dec_cmd = 13.278768 #deg
+#target_name = "IRC+10216"
+#on_frame = "fk5"
+#obs_ra_cmd = 146.989193 #deg
+#obs_dec_cmd = 13.278768 #deg
 offset_x = 0.0
 offset_y = 0.0
 
@@ -71,6 +76,12 @@ offset_y = 0.0
 #target_name = 'Cyg X'
 #obs_ra_cmd = 15*(20+28/60+40.8/3600) #deg
 #obs_dec_cmd = 41+10/60+1/3600 #deg
+
+target_name = "W51"
+on_frame = "fk4"
+obs_ra_cmd = 290.359 #deg
+obs_dec_cmd = 14.4119 #deg
+
 
 integ = 30
 
