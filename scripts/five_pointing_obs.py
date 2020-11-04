@@ -62,9 +62,9 @@ off_dec_cmd = -5.66845794 #deg
 #off_dec_cmd = 36.5084 #deg
 
 # W51
-off_frame = "fk4"
-off_ra_cmd = 290.359 #deg
-off_dec_cmd = 13.9953 #deg
+#off_frame = "fk4"
+#off_ra_cmd = 290.359 #deg
+#off_dec_cmd = 13.9953 #deg
 
 """
 target radec
