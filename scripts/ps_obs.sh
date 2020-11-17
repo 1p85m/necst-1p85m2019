@@ -6,9 +6,11 @@ do
 if [ $(($i%4)) = 0 ]; then
         echo skydip start
         ipython skydip.py
+        echo skydip end
         sleep 30
-echo start position_switch
-ipython position_swich.py
-sleep 180
 fi
+echo position_switch start
+ipython position_swich.py
+echo position_switch start
+sleep 180
 done
