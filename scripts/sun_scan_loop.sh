@@ -9,7 +9,7 @@ if [ $(($i%4)) = 0 ]; then
         sleep 30
 fi
 echo sun_scan start
-ipython ../../necst-telescope/scripts/sun_scan_loop.py
+ipython sun_scan_loop.py
 echo sun_scan end
 sleep 300
 
