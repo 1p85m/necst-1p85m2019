@@ -29,9 +29,9 @@ print(file_name)
 
 #off point coordinate
 #orikl
-#off_frame = "fk5"
-#off_ra_cmd = 82.55910596 #deg
-#off_dec_cmd = -5.66845794 #deg
+off_frame = "fk5"
+off_ra_cmd = 82.55910596 #deg
+off_dec_cmd = -5.66845794 #deg
 
 #M17
 #off_frame = "fk5"
@@ -48,17 +48,17 @@ print(file_name)
 #off_dec_cmd = 36.5084 #deg
 
 # W51
-off_frame = "fk4"
-off_ra_cmd = 290.359 #deg
-off_dec_cmd = 13.9953 #deg
+#off_frame = "fk4"
+#off_ra_cmd = 290.359 #deg
+#off_dec_cmd = 13.9953 #deg
 
 # target radec
-#target_name = "Orion KL"
-#on_frame = "fk5"
-#obs_ra_cmd = 15*(5+35/60+14.16/3600) #deg
-#obs_dec_cmd = -(5+22/60+21.5/3600) #deg
-#offset_x = 0.0
-#offset_y = 0.0
+target_name = "Orion KL"
+on_frame = "fk5"
+obs_ra_cmd = 15*(5+35/60+14.16/3600) #deg
+obs_dec_cmd = -(5+22/60+21.5/3600) #deg
+offset_x = 0.0
+offset_y = 0.0
 
 # target radec
 #target_name = "IRC+10216"
@@ -77,13 +77,13 @@ offset_y = 0.0
 #obs_ra_cmd = 15*(20+28/60+40.8/3600) #deg
 #obs_dec_cmd = 41+10/60+1/3600 #deg
 
-target_name = "W51"
-on_frame = "fk4"
-obs_ra_cmd = 290.359 #deg
-obs_dec_cmd = 14.4119 #deg
+#target_name = "W51"
+#on_frame = "fk4"
+#obs_ra_cmd = 290.359 #deg
+#obs_dec_cmd = 14.4119 #deg
 
 
-integ = 30
+integ = 60
 
 # move OFF point
 logger.start(file_name)
