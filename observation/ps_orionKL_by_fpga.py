@@ -58,11 +58,11 @@ time.sleep(5)
 obsmode.publish("{0:9}".format('hot start'))
 time.sleep(integ)
 obsmode.publish("{0:9}".format('hot end'))
-
-load.move_sky()
-time.sleep(3)
 print('end_hot_input')
 input()
+load.move_sky()
+time.sleep(3)
+
 
 time.sleep(5)
 
