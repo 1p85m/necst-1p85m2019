@@ -22,7 +22,7 @@ from std_msgs.msg import String
 name = "otf_DR21_gal"
 param = {}
 
-Cygnus DR21
+#Cygnus DR21
 param["on_x"] = 81.68073214 #deg
 param["on_y"] = 0.537422372
 
