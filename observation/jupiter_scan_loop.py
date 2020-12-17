@@ -23,7 +23,7 @@ _lx = 0.5 #deg
 _ly = 0.5 #deg
 scan_t = 60
 
-num = 5
+num = 3
 
 name = "jupiter_scan_loop"
 rospy.init_node(name)
