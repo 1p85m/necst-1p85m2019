@@ -19,9 +19,9 @@ import std_msgs
 
 planet = "jupiter"
 scan_direction = 1 #1or-1
-_lx = 0.03 #deg
-_ly = 0.03 #deg
-scan_t = 10
+_lx = 0.4 #deg
+_ly = 0.4 #deg
+scan_t = 83
 
 num = 5
 
