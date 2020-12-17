@@ -36,7 +36,7 @@ param["num_x"] = 30
 param["num_y"] = 30
 param["delta_x"] = 40/3600
 param["delta_y"] = 40/3600
-param["delta_t"] = 1
+param["delta_t"] = 0.5
 
 param["ramp"] = 2
 
