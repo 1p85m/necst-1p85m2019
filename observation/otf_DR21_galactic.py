@@ -32,8 +32,8 @@ param["on_frame"] = "galactic"
 param["on_offset_x"] = 0 #deg
 param["on_offset_y"] = 0 #deg
 
-param["num_x"] = 90
-param["num_y"] = 90
+param["num_x"] = 30
+param["num_y"] = 30
 param["delta_x"] = 40/3600
 param["delta_y"] = 40/3600
 param["delta_t"] = 1
