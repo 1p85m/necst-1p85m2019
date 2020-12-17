@@ -2,6 +2,7 @@
 
 import sys
 import time
+sys.path.append('../scripts')
 import controller_1p85m2019
 sys.path.append("../../necst-telescope/scripts")
 import telescope_controller
