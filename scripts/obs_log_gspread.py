@@ -80,21 +80,8 @@ class obs_log_gspread(object):
         self.ws.update_cells(cell_list)
 
 
-    def regist_gspread(self):
-        while not rospy.is_shutdown():
-            self.write_log()
-            time.sleep(3)
-            continue
-            
-            
-    def thread(self):
-        th = threading.Thread(target=self.regist_gspread)
-        th.setDaemon(True)
-        th.start()
-
 
 if __name__=='__main__':
     rospy.init_node(name)
     olg = obs_log_gspread()
-    olg.thread()
     rospy.spin()
