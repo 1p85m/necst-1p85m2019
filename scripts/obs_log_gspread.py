@@ -18,7 +18,7 @@ class obs_log_gspread(object):
         spread_sheet_key = "1WPOyaK7iekOK-Hk6jNLBMzsWRHGHifUyiecQI-ogwUc"
         self.ws = self.connect_gspread(json,spread_sheet_key)
 
-        rospy.Subscriber("/obs_log/date_time",Float64,self.date)
+        rospy.Subscriber("/obs_log/date_time",String,self.date)
         rospy.Subscriber("/obs_log/logger_path",String,self.logger_path)
 
     def connect_gspread(self,json,key):
@@ -30,7 +30,7 @@ class obs_log_gspread(object):
         return worksheet
 
     def date(self,q):
-        date = str(q.data)
+        date = q.data
         Y = date[:4]
         m = date[4:6]
         d = date[6:8]
@@ -73,7 +73,9 @@ class obs_log_gspread(object):
             cell.value = val
 
         worksheet.update_cells(cell_list)
-
+    
 
 if __name__=='__main__':
     rospy.init_node(name)
+    olg = obs_log_gspread()
+    rospy.spin()
