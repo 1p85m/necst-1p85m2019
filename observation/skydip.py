@@ -2,11 +2,11 @@
 
 import sys
 import time
-sys.path.append('../scripts')
+sys.path.append('/home/exito/ros/src/scripts')
 import controller_1p85m2019
-sys.path.append("../../necst-telescope/scripts")
+sys.path.append("/home/exito/ros/src/necst-telescope/scripts")
 import telescope_controller
-sys.path.append("../../necst-core/scripts")
+sys.path.append("/home/exito/ros/src/necst-core/scripts")
 import core_controller
 import rospy
 import datetime
