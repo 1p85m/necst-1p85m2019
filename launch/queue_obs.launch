@@ -1,0 +1,10 @@
+
+<launch>
+  <node pkg = "necst-1p85m2019"
+        name = "queue_obs"
+        type = "queue_obs.py"
+        required="true"
+        output="screen"
+        >
+  </node>
+</launch>
