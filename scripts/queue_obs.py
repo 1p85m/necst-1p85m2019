@@ -60,7 +60,7 @@ class queue_observation(object):
         proc= subprocess.run(cmd,
                         stdout=subprocess.PIPE,
                         stderr=subprocess.STDOUT,
-                        text=True)
+                        )
         print(proc.stdout)
         return
 
