@@ -143,7 +143,7 @@ class otf_observation(object):
         time.sleep(0.01)
 
     def start(self,param):
-        name = "otf_test"
+        name = "otf_W51"
         date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
         file_name = name + '/' + date + '.necstdb'
         print(file_name)
