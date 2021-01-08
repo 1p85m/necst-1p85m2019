@@ -37,7 +37,7 @@ param["num_x"] = 90
 param["num_y"] = 90
 param["delta_x"] = 40/3600
 param["delta_y"] = 40/3600
-param["delta_t"] = 1
+param["delta_t"] = 0.5
 
 param["ramp"] = 2
 
@@ -46,9 +46,9 @@ param["off_x"] = 82.55910596
 param["off_y"] = -5.66845794
 
 param["off_frame"] = "fk5"
-param["off_integ"] = 5 #sec
+param["off_integ"] = 10 #sec
 
-param["hot_time"] = 5 #sec
+param["hot_time"] = 10 #sec
 param["hot_interval"] = 5 #min
 
 param["direction"] = "H"
@@ -128,22 +128,22 @@ class otf_observation(object):
         target.data = param["target"]
         direc.data = param["direction"]
 
-        time.sleep(0.01)
+        time.sleep(0.1)
         self.otfparam_on.publish(on)
-        time.sleep(0.01)
+        time.sleep(0.1)
         self.otfparam_scan.publish(scan)
-        time.sleep(0.01)
+        time.sleep(0.1)
         self.otfparam_off.publish(off)
-        time.sleep(0.01)
+        time.sleep(0.1)
         self.otfparam_hot.publish(hot)
-        time.sleep(0.01)
+        time.sleep(0.1)
         self.target.publish(target)
-        time.sleep(0.01)
+        time.sleep(0.1)
         self.otfparam_direc.publish(direc)
-        time.sleep(0.01)
+        time.sleep(0.1)
 
     def start(self,param):
-        name = "otf_test"
+        name = "otf_OrionKL_radec"
         date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
         file_name = name + '/' + date + '.necstdb'
         print(file_name)
@@ -188,7 +188,7 @@ class otf_observation(object):
             on_offset_y = param["on_offset_y"]
 
         self.logger.start(file_name)
-
+        time.sleep(1)
         self.pub_scan_param(param)
 
         for scan_num in range(total_scan):

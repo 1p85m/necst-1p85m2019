@@ -83,7 +83,7 @@ offset_y = 0.0
 #obs_dec_cmd = 14.4119 #deg
 
 
-integ = 60
+integ = 20
 
 # move OFF point
 logger.start(file_name)

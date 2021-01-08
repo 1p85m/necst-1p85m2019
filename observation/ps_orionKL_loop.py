@@ -43,8 +43,8 @@ offset_y = 0.0
 
 
 
-integ = 60
-loop_num = 5
+integ = 10
+scan_num = 3
 
 logger.start(file_name)
 
@@ -58,8 +58,8 @@ load.move_sky()
 time.sleep(5)
 
 
-for i in range(loop_num):
-
+for i in range(scan_num):
+  print("scan_num="+str(i+1)+"/"+str(scan_num))
   # move&observe off
   print("Moving OFF : ra,dec "+str(off_ra_cmd)+", "+str(off_dec_cmd))
   antenna.move_wcs(off_ra_cmd,off_dec_cmd,frame=off_frame)
@@ -76,7 +76,6 @@ for i in range(loop_num):
   antenna.move_wcs(obs_ra_cmd,obs_dec_cmd,offset_x,offset_y,frame=on_frame)
   antenna.tracking_check()
   print("track ")
-
   obsmode.publish("{0:9}".format('on start'))
   time.sleep(integ)
   obsmode.publish("{0:9}".format('on end'))

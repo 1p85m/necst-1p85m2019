@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in {1..24}
+for i in {1..30}
 do
 if [ $(($i%4)) = 0 ]; then
         echo skydip start

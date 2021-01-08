@@ -49,7 +49,7 @@ param["off_integ"] = 5 #sec
 param["hot_time"] = 5 #sec
 param["hot_interval"] = 5 #min
 
-param["direction"] = "H"
+param["direction"] = "V"
 
 param["target"] = "IRC+10216"
 param["dcos"] = 1
@@ -140,7 +140,7 @@ class otf_observation(object):
         time.sleep(0.01)
 
     def start(self,param):
-        name = "otf_IRC+10216"
+        name = "otf_IRC+10216_dec"
         date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
         file_name = name + '/' + date + '.necstdb'
         print(file_name)
@@ -225,8 +225,8 @@ class otf_observation(object):
                 ly = _ly + dy/dt*ramp
                 ctr_x = x + on_offset_x
                 ctr_y = y + on_offset_y
-                sx = ctr_x - _lx/2 - dx*scan_num
-                sy = ctr_y - _ly/2 + dy/dt*ramp
+                sx = ctr_x - _lx/2 + dx*scan_num
+                sy = ctr_y - _ly/2 - dy/dt*ramp
                 scan_t = dt*(num_y+1) + ramp
                 pass
 
