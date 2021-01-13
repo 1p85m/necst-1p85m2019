@@ -1,0 +1,9 @@
+<launch>
+  <node pkg = "necst-1p85m2019"
+        name = "obs_log_gspread"
+        type = "obs_log_gspread.py"
+        required="true"
+        output="screen"
+        >
+  </node>
+</launch>
