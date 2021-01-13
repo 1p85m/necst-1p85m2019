@@ -21,40 +21,37 @@ from std_msgs.msg import String
 ###############parameter###################
 
 
-name = "otf_W51"
+name = "otf_IRC10216_2021"
 param = {}
 
-
-#W51
-param["on_x"] = 290.359 #deg
-param["on_y"] = 14.4119
-param["on_frame"] = "fk4"
+#IRC+10216
+param["on_x"] = (9 + 47/60 + 57.4063/3600)*15 #deg
+param["on_y"] = 13 + 16/60 + 43.5648/3600 #deg
+param["on_frame"] = "fk5"
 
 param["on_offset_x"] = 0 #deg
 param["on_offset_y"] = 0 #deg
 
-param["num_x"] = 90
-param["num_y"] = 90
-param["delta_x"] = 40/3600
-param["delta_y"] = 40/3600
+param["num_x"] = 120
+param["num_y"] = 120
+param["delta_x"] = 10/3600
+param["delta_y"] = 10/3600
 param["delta_t"] = 0.5
 
 param["ramp"] = 2
 
-#W51
-param["off_x"] = 290.359
-param["off_y"] = 13.9953
+param["off_x"] = (9 + 50/60 + 14/3600)*15
+param["off_y"] = 13 + 35/60 + 40/3600
 
-param["off_frame"] = "fk4"
-param["off_integ"] = 5 #sec
+param["off_frame"] = "fk5"
+param["off_integ"] = 10 #sec
 
-param["hot_time"] = 5 #sec
+param["hot_time"] = 10 #sec
 param["hot_interval"] = 5 #min
 
 param["direction"] = "H"
 
-
-param["target"] = "W51"
+param["target"] = "IRC+10216"
 param["dcos"] = 1
 
 
@@ -143,7 +140,7 @@ class otf_observation(object):
         time.sleep(0.01)
 
     def start(self,param):
-        name = "otf_W51"
+        name = "otf_IRC+10216_2021"
         date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
         file_name = name + '/' + date + '.necstdb'
         print(file_name)
@@ -188,7 +185,7 @@ class otf_observation(object):
             on_offset_y = param["on_offset_y"]
 
         self.logger.start(file_name)
-
+        time.sleep(0.1)
         self.pub_scan_param(param)
 
         for scan_num in range(total_scan):
