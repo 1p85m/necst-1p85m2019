@@ -21,7 +21,7 @@ from std_msgs.msg import String
 ###############parameter###################
 
 
-name = "otf_IRC10216_2021"
+name = "cross_scan_IRC10216_2021"
 param = {}
 
 #IRC+10216
@@ -33,10 +33,10 @@ param["on_offset_x"] = 0 #deg
 param["on_offset_y"] = 0 #deg
 
 param["num_x"] = 120
-param["num_y"] = 120
+param["num_y"] = 1
 param["delta_x"] = 10/3600
 param["delta_y"] = 10/3600
-param["delta_t"] = 0.5
+param["delta_t"] = 1
 
 param["ramp"] = 2
 
@@ -49,7 +49,7 @@ param["off_integ"] = 10 #sec
 param["hot_time"] = 10 #sec
 param["hot_interval"] = 5 #min
 
-param["direction"] = "V"
+param["direction"] = "H"
 
 param["target"] = "IRC+10216"
 param["dcos"] = 1
@@ -140,7 +140,7 @@ class otf_observation(object):
         time.sleep(0.01)
 
     def start(self,param):
-        name = "otf_IRC+10216_2021"
+        name = "cross_scan_IRC10216_2021"
         date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
         file_name = name + '/' + date + '.necstdb'
         print(file_name)

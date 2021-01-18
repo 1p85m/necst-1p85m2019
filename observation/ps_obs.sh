@@ -1,16 +1,15 @@
 #!/bin/bash
 
-sleep 10800
-for i in {1..9}
+for i in {1..25}
 do
-if [ $(($i%4)) = 0 ]; then
+if [ $(($i%5)) = 0 ]; then
         echo skydip start
         ipython skydip.py
         echo skydip end
         sleep 30
 fi
 echo position_switch start
-ipython position_swich.py
+python ps_orionKL_202101.py
 echo position_switch start
-sleep 180
+sleep 10
 done
