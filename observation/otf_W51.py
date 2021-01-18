@@ -26,9 +26,16 @@ param = {}
 
 
 #W51
-param["on_x"] = 290.359 #deg
-param["on_y"] = 14.4119
-param["on_frame"] = "fk4"
+#fk4
+#param["on_x"] = 290.359 #deg
+#param["on_y"] = 14.4119
+
+#fk5
+param["on_x"] = 290.934 #deg
+param["on_y"] = 14.513
+
+
+param["on_frame"] = "fk5"
 
 param["on_offset_x"] = 0 #deg
 param["on_offset_y"] = 0 #deg
@@ -42,10 +49,17 @@ param["delta_t"] = 0.5
 param["ramp"] = 2
 
 #W51
-param["off_x"] = 290.359
-param["off_y"] = 13.9953
 
-param["off_frame"] = "fk4"
+#fk4
+#param["off_x"] = 290.359
+#param["off_y"] = 13.9953
+
+#fk5
+param["off_x"] = 289.989
+param["off_y"] = 15.0305
+
+
+param["off_frame"] = "fk5"
 param["off_integ"] = 5 #sec
 
 param["hot_time"] = 5 #sec
