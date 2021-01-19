@@ -202,7 +202,7 @@ class otf_observation(object):
             on_offset_y = param["on_offset_y"]
 
         self.logger.start(file_name)
-
+        time.sleep(0.5)
         self.pub_scan_param(param)
 
         for scan_num in range(total_scan):
