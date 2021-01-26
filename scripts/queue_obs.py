@@ -33,34 +33,34 @@ class queue_observation(object):
         return worksheet
 
     def queue_execute(self):
-        try:
-            pd = pandas.DataFrame(self.ws.get_all_values())
-            if len(pd) <= 1:
-                return
-            t= pd.loc[1][0].split('/')
-            unixtime = datetime.datetime(int(t[0]),int(t[1]),int(t[2]),int(t[3]),int(t[4]),tzinfo=datetime.timezone.utc).timestamp()
-            order = pd.loc[1][1]
+        #try:
+        pd = pandas.DataFrame(self.ws.get_all_values())
+        if len(pd) <= 1:
+            return
+        t= pd.loc[1][0].split('/')
+        unixtime = datetime.datetime(int(t[0]),int(t[1]),int(t[2]),int(t[3]),int(t[4]),tzinfo=datetime.timezone.utc).timestamp()
+        order = pd.loc[1][1]
             # error date
-            if time.time() - unixtime >= 3600:
-                ws2 = self.connect_gspread(self.jsonf,self.spread_sheet_key,sheet='error order')
-                pd2 = pandas.DataFrame(ws2.get_all_values())
-                pd2 = pd2.append(pd.loc[1])
-                self.update_worksheet(ws2,pd2)
-                print('error order: '+str(t)+order)
-                self.ws.delete_rows(2)
+        if time.time() - unixtime >= 3600:
+            ws2 = self.connect_gspread(self.jsonf,self.spread_sheet_key,sheet='error order')
+            pd2 = pandas.DataFrame(ws2.get_all_values())
+            pd2 = pd2.append(pd.loc[1])
+            self.update_worksheet(ws2,pd2)
+            print('error order: '+str(t)+order)
+            self.ws.delete_rows(2)
             #execute obs
-            elif time.time() >= unixtime:
-                print(str(datetime.datetime.now())+':start ' +order)
-                self.execute_obs(order)
-                print(str(datetime.datetime.now())+':end ' +order)
-                self.ws.delete_rows(2)
-            else:
-                pass
-        except:
-            t = datetime.datetime.now()
-            update_t = t.strftime("%Y/%m/%d-%H:%M:%S")
-            print(update_t)
-            print("something error during gspread access")
+        elif time.time() >= unixtime:
+            print(str(datetime.datetime.now())+':start ' +order)
+            self.execute_obs(order)
+            print(str(datetime.datetime.now())+':end ' +order)
+            self.ws.delete_rows(2)
+        else:
+            pass
+        #except:
+     	    #t = datetime.datetime.now()
+     	    #update_t = t.strftime("%Y/%m/%d-%H:%M:%S")
+            #print(update_t)
+            #print("something error during gspread access")
         return
 
     def execute_obs(self,filename):
@@ -81,15 +81,15 @@ class queue_observation(object):
         else:
             return toAlpha(num//26)+chr(64+num%26)
 
-    def update_worksheet(self,pd):
+    def update_worksheet(self,_ws,pd):
         col_lastnum = len(pd.columns) # DataFrameの列数
         row_lastnum = len(pd.index)   # DataFrameの行数
 
-        cell_list = self.ws.range('A1:'+self.toAlpha(col_lastnum)+str(row_lastnum))
+        cell_list = _ws.range('A1:'+self.toAlpha(col_lastnum)+str(row_lastnum))
         for cell in cell_list:
             val = pd.iloc[cell.row-1][cell.col-1]
             cell.value = val
-        self.ws.update_cells(cell_list)
+        _ws.update_cells(cell_list)
         return
 
     def queue_obs(self):
