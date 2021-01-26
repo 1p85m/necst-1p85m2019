@@ -18,6 +18,8 @@ class queue_observation(object):
         self.spread_sheet_key = "175mbsv16ESc0-DXGVpR1X7x-0QOCHwnRfLgrvU8PAOQ"
         self.obs_path = '/home/exito/ros/src/necst-1p85m2019/observation/'
 
+        self.ws = self.connect_gspread(self.jsonf,self.spread_sheet_key)
+
     def connect_gspread(self,jsonf,key,sheet=None):
         scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
         credentials = ServiceAccountCredentials.from_json_keyfile_name(jsonf, scope)
@@ -30,9 +32,9 @@ class queue_observation(object):
             worksheet = gc.open_by_key(SPREADSHEET_KEY).worksheet(sheet)
         return worksheet
 
-    def queue_execute(self,ws):
+    def queue_execute(self):
         try:
-            pd = pandas.DataFrame(ws.get_all_values())
+            pd = pandas.DataFrame(self.ws.get_all_values())
             if len(pd) <= 1:
                 return
             t= pd.loc[1][0].split('/')
@@ -45,13 +47,13 @@ class queue_observation(object):
                 pd2 = pd2.append(pd.loc[1])
                 self.update_worksheet(ws2,pd2)
                 print('error order: '+str(t)+order)
-                ws.delete_rows(2)
+                self.ws.delete_rows(2)
             #execute obs
             elif time.time() >= unixtime:
                 print(str(datetime.datetime.now())+':start ' +order)
                 self.execute_obs(order)
                 print(str(datetime.datetime.now())+':end ' +order)
-                ws.delete_rows(2)
+                self.ws.delete_rows(2)
             else:
                 pass
         except:
@@ -62,8 +64,9 @@ class queue_observation(object):
         return
 
     def execute_obs(self,filename):
-        cmd = ['ipython',self.obs_path+filename]
+        cmd = ['ipython',filename]
         proc= subprocess.run(cmd,
+                        cwd=self.obs_path,
                         stdout=subprocess.PIPE,
                         stderr=subprocess.STDOUT,
                         )
@@ -78,21 +81,20 @@ class queue_observation(object):
         else:
             return toAlpha(num//26)+chr(64+num%26)
 
-    def update_worksheet(self,ws,pd):
+    def update_worksheet(self,pd):
         col_lastnum = len(pd.columns) # DataFrameの列数
         row_lastnum = len(pd.index)   # DataFrameの行数
 
-        cell_list = ws.range('A1:'+self.toAlpha(col_lastnum)+str(row_lastnum))
+        cell_list = self.ws.range('A1:'+self.toAlpha(col_lastnum)+str(row_lastnum))
         for cell in cell_list:
             val = pd.iloc[cell.row-1][cell.col-1]
             cell.value = val
-        ws.update_cells(cell_list)
+        self.ws.update_cells(cell_list)
         return
 
     def queue_obs(self):
         while not rospy.is_shutdown():
-            ws = self.connect_gspread(self.jsonf,self.spread_sheet_key)
-            self.queue_execute(ws)
+            self.queue_execute()
             time.sleep(60)
             continue
         return
